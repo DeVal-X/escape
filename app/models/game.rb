@@ -5,7 +5,7 @@ class Game < ApplicationRecord
 
   has_many :items
   enum status: [ :pending, :start, :level1, :ended ]
-  
+
   # def level_up!
   #   current_status_index = Game.statuses.keys.index(status)
   #   # raise GameEnded if current_status_index + 1 >= Game.statuses.count
