@@ -9,3 +9,6 @@ application.register("door-opening", DoorOpeningController)
 
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
+
+import InstructionPaperController from "./instruction_paper_controller"
+application.register("instruction-paper", InstructionPaperController)
