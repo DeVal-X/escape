@@ -33,7 +33,5 @@ class GamesController < ApplicationController
 
   def params_game
     params.require(:game).permit( :status, :first_user, :second_user)
-
   end
-
 end

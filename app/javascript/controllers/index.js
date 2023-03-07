@@ -6,3 +6,6 @@ import { application } from "./application"
 
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
+
+import TotemSwitchController from "./totem_switch_controller"
+application.register("totem-switch", TotemSwitchController)
