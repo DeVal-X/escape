@@ -8,16 +8,17 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @item = Item.new()
+    @item = Item.new
   end
 
   def destroy
-
+    @item = Item.find(params[:id])
+    @item.destroy
   end
 
   private
 
   def params_item
-    
+    params.require(:item).permit(:name, :description)
   end
 end
