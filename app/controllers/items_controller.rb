@@ -1,5 +1,8 @@
 class ItemsController < ApplicationController
   def index
+    @user = current_user
+    @game = Game.find(params[:game_id])
+    @items = @user.items.where(game_id: @game)
     @items = Item.all
   end
 

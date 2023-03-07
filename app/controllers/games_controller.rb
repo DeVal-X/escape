@@ -16,6 +16,7 @@ class GamesController < ApplicationController
     @first_user = current_user
     @game = Game.new(params_game)
     @game.first_user = @first_user
+    @game.status = :pending
     if game.save!
       redirect_to game_path(@game)
     else
@@ -25,7 +26,7 @@ class GamesController < ApplicationController
 
   def update
     @game = Game.find(params[:id])
-    @game.level_up!
+    # @game.level_up!
   end
 
   private
