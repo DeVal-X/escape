@@ -1,0 +1,24 @@
+<table>
+  <thead>
+    <h1>ScoreBoard</h1>
+
+    <tr>
+      <th>Position</th>
+      <th>User 1</th>
+      <th>User 2</th>
+      <th>Time to escape</th>
+    </tr>
+
+  </thead>
+
+  <tbody>
+    <% @ranking.each do |rank| %>
+      <tr>
+        <td><%= @ranking.index(rank) + 1 %></td>
+        <td><%= rank.first_user.pseudo %></td>
+        <td><%= rank.second_user.pseudo %></td>
+        <td><%= rank.time %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
