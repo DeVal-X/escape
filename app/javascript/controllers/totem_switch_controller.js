@@ -3,7 +3,11 @@ import { Controller } from "@hotwired/stimulus"
 // Connects to data-controller="totem-switch"
 export default class extends Controller {
   static targets = ["totem", "door"]
+  static values = { advancePath: String }
 
+  connect() {
+
+  }
 
   switch(event) {
     if (event.currentTarget.className === "button-green") {
@@ -15,13 +19,19 @@ export default class extends Controller {
     }
 
     if ( this.totemTargets[0].className === "button-green" && this.totemTargets[1].className === "button-green" && this.totemTargets[2].className === "button-green" ) {
-      this.#advanceGame()
+      const options = {last_event: "success-totem-switch", successfull_challenges: "totem-switch" }
+      this.#advanceGame(options)
     }
   }
 
-  #advanceGame() {
-    const options = {last_event: "success-totem-switch", successfull_challenges: "totem-switch" }
-    fetch("/games/1/advance", {
+  unlock() {
+    // this.doorTarget.classList.remove("d-none")
+      const options = {last_event: "success-lever-switch", successfull_challenges: "lever-switch" }
+      this.#advanceGame(options)
+  }
+
+  #advanceGame(options) {
+    fetch(this.advancePathValue, {
       method: "POST",
       headers: {
         "Accept": "application/json",
@@ -31,10 +41,4 @@ export default class extends Controller {
       body: JSON.stringify(options)
     })
   }
-
-  unlock() {
-    this.doorTarget.classList.remove("d-none")
-  }
 }
-
-// &&

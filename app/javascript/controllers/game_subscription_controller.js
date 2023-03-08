@@ -4,7 +4,7 @@ import { createConsumer } from "@rails/actioncable"
 // Connects to data-controller="game-subscription"
 export default class extends Controller {
   static values = { gameId: Number }
-  // static targets = [""]
+  static targets = ["lever", "door"]
 
   connect() {
     this.channel = createConsumer().subscriptions.create(
@@ -16,5 +16,15 @@ export default class extends Controller {
 
   #advanceGame(data) {
     console.log(data)
+    // console.log(data.successfull_challenges.includes())
+
+    if (this.hasLeverTarget && data.successfull_challenges.includes("totem-switch")) {
+      this.leverTarget.classList.remove("d-none")
+    }
+
+    if (this.hasDoorTarget && data.successfull_challenges.includes("lever-switch")) {
+      this.doorTarget.classList.remove("d-none")
+    }
+
   }
 }

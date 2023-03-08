@@ -2,9 +2,9 @@
 <% if @game_ready %>
   <h1>Ca part frere</h1>
 
-<% if %>
+<% if current_user === @game.first_user %>
 <%= render "room_one_user_one" %>
-<% elsif  %>
+<% elsif current_user === @game.second_user %>
 <%= render "room_one_user_two" %>
 <% end %>
 <% else %>
