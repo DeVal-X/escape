@@ -1,6 +1,9 @@
 
 <% if @game_ready %>
-  <h1>Ca part frere</h1>
+  <h1>La game est prête</h1>
+  <%= link_to "game", game_path %>
 <% else %>
-  <h1>Ca part pas frere</h1>
+  <h1>En attente d'un joueur 😮</h1>
 <% end %>
+
+<%= link_to "destroy", game_path(@game), data:{turbo_method: :delete} %>
