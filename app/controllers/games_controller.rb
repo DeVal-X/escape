@@ -1,7 +1,6 @@
 class GamesController < ApplicationController
-
   def index
-    @games = Game.all
+    @games = Game.all.where(status: "pending")
   end
 
   def show
@@ -15,7 +14,7 @@ class GamesController < ApplicationController
     @game = Game.new
   end
 
-  def join
+  def random
     # check s'il y a une game en cours qui n'a pas encore de player 2
     if Game.where(second_user: nil).where.not(first_user: current_user).any?
       # si c'est le cas, on rejoint la game en c:niours avc game.player2 = current_user
@@ -28,6 +27,13 @@ class GamesController < ApplicationController
       @game = Game.create(first_user: current_user) if @game.nil?
     end
     # on est ensuite redirigé vers la show du game
+    redirect_to game_path(@game)
+  end
+
+  def join
+    @game = Game.find(params[:id])
+    @game.second_user = current_user
+    @game.save
     redirect_to game_path(@game)
   end
 
@@ -46,6 +52,13 @@ class GamesController < ApplicationController
   def update
     @game = Game.find(params[:id])
     # @game.level_up!
+  end
+
+  def destroy
+    # @first_user = current_user
+    @game = Game.find(params[:id])
+    @game.destroy
+    redirect_to root_path
   end
 
   private
