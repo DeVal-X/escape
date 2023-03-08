@@ -1,0 +1,9 @@
+  <div class="container">
+    <ol>
+      <% @games.each do |game| %>
+        <li>
+          <%= link_to game.id, join_game_path(game) %>
+        </li>
+      <% end %>
+    </ol>
+  </div>
