@@ -48,6 +48,18 @@ class GamesController < ApplicationController
     # @game.level_up!
   end
 
+  def advance
+    @game = Game.find(params[:id])
+    @game.data[:last_event] = params[:last_event]
+    @game.data[:successful_challenges] = [] if @game.data[:successful_challenges].nil?
+    @game.data[:successful_challenges].push(params[:successfull_challenges])
+    GameChannel.broadcast_to(
+      @game,
+      @game.data
+    )
+    head :ok
+  end
+
   private
 
   def params_game

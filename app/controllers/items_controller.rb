@@ -11,7 +11,16 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @item = Item.new
+    @game = Game.find(params[:game_id])
+    @item = Item.new(params_item)
+    @item.game = @game
+    if @item.save
+      item.user = current_user
+    else
+      render "game/show", status: :unprocessable_entity
+    end
+
+
   end
 
   def destroy

@@ -6,6 +6,9 @@ Rails.application.routes.draw do
     collection do
       get :join, to: "games#join"
     end
+    member do
+      post :advance
+    end
     resources :items, only: %i[create index show destroy]
   end
   # Defines the root path route ("/")

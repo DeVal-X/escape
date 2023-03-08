@@ -1,6 +1,12 @@
 
 <% if @game_ready %>
   <h1>Ca part frere</h1>
+
+<% if %>
+<%= render "room_one_user_one" %>
+<% elsif  %>
+<%= render "room_one_user_two" %>
+<% end %>
 <% else %>
   <h1>Ca part pas frere</h1>
 <% end %>
