@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     end
     resources :items, only: %i[create index show destroy]
   end
+  get :scoreboard, to: "scoreboard#index"
   # Defines the root path route ("/")
   # root "articles#index"
 end
