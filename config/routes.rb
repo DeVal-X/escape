@@ -9,6 +9,9 @@ Rails.application.routes.draw do
     collection do
       get :random, to: "games#random"
     end
+    member do
+      post :advance
+    end
     resources :items, only: %i[create index show destroy]
   end
   get :scoreboard, to: "scoreboard#index"

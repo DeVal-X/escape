@@ -21,6 +21,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_08_121352) do
     t.bigint "second_user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.json "data", default: {}
     t.index ["first_user_id"], name: "index_games_on_first_user_id"
     t.index ["second_user_id"], name: "index_games_on_second_user_id"
     t.index ["status"], name: "index_games_on_status"
