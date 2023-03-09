@@ -1,13 +1,13 @@
 import { Controller } from "@hotwired/stimulus"
 
-// Connects to data-controller="totem-switch"
 export default class extends Controller {
-  static targets = ["totem", "door"]
+  static targets = ["totem","lever", "door"]
   static values = { advancePath: String }
 
   connect() {
 
   }
+
 
   switch(event) {
     if (event.currentTarget.className === "button-green") {
@@ -24,6 +24,8 @@ export default class extends Controller {
     }
   }
 
+  
+
   unlock() {
     // this.doorTarget.classList.remove("d-none")
       const options = {last_event: "success-lever-switch", successfull_challenges: "lever-switch" }
@@ -36,7 +38,7 @@ export default class extends Controller {
       this.#advanceGame(options)
   }
 
-  
+
 
 
   #advanceGame(options) {

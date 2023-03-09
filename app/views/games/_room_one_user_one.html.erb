@@ -2,7 +2,7 @@
   <button class="button-green"> aim</button>
 </div>
 
-  <div data-controller="totem-switch "
-       data-totem-switch-advance-path-value="<%= advance_game_path(@game) %>" >
-    <button class="d-none" data-game-subscription-target="lever" data-action ="click->totem-switch#unlock"> well done, you won ! </button>
+  <div data-controller="status-switch "
+       data-status-switch-advance-path-value="<%= advance_game_path(@game) %>" >
+    <button class="d-none" data-game-subscription-target="lever" data-action ="click->status-switch#unlock"> well done, you won ! </button>
   </div>

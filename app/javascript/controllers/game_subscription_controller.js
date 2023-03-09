@@ -16,11 +16,25 @@ export default class extends Controller {
 
   #advanceGame(data) {
     console.log(data)
-    // console.log(data.successfull_challenges.includes())
+
+    if (data.last_event === "player-dies") {
+      this.curerentTarget.classList.add("d-none")
+      this.gameDeadTarget.classList.remove("d-none")
+    }
 
     if (data.last_event === "open-door-one") {
       this.gameLevel1Target.classList.add("d-none")
       this.gameLevel2Target.classList.remove("d-none")
+    }
+
+    if (data.last_event === "open-door-two") {
+      this.gameLevel2Target.classList.add("d-none")
+      this.gameEndedTarget.classList.remove("d-none")
+    }
+
+    if (data.last_event === "open-score-board") {
+      this.currentTarget.classList.add("d-none")
+      this.gameScoreTarget.classList.remove("d-none")
     }
 
     if (this.hasLeverTarget && data.successfull_challenges.includes("totem-switch")) {
