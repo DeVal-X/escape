@@ -30,6 +30,15 @@ export default class extends Controller {
       this.#advanceGame(options)
   }
 
+  openDoor() {
+    // this.doorTarget.classList.remove("d-none")
+      const options = {last_event: "open-door-one", successfull_challenges: "door-open" }
+      this.#advanceGame(options)
+  }
+
+  
+
+
   #advanceGame(options) {
     fetch(this.advancePathValue, {
       method: "POST",

@@ -57,15 +57,23 @@ class GamesController < ApplicationController
 
   def update
     @game = Game.find(params[:id])
+    @game.status = params[:game][:status]
+    @game.data[:last_event] = @game.status
+    @game.save
   end
 
   def advance
     @game = Game.find(params[:id])
     @game.data[:last_event] = params[:last_event]
-    # @game.status =
-
     @game.data[:successfull_challenges] = [] if @game.data[:successfull_challenges].nil?
     @game.data[:successfull_challenges].push(params[:successfull_challenges])
+    # dead
+    # level1
+    # level2
+    # ended
+    # score
+    @game.status = :level2 if @game.data[:last_event] == "open-door-one"
+
     @game.save
     GameChannel.broadcast_to(
       @game,

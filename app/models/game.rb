@@ -4,7 +4,7 @@ class Game < ApplicationRecord
   belongs_to :second_user, foreign_key: :second_user_id, class_name: "User", optional: true
 
   has_many :items
-  enum status: [ :pending, :lobby_full, :start, :level1, :ended, :dead ]
+  enum status: [ :pending, :lobby_full, :start, :level1, :level2, :ended, :dead, :score ]
 
   # def level_up!
   #   current_status_index = Game.statuses.keys.index(status)
