@@ -7,6 +7,10 @@
     <%# rules decription / situation before the start btn in the form bellow  %>
     <%= render "waiting_room" if @game.status === "lobby_full"  %>
 
+    <div class="<%= @game.status == "start" ? "": "d-none"%>"
+         data-game-subscription-target="gameStart">
+
+    </div>
     <%# status = start => game starts and each player is directed to its respective user screen IF STATUS %>
 
     <div class="<%= @game.status == "start" ? "": "d-none"%>"
