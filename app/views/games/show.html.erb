@@ -60,7 +60,12 @@
     <% end %>
 
   <% else %>
-    <h1>En attente d'un joueur 😮</h1>
+    <div class="waitpage">
+    <h1 class="content-title">Waiting for a player</h1>
+    <img class="imgwaiting" src="https://static.wixstatic.com/media/8a2fe1_ba66bf4ef6c2440e9450209d4510df67~mv2.gif" alt="">
+    <p class="content-title">You are alone </p>
+    <%= link_to "destroy the Room", game_path(@game), data:{turbo_method: :delete}, class: "btn-distorition" %>
+  </div>
   <% end %>
 
 </div>
