@@ -1,23 +1,78 @@
-.button-green {
-  width: 40px;
-  height: 25px;
-  margin: 0 auto;
-  background-color: rgb(2, 139, 80);
-  padding: 0;
+// .button-green {
+//   width: 40px;
+//   height: 25px;
+//   margin: 0 auto;
+//   background-color: rgb(2, 139, 80);
+//   padding: 0;
+// }
+.frame1 {
+  & .button-blue {
+    background-image: url("woman_4.png");
+    margin: 0 auto;
+    background-position: center;
+    padding: 0;
+    background-size: cover;
+  }
+  & .button-green {
+    background-image: url("woman_2.png");
+    margin: 0 auto;
+    background-position: center;
+    padding: 0;
+    background-size: cover;
+  }
+  & .button-red {
+    background-image: url("woman_3.png");
+    margin: 0 auto;
+    background-position: center;
+    padding: 0;
+    background-size: cover;
+  }
 }
 
-.button-blue {
-  width: 40px;
-  height: 25px;
-  margin: 0 auto;
-  background-color: rgb(2, 73, 139);
-  padding: 0;
+.frame2 {
+  & .button-blue {
+    background-image: url("men_1.png");
+    margin: 0 auto;
+    background-position: center;
+    padding: 0;
+    background-size: cover;
+  }
+  & .button-green {
+    background-image: url("men_2.png");
+    margin: 0 auto;
+    background-position: center;
+    padding: 0;
+    background-size: cover;
+  }
+  & .button-red {
+    background-image: url("men_4.png");
+    margin: 0 auto;
+    background-position: center;
+    padding: 0;
+    background-size: cover;
+  }
 }
 
-.button-red {
-  width: 40px;
-  height: 25px;
-  margin: 0 auto;
-  background-color: rgb(139, 36, 2);
-  padding: 0;
+.frame3 {
+  & .button-blue {
+    background-image: url("child_1.png");
+    margin: 0 auto;
+    background-position: center;
+    padding: 0;
+    background-size: cover;
+  }
+  & .button-green {
+    background-image: url("child_3.png");
+    margin: 0 auto;
+    background-position: center;
+    padding: 0;
+    background-size: cover;
+  }
+  & .button-red {
+    background-image: url("child_4.png");
+    margin: 0 auto;
+    background-position: center;
+    padding: 0;
+    background-size: cover;
+  }
 }
