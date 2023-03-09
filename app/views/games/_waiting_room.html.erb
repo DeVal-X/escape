@@ -1,6 +1,14 @@
-<h1>La game est prête</h1>
 
-<%= simple_form_for @game do |f| %>
-  <%= f.input :status, as: :hidden, input_html: { value: 'level1' } %>
-  <%= f.button :submit %>
-<% end %>
+<h1>Game ready</h1>
+
+<div
+  data-controller="game-subscription status-switch"
+  data-game-subscription-game-id-value="<%= @game.id %>"
+  data-status-switch-target="waitingRoom"
+  data-action="click->status-switch#startGame"
+>
+  <%= simple_form_for @game do |f| %>
+    <%= f.input :status, as: :hidden, input_html: { value: 'level1' } %>
+    <%= f.button :submit %>
+  <% end %>
+</div>

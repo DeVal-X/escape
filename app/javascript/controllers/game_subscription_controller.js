@@ -4,7 +4,7 @@ import { createConsumer } from "@rails/actioncable"
 // Connects to data-controller="game-subscription"
 export default class extends Controller {
   static values = { gameId: Number }
-  static targets = ["lever", "door", "lobbyFull", "gameStart", "gameDead", "gameEnded", "gameLevel1", "gameLevel2", "gameScore" ]
+  static targets = ["lever", "door", "lobbyFull", "gameWait", "gameStart", "gameDead", "gameEnded", "gameLevel1", "gameLevel2", "gameScore" ]
 
   connect() {
     this.channel = createConsumer().subscriptions.create(
@@ -17,22 +17,27 @@ export default class extends Controller {
   #advanceGame(data) {
     console.log(data)
 
-    if (data.last_event === "player-dies") {
-      this.curerentTarget.classList.add("d-none")
+    if (data.last_event === "start-game") {
+      this.lobbyFullTarget.classList.add("d-none")
+      this.gameLevel1Target.classList.remove("d-none")
+    }
+
+    if (data.last_event === "player-is-dead") {
+      this.currentTarget.classList.add("d-none")
       this.gameDeadTarget.classList.remove("d-none")
     }
 
-    if (data.last_event === "open-door-one") {
+    if (data.last_event === "success-open-door-one") {
       this.gameLevel1Target.classList.add("d-none")
       this.gameLevel2Target.classList.remove("d-none")
     }
 
-    if (data.last_event === "open-door-two") {
+    if (data.last_event === "success-open-door-two") {
       this.gameLevel2Target.classList.add("d-none")
       this.gameEndedTarget.classList.remove("d-none")
     }
 
-    if (data.last_event === "open-score-board") {
+    if (data.last_event === "success-open-score-board") {
       this.currentTarget.classList.add("d-none")
       this.gameScoreTarget.classList.remove("d-none")
     }

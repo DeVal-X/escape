@@ -67,12 +67,12 @@ class GamesController < ApplicationController
     @game.data[:last_event] = params[:last_event]
     @game.data[:successfull_challenges] = [] if @game.data[:successfull_challenges].nil?
     @game.data[:successfull_challenges].push(params[:successfull_challenges])
-    # dead
-    # level1
-    # level2
-    # ended
-    # score
-    @game.status = :level2 if @game.data[:last_event] == "open-door-one"
+
+    @game.status = :level1 if @game.data[:successfull_challenges] == "start-game"
+    @game.status = :level2 if @game.data[:successfull_challenges] == "open-door-one"
+    @game.status = :ended if @game.data[:successfull_challenges] == "open-door-two"
+    @game.status = :dead if @game.data[:successfull_challenges] == "player-died"
+    @game.status = :score if @game.data[:successfull_challenges] == "open-score-board"
 
     @game.save
     GameChannel.broadcast_to(
@@ -83,7 +83,6 @@ class GamesController < ApplicationController
   end
 
   def destroy
-    # @first_user = current_user
     @game = Game.find(params[:id])
     @game.destroy
     redirect_to root_path
