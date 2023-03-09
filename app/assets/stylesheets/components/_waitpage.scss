@@ -1,0 +1,29 @@
+.waitpage {
+  border-color: white;
+  border-radius: 5px;
+  margin: 0 auto;
+  /* width: 100px; */
+  padding: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.waitpage h1{
+  font-size: 70px;
+  text-align: center;
+}
+
+.waitpage p{
+  font-size: 50px;
+  text-align: center;
+}
+
+.waitpage img{
+  text-align:center;
+  width: 10%;
+}
+
+.waitpage .btn-distorition{
+
+}
