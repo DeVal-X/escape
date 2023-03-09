@@ -1,6 +1,5 @@
 <div class="container"
-     data-controller="totem-switch game-subscription"
-     data-game-subscription-game-id-value="<%= @game.id %>"
+     data-controller="totem-switch"
      data-totem-switch-advance-path-value="<%= advance_game_path(@game) %>">
   <button class="button-blue"  data-totem-switch-target="totem" data-action="click->totem-switch#switch">1 </button>
   <button class="button-red"  data-totem-switch-target="totem" data-action="click->totem-switch#switch">2 </button>

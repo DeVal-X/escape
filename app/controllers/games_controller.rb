@@ -20,7 +20,13 @@ class GamesController < ApplicationController
       # si c'est le cas, on rejoint la game en c:niours avc game.player2 = current_user
       @game = Game.find_by(second_user: nil)
       @game.second_user = current_user
+      @game.status = :lobby_full
+      @game.data[:last_event] = :lobby_full
       @game.save
+      GameChannel.broadcast_to(
+        @game,
+        @game.data
+      )
     else
       # else => On crée une nouvelle game et on prend la position du player 1
       @game = Game.find_by(first_user: current_user, second_user: nil)
@@ -51,12 +57,13 @@ class GamesController < ApplicationController
 
   def update
     @game = Game.find(params[:id])
-    # @game.level_up!
   end
 
   def advance
     @game = Game.find(params[:id])
     @game.data[:last_event] = params[:last_event]
+    # @game.status =
+
     @game.data[:successfull_challenges] = [] if @game.data[:successfull_challenges].nil?
     @game.data[:successfull_challenges].push(params[:successfull_challenges])
     @game.save
