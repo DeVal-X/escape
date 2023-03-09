@@ -1,15 +1,14 @@
 
 <% if @game_ready %>
-  <h1>La game est prête</h1>
-  <%= link_to "game", game_path %>
-<%#  %>
-<%# <% if current_user === @game.first_user %> %>
-<%# <%= render "room_one_user_one" %> %>
-<%# <% elsif current_user === @game.second_user %> %>
-<%# <%= render "room_one_user_two" %> %>
-<%# <% end %> %>
-<% else %>
+  <%# <h1>La game est prête</h1> %>
+  <%# <%= link_to "game", game_path %>
+ <% if current_user === @game.first_user %>
+ <%= render "room_one_user_one" %>
+ <% elsif current_user === @game.second_user %>
+ <%= render "room_one_user_two" %>
+<% end %>
+ <% else %>
   <h1>En attente d'un joueur 😮</h1>
 <% end %>
 
-<%= link_to "destroy", game_path(@game), data:{turbo_method: :delete} %>
+<%# <%= link_to "destroy", game_path(@game), data:{turbo_method: :delete} %>

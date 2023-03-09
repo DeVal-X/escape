@@ -1,19 +1,9 @@
-<div class="container"
-     data-controller="totem-switch game-subscription"
-     data-game-subscription-game-id-value="<%= @game.id %>"
-     data-totem-switch-advance-path-value="<%= advance_game_path(@game) %>">
-  <button class="button-blue"  data-totem-switch-target="totem" data-action="click->totem-switch#switch">1 </button>
-  <button class="button-red"  data-totem-switch-target="totem" data-action="click->totem-switch#switch">2 </button>
-  <button class="button-green"  data-totem-switch-target="totem" data-action="click->totem-switch#switch">3 </button>
-
-  <div>
-    <button
-      class="d-none"
-      data-totem-switch-target="door"
-      data-game-subscription-target="door"
-      data-action="click->totem-switch#unlock"
-    >
-      should link both users to second rooms when they scroll
-    </button>
-  </div>
+<div class="container">
+  <button class="button-green"> aim</button>
 </div>
+
+  <div data-controller="totem-switch game-subscription"
+       data-game-subscription-game-id-value="<%= @game.id %>"
+       data-totem-switch-advance-path-value="<%= advance_game_path(@game) %>" >
+    <button class="d-none" data-game-subscription-target="lever" data-action ="click->totem-switch#unlock"> well done, you won ! </button>
+  </div>
