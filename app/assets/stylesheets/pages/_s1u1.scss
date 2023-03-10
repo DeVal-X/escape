@@ -1,20 +1,26 @@
 .chandelier-img {
-  top: 0;
-  right: 230px;
+  top: -11px;
+  right: 131px;
 }
 
 .frame {
   transform: translate(-50%, -50%);
   &:nth-child(1) {
-    top: -120px;
-    left: -481px;
+    top: -70px;
+    left: -476px;
   }
   &:nth-child(2) {
-    top: 0px;
-    left: -290px;
+    top: 24px;
+    left: -259px;
   }
   &:nth-child(3) {
-    top: 0px;
+    top: -2px;
     left: 300px;
   }
+}
+
+
+// c'est dans la show lol
+.full-height-game-content {
+  height: 100vh;
 }
