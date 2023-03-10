@@ -1,53 +1,35 @@
-
-<div
-  data-controller="status-switch "
-  data-status-switch-advance-path-value="<%= advance_game_path(@game) %>"
->
-  <div class="frames">
-
-    <div class="frame2 d-flex justify-content-center align-items-center">
-      <button
-        class="button-green"
-        data-status-switch-target="totem"
-        data-action="click->status-switch#switch">
-      </button>
-    </div>
-
-    <div class="frame1 d-flex justify-content-center align-items-center">
-      <button
-        class="button-red"
-        data-status-switch-target="totem"
-        data-action="click->status-switch#switch">
-      </button>
-    </div>
-
-    <div class="frame3 d-flex justify-content-center align-items-center">
-      <button
-        class="button-blue"
-        data-status-switch-target="totem"
-        data-action="click->status-switch#switch">
-      </button>
-    </div>
-
-    <div class="d-flex justify-content-center align-items-center">
-      <button
-        class="d-none"
-        data-status-switch-target="door"
-        data-game-subscription-target="door"
-        data-action="click->status-switch#openDoorOne"
-      >
-        User action to open the door
-      </button>
-    </div>
-
+<div class="d-flex justify-content-center align-items-center h-100 position-relative">
+  <div class="scene">
+    <%= image_tag "porte_1.png", class: "door-img w-100 ", height: "400" %>
+    <%= image_tag "chandelier_1.png", class: "chandelier-img position-absolute", height: "200" %>
   </div>
 
-  <div class="d-flex justify-content-center">
-    <img src="https://www.csrugs.com/wp-content/uploads/2021/10/CarpetSign-Surfaces-Mosaic-HR.png" alt="carpet.png">
+  <div class="position-absolute"
+    data-controller="status-switch "
+    data-status-switch-advance-path-value="<%= advance_game_path(@game) %>">
+    <div class="position-relative">
+      <div class="position-absolute frame frame2 d-flex justify-content-center align-items-center">
+        <button class="button-green"  data-status-switch-target="totem" data-action="click->status-switch#switch"></button>
+      </div>
+      <div class="position-absolute frame frame1 d-flex justify-content-center align-items-center">
+        <button class="button-red"  data-status-switch-target="totem" data-action="click->status-switch#switch"></button>
+      </div>
+      <div class="position-absolute frame frame3 d-flex justify-content-center align-items-center">
+        <button class="button-blue"  data-status-switch-target="totem" data-action="click->status-switch#switch"></button>
+      </div>
+      <div class="d-flex justify-content-center align-items-center">
+        <div class="d-none"
+          data-status-switch-target="door"
+          data-game-subscription-target="door"
+          data-action="click->status-switch#openDoorOne"
+        >
+        !
+        </div>
+      </div>
+    </div>
   </div>
-
-  <section>
-      <%= link_to "► Scoreboard",scoreboard_path, class: "btn-distorition" %>
-  </section>
-
 </div>
+
+<%# <section> %>
+    <%#= link_to "► Scoreboard",scoreboard_path, class: "btn-distorition" %>
+<%# </section> %>
