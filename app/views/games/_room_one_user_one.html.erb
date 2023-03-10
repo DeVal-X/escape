@@ -1,29 +1,53 @@
-<div data-controller="totem-switch game-subscription"
-     data-game-subscription-game-id-value="<%= @game.id %>"
-     data-totem-switch-advance-path-value="<%= advance_game_path(@game) %>">
+
+<div
+  data-controller="status-switch "
+  data-status-switch-advance-path-value="<%= advance_game_path(@game) %>"
+>
   <div class="frames">
+
     <div class="frame2 d-flex justify-content-center align-items-center">
-      <button class="button-green"  data-totem-switch-target="totem" data-action="click->totem-switch#switch"></button>
-    </div>
-    <div class="frame1 d-flex justify-content-center align-items-center">
-      <button class="button-red"  data-totem-switch-target="totem" data-action="click->totem-switch#switch"></button>
-    </div>
-    <div class="frame3 d-flex justify-content-center align-items-center">
-      <button class="button-blue"  data-totem-switch-target="totem" data-action="click->totem-switch#switch"></button>
-    </div>
-    <div class="d-flex justify-content-center align-items-center">
-      <button class="d-none"
-        data-totem-switch-target="door"
-        data-game-subscription-target="door"
-        data-action="click->totem-switch#unlock"
-      >
+      <button
+        class="button-green"
+        data-status-switch-target="totem"
+        data-action="click->status-switch#switch">
       </button>
     </div>
+
+    <div class="frame1 d-flex justify-content-center align-items-center">
+      <button
+        class="button-red"
+        data-status-switch-target="totem"
+        data-action="click->status-switch#switch">
+      </button>
+    </div>
+
+    <div class="frame3 d-flex justify-content-center align-items-center">
+      <button
+        class="button-blue"
+        data-status-switch-target="totem"
+        data-action="click->status-switch#switch">
+      </button>
+    </div>
+
+    <div class="d-flex justify-content-center align-items-center">
+      <button
+        class="d-none"
+        data-status-switch-target="door"
+        data-game-subscription-target="door"
+        data-action="click->status-switch#openDoorOne"
+      >
+        User action to open the door
+      </button>
+    </div>
+
   </div>
+
   <div class="d-flex justify-content-center">
-  <img src="https://www.csrugs.com/wp-content/uploads/2021/10/CarpetSign-Surfaces-Mosaic-HR.png" alt="carpet.png">
+    <img src="https://www.csrugs.com/wp-content/uploads/2021/10/CarpetSign-Surfaces-Mosaic-HR.png" alt="carpet.png">
   </div>
+
   <section>
       <%= link_to "► Scoreboard",scoreboard_path, class: "btn-distorition" %>
   </section>
+
 </div>
