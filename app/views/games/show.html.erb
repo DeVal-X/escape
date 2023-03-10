@@ -1,7 +1,8 @@
-<Div>
+<Div class="waitpage">
   <% if @game_ready %>
-    <h1>The game is ready</h1>
-  <%= link_to "game", game_path %>
+    <h1 class="content-title">The game is ready</h1>
+    <p class="content-title">Your friend has arrived</p>
+  <%= link_to "Start", game_path, class: "btn-distorition" %>
 </Div>
 
 <%#  %>
