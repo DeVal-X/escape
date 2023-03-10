@@ -1,5 +1,13 @@
-<h1> Unfortunatly you are dead ... </h1>
 
+    <div
+      data-status-switch-advance-path-value="<%= advance_game_path(@game) %>"
+      data-game-subscription-target="lobbyFull"
+      class="waitpage"
+    >
+      <h1 class="content-title">You are dead ... </h1>
+      <img class="img-deadscreen" src="https://thumbs.gfycat.com/FrayedGratefulKoala-max-1mb.gif" alt="">
+      <p>You triggered a trap.</p>
+    </div>
 
-<%= link_to "Try again", root_path, class: "btn btn-secondary" %>
-<%= link_to "scoreboard", scoreboard_path, class: "btn btn-secondary" %>
+<%= link_to "► Try again", root_path, class: "btn-distorition" %>
+<%= link_to "► Scoreboard", scoreboard_path, class: "btn-distorition" %>
