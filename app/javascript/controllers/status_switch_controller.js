@@ -44,10 +44,7 @@ export default class extends Controller {
     this.#advanceGame(options)
   }
 
-  scoreBoard() {
-    const options = {last_event: "sucess-open-score-board", successfull_challenges: "open-score-board" }
-    this.#advanceGame(options)
-  }
+
 
   playerDeath() {
     const options = {last_event: "player-is-dead", successfull_challenges: "player-died" }

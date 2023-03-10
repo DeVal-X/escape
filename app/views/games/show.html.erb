@@ -36,13 +36,6 @@
      <%= render "end_screen" %>
     </div>
 
-    <div
-      class="<%= @game.status == "score" ? "": "d-none"%>"
-      data-game-subscription-target="gameScore"
-    >
-     <%= render "scoreboard" %>
-    </div>
-
     <% if current_user === @game.first_user %>
       <div
         class="<%= @game.status == "level1" ? "": "d-none"%>"

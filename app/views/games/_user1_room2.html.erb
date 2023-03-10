@@ -1,8 +1,8 @@
 
 <div
-  data-controller="door-opening"
-  data-controller="game-subscription"
+  data-controller="door-opening game-subscription"
   data-game-subscription-game-id-value="<%= @game.id %>"
+  data-door-opening-advance-path-value="<%= advance_game_path(@game) %>"
 >
 
   <button type="button" data-action="click->door-opening#grabKey" data-door-opening-good-key-param="true">Grab the key</button>

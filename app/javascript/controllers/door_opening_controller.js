@@ -2,6 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="door-opening"
 export default class extends Controller {
+  static values = { advancePath: String }
 
   grabKey(event) {
     event.currentTarget.disabled = true
@@ -15,14 +16,12 @@ export default class extends Controller {
   //     window.alert( "Door is still locked" )
   //   }
   // }
-  
+
   deactivateDoorTrap() {
     if (this.keyFound) {
       this.openDoorTwo()
-      window.alert( "The door is open" )
     } else {
       this.playerDeath()
-      window.alert( "Unfortunatly, you activated a trap and died" )
     }
   }
 
