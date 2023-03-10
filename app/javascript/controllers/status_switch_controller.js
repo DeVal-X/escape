@@ -1,12 +1,12 @@
 import { Controller } from "@hotwired/stimulus"
 
-// Connects to data-controller="totem-switch"
 export default class extends Controller {
-  static targets = ["totem", "door"]
+  static targets = ["totem","lever", "door", "waitingRoom"]
   static values = { advancePath: String }
 
-  connect() {
-
+  startGame() {
+    const options = {last_event: "start-game", successfull_challenges: "start-game" }
+    this.#advanceGame(options)
   }
 
   switch(event) {
@@ -17,7 +17,6 @@ export default class extends Controller {
     } else if (event.currentTarget.className === "button-red") {
       event.currentTarget.classList.replace("button-red","button-green")
     }
-
     if ( this.totemTargets[0].className === "button-green" && this.totemTargets[1].className === "button-green" && this.totemTargets[2].className === "button-green" ) {
       const options = {last_event: "success-totem-switch", successfull_challenges: "totem-switch" }
       this.#advanceGame(options)
@@ -26,8 +25,33 @@ export default class extends Controller {
 
   unlock() {
     // this.doorTarget.classList.remove("d-none")
-      const options = {last_event: "success-lever-switch", successfull_challenges: "lever-switch" }
-      this.#advanceGame(options)
+    const options = {last_event: "success-lever-switch", successfull_challenges: "lever-switch" }
+    this.#advanceGame(options)
+  }
+
+  openDoorOne() {
+    const options = {last_event: "success-open-door-one", successfull_challenges: "open-door-one" }
+    this.#advanceGame(options)
+  }
+
+  openDoorTwo() {
+    const options = {last_event: "success-open-door-two", successfull_challenges: "open-door-two" }
+    this.#advanceGame(options)
+  }
+
+  victoryDoor() {
+    const options = {last_event: "", successfull_challenges: "" }
+    this.#advanceGame(options)
+  }
+
+  scoreBoard() {
+    const options = {last_event: "sucess-open-score-board", successfull_challenges: "open-score-board" }
+    this.#advanceGame(options)
+  }
+
+  playerDeath() {
+    const options = {last_event: "player-is-dead", successfull_challenges: "player-died" }
+    this.#advanceGame(options)
   }
 
   #advanceGame(options) {

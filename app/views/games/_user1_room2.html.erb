@@ -1,12 +1,14 @@
 
-<div data-controller="door-opening"
-     data-controller="game-subscription"
-     data-game-subscription-game-id-value="<%= @game.id %>">
+<div
+  data-controller="door-opening"
+  data-controller="game-subscription"
+  data-game-subscription-game-id-value="<%= @game.id %>"
+>
 
   <button type="button" data-action="click->door-opening#grabKey" data-door-opening-good-key-param="true">Grab the key</button>
   <button type="button" data-action="click->door-opening#grabKey" data-door-opening-good-key-param="false">Grab the key</button>
   <button type="button" data-action="click->door-opening#grabKey" data-door-opening-good-key-param="false">Grab the key</button>
 
-  <button type = "button" data-action="click->door-opening#open">Try to open the door</button>
+  <button type = "button" data-action="click->door-opening#deactivateDoorTrap">Try to open the door</button>
 
 </div>
