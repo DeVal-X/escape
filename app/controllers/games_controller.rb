@@ -68,11 +68,10 @@ class GamesController < ApplicationController
     @game.data[:successfull_challenges] = [] if @game.data[:successfull_challenges].nil?
     @game.data[:successfull_challenges].push(params[:successfull_challenges])
 
-    @game.status = :level1 if @game.data[:successfull_challenges] == "start-game"
-    @game.status = :level2 if @game.data[:successfull_challenges] == "open-door-one"
-    @game.status = :ended if @game.data[:successfull_challenges] == "open-door-two"
-    @game.status = :dead if @game.data[:successfull_challenges] == "player-died"
-    @game.status = :score if @game.data[:successfull_challenges] == "open-score-board"
+    @game.status = :level1 if @game.data[:successfull_challenges].include?("start-game")
+    @game.status = :level2 if @game.data[:successfull_challenges].include?("open-door-one")
+    @game.status = :ended if @game.data[:successfull_challenges].include?("open-door-two")
+    @game.status = :dead if @game.data[:successfull_challenges].include?("player-died")
 
     @game.save
     GameChannel.broadcast_to(

@@ -6,6 +6,7 @@ export default class extends Controller {
   static values = { gameId: Number }
   static targets = ["lever", "door", "lobbyFull", "gameWait", "gameStart", "gameDead", "gameEnded", "gameLevel1", "gameLevel2", "gameScore" ]
 
+
   connect() {
     this.channel = createConsumer().subscriptions.create(
       { channel: "GameChannel", id: this.gameIdValue },
@@ -18,27 +19,28 @@ export default class extends Controller {
     console.log(data)
 
     if (data.last_event === "start-game") {
-      this.lobbyFullTarget.classList.add("d-none")
+      if (this.hasLobbyFullTarget ) this.lobbyFullTarget.classList.add("d-none")
       this.gameLevel1Target.classList.remove("d-none")
     }
 
     if (data.last_event === "player-is-dead") {
-      this.currentTarget.classList.add("d-none")
+      if (this.hasGameLevel1Target ) { this.gameLevel1Target.classList.add("d-none") }
+      if (this.hasGameLevel2Target ) { this.gameLevel2Target.classList.add("d-none") }
       this.gameDeadTarget.classList.remove("d-none")
     }
 
     if (data.last_event === "success-open-door-one") {
-      this.gameLevel1Target.classList.add("d-none")
+      if (this.hasGameLevel1Target )this.gameLevel1Target.classList.add("d-none")
       this.gameLevel2Target.classList.remove("d-none")
     }
 
     if (data.last_event === "success-open-door-two") {
-      this.gameLevel2Target.classList.add("d-none")
+      if (this.hasGameLevel2Target ) this.gameLevel2Target.classList.add("d-none")
       this.gameEndedTarget.classList.remove("d-none")
     }
 
     if (data.last_event === "success-open-score-board") {
-      this.currentTarget.classList.add("d-none")
+      if (this.hasGameLevel1Target ) this.currentTarget.classList.add("d-none")
       this.gameScoreTarget.classList.remove("d-none")
     }
 

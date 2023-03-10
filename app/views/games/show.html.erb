@@ -3,8 +3,6 @@
   data-game-subscription-game-id-value="<%= @game.id %>"
 >
 
-  <%= @game.status %>
-
   <% if @game_ready %>
     <%# rules decription / situation before the start btn in the form bellow  %>
     <div
@@ -34,13 +32,6 @@
       data-game-subscription-target="gameEnded"
     >
      <%= render "end_screen" %>
-    </div>
-
-    <div
-      class="<%= @game.status == "score" ? "": "d-none"%>"
-      data-game-subscription-target="gameScore"
-    >
-     <%= render "scoreboard" %>
     </div>
 
     <% if current_user === @game.first_user %>
