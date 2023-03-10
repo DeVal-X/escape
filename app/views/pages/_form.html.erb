@@ -1,0 +1,32 @@
+<%= link_to "► Join a Game (Auto) ", random_games_path, class: "btn-distorition" %>
+<% if current_user === @game.first_user %>
+  <%= simple_form_for @game do |f| %>
+    <%= f.input :status,
+                as: :hidden,
+                input_html: { value: 'pending' } %>
+    <%= f.button :submit %>
+  <% end %>
+<% elsif current_user === @game.second_user %>
+  <%= simple_form_for @game do |f| %>
+    <%= f.input :status,
+                as: :hidden,
+                input_html: { value: 'level1' } %>
+    <%= f.button :submit %>
+  <% end %>
+<% end %>
+
+<%= link_to "► Search a Game",games_path, class: "btn-distorition" %>
+<%= simple_form_for @game do |f| %>
+  <%= f.input :status,
+              as: :hidden,
+              input_html: { value: 'level1' } %>
+  <%= f.button :submit %>
+<% end %>
+
+<%= link_to "► Create a Game",new_game_path, class: "btn-distorition" %>
+<%= simple_form_for @game do |f| %>
+  <%= f.input :status,
+              as: :hidden,
+              input_html: { value: 'pending' } %>
+  <%= f.button :submit %>
+<% end %>

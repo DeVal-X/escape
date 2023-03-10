@@ -1,5 +1,5 @@
 
-  <div class="content">
+  <div class="content" data-action="mousemove->mooving-effect-object#moovingEffect" data-controller="mooving-effect-object">
     <div class="mininavbarre">
       <% if user_signed_in? %>
         <li class="nav-item dropdown">
@@ -17,11 +17,11 @@
 
 
     <div class="glitch">
-      <div class="glitch-img"></div>
-      <div class="glitch-img"></div>
-      <div class="glitch-img"></div>
-      <div class="glitch-img"></div>
-      <div class="glitch-img"></div>
+      <div class="glitch-img" data-mooving-effect-object-target="object"></div>
+      <div class="glitch-img" data-mooving-effect-object-target="object"></div>
+      <div class="glitch-img" data-mooving-effect-object-target="object"></div>
+      <div class="glitch-img" data-mooving-effect-object-target="object"></div>
+      <div class="glitch-img" data-mooving-effect-object-target="object"></div>
     </div>
 
     <div class="home-txt">
@@ -29,8 +29,12 @@
     </div>
   </div>
 
-<section>
-    <%= link_to "► Join a Game (Auto) ", random_games_path, class: "btn-distorition" %>
-    <%= link_to "► Search a Game",games_path, class: "btn-distorition" %>
-    <%= link_to "► Create a Game",new_game_path, class: "btn-distorition" %>
+<section
+  data-controller="game-subscription status-switch"
+  data-game-subscription-home-value="<%=  %>"
+>
+  <%# render "form" %>
+  <%= link_to "► Join a Game (Auto) ", random_games_path, class: "btn-distorition" %>
+  <%= link_to "► Search a Game",games_path, class: "btn-distorition" %>
+  <%= link_to "► Create a Game",new_game_path, class: "btn-distorition" %>
 </section>

@@ -1,0 +1,14 @@
+
+<h1>Game ready</h1>
+
+<div
+  data-controller="status-switch"
+  data-status-switch-advance-path-value="<%= advance_game_path(@game) %>"
+  data-status-switch-target="waitingRoom"
+  data-action="click->status-switch#startGame"
+>
+  <%= simple_form_for @game do |f| %>
+    <%= f.input :status, as: :hidden, input_html: { value: 'level1' } %>
+    <%= f.button :submit %>
+  <% end %>
+</div>

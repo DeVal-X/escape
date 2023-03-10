@@ -16,5 +16,8 @@ application.register("hello", HelloController)
 import InstructionPaperController from "./instruction_paper_controller"
 application.register("instruction-paper", InstructionPaperController)
 
-import TotemSwitchController from "./totem_switch_controller"
-application.register("totem-switch", TotemSwitchController)
+import MoovingEffectObjectController from "./mooving_effect_object_controller"
+application.register("mooving-effect-object", MoovingEffectObjectController)
+
+import StatusSwitchController from "./status_switch_controller"
+application.register("status-switch", StatusSwitchController)

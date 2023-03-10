@@ -20,7 +20,13 @@ class GamesController < ApplicationController
       # si c'est le cas, on rejoint la game en c:niours avc game.player2 = current_user
       @game = Game.find_by(second_user: nil)
       @game.second_user = current_user
+      @game.status = :lobby_full
+      @game.data[:last_event] = :lobby_full
       @game.save
+      GameChannel.broadcast_to(
+        @game,
+        @game.data
+      )
     else
       # else => On crée une nouvelle game et on prend la position du player 1
       @game = Game.find_by(first_user: current_user, second_user: nil)
@@ -51,7 +57,9 @@ class GamesController < ApplicationController
 
   def update
     @game = Game.find(params[:id])
-    # @game.level_up!
+    @game.status = params[:game][:status]
+    @game.data[:last_event] = @game.status
+    @game.save
   end
 
   def advance
@@ -59,6 +67,12 @@ class GamesController < ApplicationController
     @game.data[:last_event] = params[:last_event]
     @game.data[:successfull_challenges] = [] if @game.data[:successfull_challenges].nil?
     @game.data[:successfull_challenges].push(params[:successfull_challenges])
+
+    @game.status = :level1 if @game.data[:successfull_challenges].include?("start-game")
+    @game.status = :level2 if @game.data[:successfull_challenges].include?("open-door-one")
+    @game.status = :ended if @game.data[:successfull_challenges].include?("open-door-two")
+    @game.status = :dead if @game.data[:successfull_challenges].include?("player-died")
+
     @game.save
     GameChannel.broadcast_to(
       @game,
@@ -68,7 +82,6 @@ class GamesController < ApplicationController
   end
 
   def destroy
-    # @first_user = current_user
     @game = Game.find(params[:id])
     @game.destroy
     redirect_to root_path
