@@ -1,21 +1,22 @@
-<Div class="waitpage">
   <% if @game_ready %>
-    <h1 class="content-title">The game is ready</h1>
-    <p class="content-title">Your friend has arrived</p>
-  <%= link_to "Start", game_path, class: "btn-distorition" %>
-</Div>
+    <%# <h1 class="content-title">The game is ready</h1> %>
+    <%# <p class="content-title">Your friend has arrived</p> %>
+    <%# <%= link_to "Start", game_path(@game), class: "btn-distorition" %>
 
-<%#  %>
-<%# <% if current_user === @game.first_user %>
-<%# <%= render "room_one_user_one" %>
-<%# <% elsif current_user === @game.second_user %>
-<%# <%= render "room_one_user_two" %>
-<%# <% end %>
-<% else %>
+  <%= render "room_one_user_one" %>
+
+
+  <%#  %>
+  <%# <% if current_user === @game.first_user %>
+  <%# <%= render "room_one_user_one" %>
+  <%# <% elsif current_user === @game.second_user %>
+  <%# <%= render "room_one_user_two" %>
+  <%# <% end %>
+  <% else %>
   <div class="waitpage">
-    <h1 class="content-title">Waiting for a player</h1>
-    <img class="imgwaiting" src="https://static.wixstatic.com/media/8a2fe1_ba66bf4ef6c2440e9450209d4510df67~mv2.gif" alt="">
-    <p class="content-title">You are alone </p>
-    <%= link_to "destroy the Room", game_path(@game), data:{turbo_method: :delete}, class: "btn-distorition" %>
+      <h1 class="content-title">Waiting for a player</h1>
+      <img class="imgwaiting" src="https://static.wixstatic.com/media/8a2fe1_ba66bf4ef6c2440e9450209d4510df67~mv2.gif" alt="">
+      <p class="content-title">You are alone </p>
+      <%= link_to "destroy the Room", game_path(@game), data:{turbo_method: :delete}, class: "btn-distorition" %>
   </div>
-<% end %>
+  <% end %>
