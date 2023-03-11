@@ -1,27 +1,29 @@
-<table>
-  <thead>
-    <h1>ScoreBoard</h1>
+<table class="container">
 
-    <tr>
-      <th>Position</th>
-      <th>User 1</th>
-      <th>User 2</th>
-      <th>Time to escape</th>
-    </tr>
+  <div>
+    <thead>
+      <h1 class="content-title ">ScoreBoard</h1>
 
-  </thead>
-
-  <tbody>
-    <% @ranking.each do |rank| %>
       <tr>
-        <td><%= @ranking.index(rank) + 1 %></td>
-        <td><%= rank.first_user.pseudo %></td>
-        <td><%= rank.second_user.pseudo %></td>
-        <td><%= rank.time %></td>
+        <th>Position</th>
+        <th>User 1</th>
+        <th>User 2</th>
+        <th>Time to escape</th>
       </tr>
-    <% end %>
-  </tbody>
+
+    </thead>
+
+    <tbody>
+      <% @ranking.each do |rank| %>
+        <tr>
+          <td><%= @ranking.index(rank) + 1 %></td>
+          <td><%= rank.first_user.pseudo %></td>
+          <td><%= rank.second_user.pseudo %></td>
+          <td><%= rank.time %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </div>
 </table>
 
-
-  <%= link_to "► Homepage", root_path, class: "btn-distorition" %>
+<%= link_to "► Homepage", root_path, class: "btn-distorition" %>
