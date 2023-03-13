@@ -8,3 +8,18 @@
 legend ~ div.form-check:first-of-type {
   clear: left;
 }
+
+.new-game-form {
+  width: 40vw;
+  min-width: 100px;
+  max-width: 400px;
+  margin: 16vh 0 0 8vw ;
+  padding: 30px 40px;
+  border: 1px solid whitesmoke;
+  border-radius: 8px;
+  box-shadow: 1px 2px 20px whitesmoke;
+
+  abbr[title]{
+    display: none;
+  }
+}

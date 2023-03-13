@@ -1,5 +1,5 @@
 
-<h1>Game ready</h1>
+<h1 >Game ready</h1>
 
 <div
   data-controller="status-switch"
@@ -9,6 +9,6 @@
 >
   <%= simple_form_for @game do |f| %>
     <%= f.input :status, as: :hidden, input_html: { value: 'level1' } %>
-    <%= f.button :submit %>
+    <%= f.button :submit, class: "btn-distorition" %>
   <% end %>
 </div>

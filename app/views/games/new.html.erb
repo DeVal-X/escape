@@ -1,2 +1,9 @@
-<p>Oskour c'est la fin</p>
-
+<div class="new-game-form">
+  <%= simple_form_for @game do |f| %>
+    <%= f.input :name, label: "Session's name",
+                error: "This name is already taken, choose another one ",
+                placeholder: "#{current_user.email}'s session" %>
+    <%#= f.input :remember_me, inline_label: 'Yes, remember me' %>
+    <button type="submit" class="btn-distorition"> ►Create a session </button>
+  <% end %>
+</div>
