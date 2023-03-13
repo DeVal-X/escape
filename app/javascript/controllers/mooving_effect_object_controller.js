@@ -3,9 +3,6 @@ import { Controller } from "@hotwired/stimulus"
 // Connects to data-controller="mooving-effect-object"
 export default class extends Controller {
   static targets = ["object"]
-  connect() {
-    console.log("coucou")
-  }
 
   moovingEffect(event) {
 
