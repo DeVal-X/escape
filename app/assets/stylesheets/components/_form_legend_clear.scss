@@ -18,4 +18,8 @@ legend ~ div.form-check:first-of-type {
   border: 1px solid whitesmoke;
   border-radius: 8px;
   box-shadow: 1px 2px 20px whitesmoke;
+
+  abbr[title]{
+    display: none;
+  }
 }
