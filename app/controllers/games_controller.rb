@@ -30,7 +30,7 @@ class GamesController < ApplicationController
     else
       # else => On crée une nouvelle game et on prend la position du player 1
       @game = Game.find_by(first_user: current_user, second_user: nil)
-      @game = Game.create(first_user: current_user) if @game.nil?
+      @game = Game.create!(first_user: current_user) if @game.nil?
       GameChannel.broadcast_to(
         @game,
         @game.data
@@ -45,7 +45,6 @@ class GamesController < ApplicationController
     @game.second_user = current_user
     @game.status = :lobby_full
     @game.save
-    # broadcast et lobbyfull
     GameChannel.broadcast_to(
       @game,
       @game.data.merge(status: 'lobby_full')
@@ -58,7 +57,11 @@ class GamesController < ApplicationController
     @game = Game.new(params_game)
     @game.first_user = @first_user
     @game.status = :pending
-    if game.save!
+    if @game.save!
+      GameChannel.broadcast_to(
+        @game,
+        @game.data
+      )
       redirect_to game_path(@game)
     else
       render :index, status: :unprocessable_entity
@@ -70,7 +73,10 @@ class GamesController < ApplicationController
     @game.status = params[:game][:status]
     @game.data[:last_event] = @game.status
     @game.save
-    #braodcast ?
+    GameChannel.broadcast_to(
+      @game,
+      @game.data
+    )
   end
 
   def advance
@@ -101,6 +107,6 @@ class GamesController < ApplicationController
   private
 
   def params_game
-    params.require(:game).permit(:status, :first_user, :second_user)
+    params.require(:game).permit(:status, :first_user, :second_user, :name)
   end
 end

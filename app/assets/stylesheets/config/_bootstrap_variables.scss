@@ -19,8 +19,15 @@ $danger:     $red;
 $warning:    $orange;
 
 // Buttons & inputs' radius
-$border-radius:    2px;
+$border-radius:    4px;
 $border-radius-lg: 2px;
 $border-radius-sm: 2px;
 
 // Override other variables below!
+
+// buttons default border color & text color
+$btn-border-color: rgb(232, 227, 227);
+$btn-color:  rgb(232, 227, 227);
+
+
+
