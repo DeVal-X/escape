@@ -101,6 +101,6 @@ class GamesController < ApplicationController
   private
 
   def params_game
-    params.require(:game).permit( :status, :first_user, :second_user)
+    params.require(:game).permit(:status, :first_user, :second_user)
   end
 end
