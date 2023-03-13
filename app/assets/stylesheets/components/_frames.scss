@@ -6,7 +6,7 @@
 }
 
 .frame1{
-  height: 200px;
+  height: 190px;
   width: 200px;
   position: relative;
   &::after {
@@ -27,7 +27,7 @@
 }
 
 .frame2{
-  height: 200px;
+  height: 190px;
   width: 200px;
   position: relative;
   &::after {
@@ -48,7 +48,7 @@
 }
 
 .frame3{
-  height: 200px;
+  height: 175px;
   width: 200px;
   position: relative;
   &::after {
@@ -66,9 +66,4 @@
     width: 60%;
     height: 80%;
   }
-}
-
-.carpet {
-  height: 32px;
-  width: 64px;
 }

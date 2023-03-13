@@ -1,21 +1,67 @@
 .chandelier-img {
-  top: -11px;
-  right: 131px;
+  top: -181px;
+  right: -23px;
 }
+
+.frame101-img {
+  top: -511px;
+  left: -124px;
+}
+
+.frame102-img {
+  top: -410px;
+  left: 472px;
+}
+
+.frame103-img {
+  top: -346px;
+  left: -340px;
+}
+
+.frame104-img {
+  top: -558px;
+  left: 524px;
+}
+
+.frame105-img {
+  top: -512px;
+  left: 603px;
+}
+
+.carpet2-img {
+  top: 511px;
+  right: -258px;
+}
+
+.storage1-img {
+  top: 364px;
+  right: 679px;
+}
+
+.chair1-img {
+  top: 316px;
+  right: -386px;
+}
+
+.oldwallpaper-img {
+  top: 316px;
+  right: -386px;
+}
+
 
 .frame {
   transform: translate(-50%, -50%);
   &:nth-child(1) {
-    top: -70px;
-    left: -476px;
+    top: -265px;
+    left: -48px;
   }
   &:nth-child(2) {
-    top: 24px;
-    left: -259px;
+    top: -455px;
+    left: -227px;
   }
   &:nth-child(3) {
-    top: -2px;
-    left: 300px;
+    top: -266px;
+    left: 681px;
   }
 }
 
