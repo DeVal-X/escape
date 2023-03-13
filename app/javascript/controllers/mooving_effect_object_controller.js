@@ -8,6 +8,6 @@ export default class extends Controller {
 
     const mouseX = event.clientX / window.innerWidth * 4;
     const mouseY = event.clientY / window.innerHeight * 4;
-    this.objectTarget.style.transform = `translate3d(-${mouseX}%, -${mouseY}%, 0)`;
+    this.objectTargets.forEach(object => {object.style.transform = `translate3d(-${mouseX}%, -${mouseY}%, 0)`});
   }
 }
