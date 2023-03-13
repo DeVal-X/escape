@@ -1,10 +1,10 @@
 .marble-floor{
   background-image: image-url("marble-floor.jpg");
   background-size: cover;
-  width: 100vw;
-  height: 50vh;
-  transform:perspective(30px) rotateX(5deg);
+  width: 101vw;
+  height: 29vh;
   position: fixed;
   bottom: 0;
-  left: -50vw;
+  left: 0vw;
 }
+  // transform:perspective(30px) rotateX(5deg);
