@@ -103,6 +103,19 @@ body {
     background-blend-mode: none;
 }
 
+.glitch-img-new {
+	position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.9)), url(https://www.motionforgepictures.com/wp-content/uploads/2021/10/Old-Fashioned-1950s-living-Room-1-scaled.jpg) no-repeat 50% 0;
+    /* background-color: transparent; */
+    background-size: cover;
+    /* transform: translate3d(0, 0, 0); */
+    background-blend-mode: none;
+}
+
 .glitch-img:nth-child(n+2) {
 	opacity: 0;
 }

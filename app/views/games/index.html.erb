@@ -1,10 +1,28 @@
 
-  <div class="container">
-    <ol>
+<div class="content smt" data-action="mousemove->mooving-effect-object#moovingEffect" data-controller="mooving-effect-object">
+
+  <div class="glitch">
+    <div class="glitch-img-new" data-mooving-effect-object-target="object"></div>
+    <div class="glitch-img-new" data-mooving-effect-object-target="object"></div>
+    <div class="glitch-img-new" data-mooving-effect-object-target="object"></div>
+    <div class="glitch-img-new" data-mooving-effect-object-target="object"></div>
+    <div class="glitch-img-new" data-mooving-effect-object-target="object"></div>
+  </div>
+
+  <div class="games_list">
+    <h1 class = "title">Sessions list</h1>
+    <ol class = "listing">
       <% @games.each do |game| %>
         <li>
-          <%= link_to game.name, join_game_path(game) %>
+          <span><%= link_to game.name, join_game_path(game) %></span>
         </li>
       <% end %>
     </ol>
   </div>
+
+  <section data-controller="game-subscription status-switch" >
+    <%= link_to "► Join a Game (Auto) ", random_games_path, class: "btn-distorition" %>
+    <%= link_to "► Search a Game",games_path, class: "btn-distorition" %>
+    <%= link_to "► Create a Game",new_game_path, class: "btn-distorition" %>
+  </section>
+</div>
