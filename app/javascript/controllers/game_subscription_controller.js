@@ -4,7 +4,19 @@ import { createConsumer } from "@rails/actioncable"
 // Connects to data-controller="game-subscription"
 export default class extends Controller {
   static values = { gameId: Number }
-  static targets = ["lever", "door", "lobbyFull", "gameWait", "gameStart", "gameDead", "gameEnded", "gameLevel1", "gameLevel2", "gameScore" ]
+  static targets = [
+    "lever",
+    "door",
+    "pending",
+    "lobbyFull",
+    "gameWait",
+    "gameStart",
+    "gameDead",
+    "gameEnded",
+    "gameLevel1",
+    "gameLevel2",
+    "gameScore"
+  ]
 
 
   connect() {
@@ -17,6 +29,12 @@ export default class extends Controller {
 
   #advanceGame(data) {
     console.log(data)
+
+    if (data.status === "lobby_full") {
+      console.log('LOBBY FULL')
+      if (this.hasPendingTarget) this.pendingTarget.classList.add("d-none")
+      if (this.hasLobbyFullTarget) this.lobbyFullTarget.classList.remove("d-none")
+    }
 
     if (data.last_event === "start-game") {
       if (this.hasLobbyFullTarget ) this.lobbyFullTarget.classList.add("d-none")

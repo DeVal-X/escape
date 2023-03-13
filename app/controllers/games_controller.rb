@@ -25,12 +25,16 @@ class GamesController < ApplicationController
       @game.save
       GameChannel.broadcast_to(
         @game,
-        @game.data
+        @game.data.merge(status: 'lobby_full')
       )
     else
       # else => On crée une nouvelle game et on prend la position du player 1
       @game = Game.find_by(first_user: current_user, second_user: nil)
       @game = Game.create(first_user: current_user) if @game.nil?
+      GameChannel.broadcast_to(
+        @game,
+        @game.data
+      )
     end
     # on est ensuite redirigé vers la show du game
     redirect_to game_path(@game)
@@ -39,7 +43,13 @@ class GamesController < ApplicationController
   def join
     @game = Game.find(params[:id])
     @game.second_user = current_user
+    @game.status = :lobby_full
     @game.save
+    # broadcast et lobbyfull
+    GameChannel.broadcast_to(
+      @game,
+      @game.data.merge(status: 'lobby_full')
+    )
     redirect_to game_path(@game)
   end
 
@@ -60,6 +70,7 @@ class GamesController < ApplicationController
     @game.status = params[:game][:status]
     @game.data[:last_event] = @game.status
     @game.save
+    #braodcast ?
   end
 
   def advance
