@@ -1,0 +1,27 @@
+
+.noise {
+  opacity: 0.25;
+  margin: 0;
+  padding: 0;
+  background: url(noise.jpeg);
+  animation: animate .08s ease alternate infinite;
+  position: absolute;
+  z-index: 6;
+  height: 200vh;
+  width: 200vw;
+  pointer-events: none;
+}
+
+
+
+
+@keyframes animate {
+  0%
+  {
+    background-position: 0 0;
+  }
+  100%
+  {
+    background-position: 100% 100%;
+  }
+}

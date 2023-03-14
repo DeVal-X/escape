@@ -1,87 +1,86 @@
-<div
-  data-controller="game-subscription"
-  data-game-subscription-game-id-value="<%= @game.id %>"
->
 
-  <% if @game_ready %>
-    <%# rules decription / situation before the start btn in the form bellow  %>
-    <div
-      class="<%= @game.status == "lobby_full" ? "": "d-none"%>"
-      data-game-subscription-target="lobbyFull"
-    >
-      <%= render "waiting_room" %>
-    </div>
-    <%# status = start => game starts and each player is directed to its respective user screen IF STATUS %>
 
-    <div
-      class="<%= @game.status == "start" ? "": "d-none"%>"
-      data-game-subscription-target="gameStart"
-    >
-      <%= render "start_animation" %>
-    </div>
+<div data-controller="old-tv-effect">
+  <div
+    data-controller="game-subscription"
+    data-game-subscription-game-id-value="<%= @game.id %>">
 
-    <div
-      class="<%= @game.status == "dead" ? "": "d-none"%>"
-      data-game-subscription-target="gameDead"
-    >
-     <%= render "dead_screen" %>
-    </div>
-
-    <div
-      class="<%= @game.status == "ended" ? "": "d-none"%>"
-      data-game-subscription-target="gameEnded"
-    >
-     <%= render "end_screen" %>
-    </div>
-
-    <% if current_user === @game.first_user %>
+    <% if @game_ready %>
+      <%# rules decription / situation before the start btn in the form bellow  %>
       <div
-        class="full-height-game-content <%= @game.status == "level1" ? "": "d-none"%>"
-        data-game-subscription-target="gameLevel1"
+        class="<%= @game.status == "lobby_full" ? "": "d-none"%>"
+        data-game-subscription-target="lobbyFull"
       >
-        <%= render "room_one_user_one" %>
+        <%= render "waiting_room" %>
+      </div>
+      <%# status = start => game starts and each player is directed to its respective user screen IF STATUS %>
+
+      <div
+        class="<%= @game.status == "start" ? "": "d-none"%>"
+        data-game-subscription-target="gameStart"
+      >
+        <%= render "start_animation" %>
       </div>
 
       <div
-        class="<%= @game.status == "level2" ? "": "d-none"%>"
-        data-game-subscription-target="gameLevel2"
+        class="<%= @game.status == "dead" ? "": "d-none"%>"
+        data-game-subscription-target="gameDead"
       >
-        <%= render "user1_room2" %>
-      </div>
-
-    <% elsif current_user === @game.second_user %>
-      <div
-        class="<%= @game.status == "level1" ? "": "d-none"%>"
-        data-game-subscription-target="gameLevel1"
-      >
-        <%= render "room_one_user_two" %>
+      <%= render "dead_screen" %>
       </div>
 
       <div
-        class="<%= @game.status == "level2" ? "": "d-none"%>"
-        data-game-subscription-target="gameLevel2"
+        class="<%= @game.status == "ended" ? "": "d-none"%>"
+        data-game-subscription-target="gameEnded"
       >
-        <%= render "user2_room2" %>
+      <%= render "end_screen" %>
       </div>
 
+      <% if current_user === @game.first_user %>
+        <div
+          class="full-height-game-content <%= @game.status == "level1" ? "": "d-none"%>"
+          data-game-subscription-target="gameLevel1"
+        >
+          <%= render "room_one_user_one" %>
+        </div>
+
+        <div
+          class="<%= @game.status == "level2" ? "": "d-none"%>"
+          data-game-subscription-target="gameLevel2"
+        >
+          <%= render "user1_room2" %>
+        </div>
+
+      <% elsif current_user === @game.second_user %>
+        <div
+          class="<%= @game.status == "level1" ? "": "d-none"%>"
+          data-game-subscription-target="gameLevel1"
+        >
+          <%= render "room_one_user_two" %>
+        </div>
+
+        <div
+          class="<%= @game.status == "level2" ? "": "d-none"%>"
+          data-game-subscription-target="gameLevel2"
+        >
+          <%= render "user2_room2" %>
+        </div>
+
+      <% end %>
+
+    <% else %>
+      <div
+        data-status-switch-advance-path-value="<%= advance_game_path(@game) %>"
+        data-game-subscription-target="lobbyFull"
+        class="waitpage"
+      >
+        <h1 class="content-title">Waiting for a player</h1>
+        <img class="imgwaiting" src="https://static.wixstatic.com/media/8a2fe1_ba66bf4ef6c2440e9450209d4510df67~mv2.gif" alt="">
+        <p class="content-title">You are alone </p>
+        <%= link_to "destroy the Room", game_path(@game), data:{turbo_method: :delete}, class: "btn-distorition" %>
+      </div>
     <% end %>
 
-  <% else %>
-    <div
-      data-status-switch-advance-path-value="<%= advance_game_path(@game) %>"
-      data-game-subscription-target="lobbyFull"
-      class="waitpage"
-    >
-      <h1 class="content-title">Waiting for a player</h1>
-      <img class="imgwaiting" src="https://static.wixstatic.com/media/8a2fe1_ba66bf4ef6c2440e9450209d4510df67~mv2.gif" alt="">
-      <p class="content-title">You are alone </p>
-      <%= link_to "destroy the Room", game_path(@game), data:{turbo_method: :delete}, class: "btn-distorition" %>
-    </div>
-  <% end %>
-
+  </div>
 </div>
-
-
-
-
  <%#= link_to "► Quit game for both players", game_path(@game), data:{turbo_method: :delete}, class: "btn-distorition" %>
