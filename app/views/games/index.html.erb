@@ -1,6 +1,8 @@
 
-<div class="content smt" data-action="mousemove->mooving-effect-object#moovingEffect" data-controller="mooving-effect-object">
-
+<div class="content smt"
+  data-action="mousemove->mooving-effect-object#moovingEffect"
+  data-controller="mooving-effect-object"
+>
   <div class="glitch">
     <div class="glitch-img-new" data-mooving-effect-object-target="object"></div>
     <div class="glitch-img-new" data-mooving-effect-object-target="object"></div>
@@ -14,7 +16,9 @@
     <ol class = "listing">
       <% @games.each do |game| %>
         <li>
-          <span><%= link_to game.name, join_game_path(game) %></span>
+          <span>
+            <%= link_to game.name, join_game_path(game) %>
+          </span>
         </li>
       <% end %>
     </ol>
@@ -25,4 +29,5 @@
     <%= link_to "► Search a Game",games_path, class: "btn-distorition" %>
     <%= link_to "► Create a Game",new_game_path, class: "btn-distorition" %>
   </section>
+
 </div>
