@@ -19,5 +19,8 @@ application.register("instruction-paper", InstructionPaperController)
 import MoovingEffectObjectController from "./mooving_effect_object_controller"
 application.register("mooving-effect-object", MoovingEffectObjectController)
 
+import OldTvEffectController from "./old_tv_effect_controller"
+application.register("old-tv-effect", OldTvEffectController)
+
 import StatusSwitchController from "./status_switch_controller"
 application.register("status-switch", StatusSwitchController)

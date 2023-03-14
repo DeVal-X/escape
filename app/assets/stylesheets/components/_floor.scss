@@ -15,3 +15,20 @@
   left: 0vw;
   transform: perspective(14px) rotateX(3deg);
 }
+
+.marble-floor-room2 {
+  background-image:
+  radial-gradient(rgba(0,0,0,0.02),
+  rgba(0,0,0,0.09),
+  rgba(0,0,0,0.2),
+  rgba(0,0,0,0.6),
+  rgba(0,0,0,0.9)),
+  image-url("marble-floor.jpg");
+background-size: cover;
+width: 1080px;
+height: 39vh;
+position: fixed;
+bottom: 0;
+transform: perspective(13px) rotateX(3deg);
+margin: 0 auto;
+}
