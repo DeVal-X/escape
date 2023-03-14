@@ -5,6 +5,7 @@ export default class extends Controller {
   static values = { advancePath: String }
 
   grabKey(event) {
+    alert('grab')
     event.currentTarget.disabled = true
     if (!this.keyFound) this.keyFound = event.params.goodKey
   }
