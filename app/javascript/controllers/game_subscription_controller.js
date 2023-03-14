@@ -37,10 +37,11 @@ export default class extends Controller {
     }
 
     if (data.last_event === "start-game") {
+      const customGameEvent = new CustomEvent('game:start')
+      document.dispatchEvent(customGameEvent)
       if (this.hasLobbyFullTarget ) { this.lobbyFullTarget.classList.add("d-none") }
       if (this.hasGameLevel1Target ) {
-        this.gameLevel1Target.classList.remove("d-none")
-        this.gameLevel1Target.classList.remove("hidden-object")
+        this.gameLevel1Target.classList.remove("d-none", "hidden-object")
         this.gameLevel1Target.classList.add("displayed-object")
       }
     }
