@@ -16,50 +16,58 @@ export default class extends Controller {
     "gameLevel1",
     "gameLevel2",
     "gameScore",
-    'doorUser1',
-    'carpetUser1',
-    'chairUser1',
-    'floorUser1',
-    'frame101User1',
-    'frame102User1',
-    'frame103User1',
-    'frame104User1',
-    'frame105User1',
-    'frame1And2User1',
-    'frame3User1',
+    "chandelierUser1Room1",
+    "doorUser1Room1",
+    "carpetUser1Room1",
+    "chairUser1Room1",
+    "floorUser1Room1",
+    "frame101User1Room1",
+    "frame102User1Room1",
+    "frame103User1Room1",
+    "frame104User1Room1",
+    "frame105User1Room1",
+    "frame1And2User1Room1",
+    "frame3User1Room1"
   ]
 
   displayRoom1(addClass = true) {
-    this.Target.classList.toggle('fade-in-chandelier-n-r', addClass)
-    this.Target.classList.toggle('fade-in-door-n-r', addClass)
-    this.Target.classList.toggle('fade-in-chandelier-n', addClass)
-    this.Target.classList.toggle('chair', addClass)
-    this.Target.classList.toggle('chandelier', addClass)
-    this.Target.classList.toggle('chandelier', addClass)
-    this.Target.classList.toggle('chandelier', addClass)
-    this.Target.classList.toggle('chandelier', addClass)
-    this.Target.classList.toggle('chandelier', addClass)
-    this.Target.classList.toggle('chandelier', addClass)
-    this.Target.classList.toggle('chandelier', addClass)
-    this.Target.classList.toggle('chandelier', addClass)
-    this.Target.classList.toggle('chandelier', addClass)
+    this.chandelierUser1Room1Target.classList.toggle('fade-in-chandelier-n', addClass)
+    this.doorUser1Room1Target.classList.toggle('fade-in-door-n', addClass)
+    this.carpetUser1Room1Target.classList.toggle('fade-in-carpet-n', addClass)
+    this.chairUser1Room1Target.classList.toggle('fade-in-chair-e', addClass)
+    this.floorUser1Room1Target.classList.toggle('fade-in-floor-s', addClass)
+    this.frame101User1Room1Target.classList.toggle('fade-in-frame101-w', addClass)
+    this.frame102User1Room1Target.classList.toggle('fade-in-frame102-e', addClass)
+    this.frame103User1Room1Target.classList.toggle('fade-in-frame103-w', addClass)
+    this.frame104User1Room1Target.classList.toggle('fade-in-frame104-e', addClass)
+    this.frame105User1Room1Target.classList.toggle('fade-in-frame105-e', addClass)
+    this.frame1And2User1Room1Target.classList.toggle('fade-in-frame1-2-w', addClass)
+    this.frame3User1Room1Target.classList.toggle('fade-in-frame3-e', addClass)
+  }
+
+  displayRoom1(addClass = true) {
+    this.carpetUser1Room2Target.classList.toggle('fade-in-chandelier-n', addClass)
   }
 
   hideRoom1() {
     this.displayRoom1(false)
-    this.frame1Target.classList.add('fade-in-chandelier-n-r')
-    this.targets.classlist.add('fade-in-door-n-r')
-    this.targets.classlist.add('fade-in-chandelier-n-r')
-    this.targets.classlist.add('fade-in-carpet-n-r')
-    this.targets.classlist.add('fade-in-chair-e-r')
-    this.targets.classlist.add('fade-in-floor-s-r')
-    this.targets.classlist.add('fade-in-frame101-w-r')
-    this.targets.classlist.add('fade-in-frame102-e-r')
-    this.targets.classlist.add('fade-in-frame103-w-r')
-    this.targets.classlist.add('fade-in-frame104-e-r')
-    this.targets.classlist.add('fade-in-frame105-e-r')
-    this.targets.classlist.add('fade-in-frame1-2-w-r')
-    this.targets.classlist.add('fade-in-frame3-e-r')
+    this.chandelierUser1Room1Target.classList.toggle('fade-in-chandelier-n-r')
+    this.doorUser1Room1Target.classList.toggle('fade-in-door-n-r')
+    this.carpetUser1Room1Target.classList.toggle('fade-in-carpet-n-r')
+    this.chairUser1Room1Target.classList.toggle('fade-in-chair-e-r')
+    this.floorUser1Room1Target.classList.toggle('fade-in-floor-s-r')
+    this.frame101User1Room1Target.classList.toggle('fade-in-frame101-w-r')
+    this.frame102User1Room1Target.classList.toggle('fade-in-frame102-e-r')
+    this.frame103User1Room1Target.classList.toggle('fade-in-frame103-w-r')
+    this.frame104User1Room1Target.classList.toggle('fade-in-frame104-e-r')
+    this.frame105User1Room1Target.classList.toggle('fade-in-frame105-e-r')
+    this.frame1And2User1Room1Target.classList.toggle('fade-in-frame1-2-w-r')
+    this.frame3User1Room1Target.classList.toggle('fade-in-frame3-e-r')
+  }
+
+  hideRoom2() {
+    this.displayRoom2(false)
+    this.carpetUser1Room2Target.classList.toggle('fade-in-chandelier-n-r')
   }
 
   connect() {
