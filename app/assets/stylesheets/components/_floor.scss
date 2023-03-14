@@ -1,5 +1,11 @@
 .marble-floor{
-  background-image: image-url("marble-floor.jpg");
+  background-image:
+    radial-gradient(rgba(0,0,0,0.02),
+    rgba(0,0,0,0.09),
+    rgba(0,0,0,0.2),
+    rgba(0,0,0,0.6),
+    rgba(0,0,0,0.9)),
+    image-url("marble-floor.jpg");
   background-size: cover;
   width: 101vw;
   height: 29vh;
@@ -7,4 +13,3 @@
   bottom: 0;
   left: 0vw;
 }
-// carpet     {transform: perspective(26px) rotateX(2deg);}

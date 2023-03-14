@@ -5,7 +5,6 @@ export default class extends Controller {
   static targets = ["object", "floor"]
 
   moovingEffect(event) {
-
     const mouseX = event.clientX / window.innerWidth * 2;
     const mouseY = event.clientY / window.innerHeight * 2;
     const mouseXup = event.clientX / window.innerWidth * 4;
