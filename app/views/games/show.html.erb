@@ -43,7 +43,7 @@
       </div>
 
       <div
-        class="<%= @game.status == "level2" ? "": "d-none"%>"
+        class="full-height-game-content <%= @game.status == "level2" ? "": "d-none"%>"
         data-game-subscription-target="gameLevel2"
       >
         <%= render "user1_room2" %>
@@ -51,14 +51,14 @@
 
     <% elsif current_user === @game.second_user %>
       <div
-        class="<%= @game.status == "level1" ? "": "d-none"%>"
+        class="full-height-game-content <%= @game.status == "level1" ? "": "d-none"%>"
         data-game-subscription-target="gameLevel1"
       >
         <%= render "room_one_user_two" %>
       </div>
 
       <div
-        class="<%= @game.status == "level2" ? "": "d-none"%>"
+        class=" full-height-game-content <%= @game.status == "level2" ? "": "d-none"%>"
         data-game-subscription-target="gameLevel2"
       >
         <%= render "user2_room2" %>
