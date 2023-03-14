@@ -9,6 +9,6 @@
 >
   <%= simple_form_for @game do |f| %>
     <%= f.input :status, as: :hidden, input_html: { value: 'level1' } %>
-    <%= f.button :submit, class: "btn-distorition" %>
+    <button type="submit" class="btn-distorition"> ► start game </button>
   <% end %>
 </div>
