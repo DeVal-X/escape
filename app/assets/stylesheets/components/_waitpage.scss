@@ -23,3 +23,51 @@
   text-align:center;
   width: 10%;
 }
+
+
+.games_list {
+
+  position: relative;
+  z-index: 2;
+
+  a{
+    text-decoration: none;
+  }
+
+  a:hover{
+    color: white;
+  }
+
+  .h1{
+    margin: 0;
+  }
+
+  li {
+    margin: 0;
+    padding: 4px 8px;
+  }
+
+  li:hover{
+    transform: scale(1,1.05);
+    text-shadow: 1px 1px 1px rgba(223, 220, 220, 0.448), 0 0 1em rgba(137, 137, 154, 0.323), 0 0 0.2em rgba(146, 146, 169, 0.471);
+  }
+
+  .title{
+    width: 20vw;
+    margin-top: 10vh;
+    margin-left: 10vw;
+    margin-bottom: 10vh;
+  }
+
+  .listing{
+    width: 80vw;
+    min-width: 50px;
+    margin: 0 auto;
+    padding: 30px 40px;
+    border: 1px solid whitesmoke;
+    border-radius: 10px;
+    box-shadow: 1px 2px 20px whitesmoke;
+    font-size: 1.3em;
+
+  }
+}
