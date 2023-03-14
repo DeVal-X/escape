@@ -107,7 +107,9 @@ export default class extends Controller {
         this.hideRoom1()
         this.displayRoom2()
       }
-      if (this.hasGameLevel2Target) this.gameLevel2Target.classList.remove("d-none")
+      if (this.hasGameLevel2Target) {
+        this.gameLevel2Target.classList.remove("d-none")
+      }
     }
 
     if (data.last_event === "success-open-door-two") {
@@ -127,7 +129,5 @@ export default class extends Controller {
     if (this.hasDoorTarget && data.successfull_challenges && data.successfull_challenges.includes("lever-switch")) {
       if (this.hasDoorTarget) this.doorTarget.classList.remove("d-none")
     }
-
-
   }
 }
