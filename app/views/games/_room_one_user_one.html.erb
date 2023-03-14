@@ -2,45 +2,51 @@
   data-action="mousemove->mooving-effect-object#moovingEffect"
   data-controller="mooving-effect-object"
 >
-  <div class="marble-floor" data-mooving-effect-object-target="floor"></div>
-  <div class="scene" data-mooving-effect-object-target="object">
-    <%#     <%= image_tag "porte_1.png", class: "door-img w-100 ", height: "200" %>
-    <%= image_tag "chandelier_1.png", class: "chandelier-img position-absolute", height: "200" %>
-  <div>
-
-  <div>
-    <%= image_tag "porte_1.png", class: "door-img w-100", height: "500" %>
-    <%= image_tag  "carpet_2.png", class: "carpet2-img position-absolute", height: "190"%>
-    <%= image_tag  "chair_1.png", class: "chair1-img position-absolute", height: "250"%>
+  <div class="marble-floor" data-mooving-effect-object-target="floor">
   </div>
 
+  <div class="scene" >
+    <%#     <%= image_tag "porte_1.png", class: "door-img w-100 ", height: "200" %>
+    <div data-mooving-effect-object-target="door">
+    <%= image_tag "chandelier_1.png", class: "chandelier-img position-absolute", height: "200" %>
+    </div>
 
-  <div class="position-absolute"
-    data-controller="status-switch "
-    data-status-switch-advance-path-value="<%= advance_game_path(@game) %>">
-    <div class="position-relative">
-      <div class="position-absolute frame frame2 d-flex justify-content-center align-items-center"  data-mooving-effect-object-target="object">
-        <button class="button-green"  data-status-switch-target="totem" data-action="click->status-switch#switch"></button>
+    <div>
+      <div>
+        <%= image_tag "porte_1.png", class: "door-img w-100", height: "500" %>
+        <%= image_tag  "carpet_2.png", class: "carpet2-img position-absolute", height: "190", "data-mooving-effect-object-target":"floor"%>
+        <%= image_tag  "chair_1.png", class: "chair1-img position-absolute", height: "250", "data-mooving-effect-object-target":"object"%>
       </div>
-      <div class="position-absolute frame frame1 d-flex justify-content-center align-items-center" data-mooving-effect-object-target="object">
-        <button class="button-red"  data-status-switch-target="totem" data-action="click->status-switch#switch"></button>
-      </div>
-      <div class="position-absolute frame frame3 d-flex justify-content-center align-items-center" data-mooving-effect-object-target="object">
-        <button class="button-blue"  data-status-switch-target="totem" data-action="click->status-switch#switch"></button>
-      </div>
-      <div class="d-flex justify-content-center align-items-center">
-      <%= image_tag "frame_101.png", class: "position-absolute frame101-img", height: "90" %>
-      <%= image_tag "frame_102.png", class: "position-absolute frame102-img", height: "140" %>
-      <%= image_tag "frame_103.png", class: "position-absolute frame103-img", height: "180" %>
-      <%= image_tag "frame_104.png", class: "position-absolute frame104-img", height: "70" %>
-      <%= image_tag "frame_105.png", class: "position-absolute frame105-img", height: "140" %>
 
-        <div class="d-none"
-          data-status-switch-target="door"
-          data-game-subscription-target="door"
-          data-action="click->status-switch#openDoorOne"
-        >
-        !
+      <div class="position-absolute"
+        data-controller="status-switch "
+        data-status-switch-advance-path-value="<%= advance_game_path(@game) %>"
+      >
+        <div class="position-relative">
+          <div class="position-absolute frame frame2 d-flex justify-content-center align-items-center"  data-mooving-effect-object-target="object">
+            <button class="button-green"  data-status-switch-target="totem" data-action="click->status-switch#switch"></button>
+          </div>
+          <div class="position-absolute frame frame1 d-flex justify-content-center align-items-center" data-mooving-effect-object-target="object">
+            <button class="button-red"  data-status-switch-target="totem" data-action="click->status-switch#switch"></button>
+          </div>
+          <div class="position-absolute frame frame3 d-flex justify-content-center align-items-center" data-mooving-effect-object-target="object">
+            <button class="button-blue"  data-status-switch-target="totem" data-action="click->status-switch#switch"></button>
+          </div>
+          <div class="d-flex justify-content-center align-items-center">
+          <%= image_tag "frame_101.png", class: "position-absolute frame101-img", height: "90", "data-mooving-effect-object-target":"object" %>
+          <%= image_tag "frame_102.png", class: "position-absolute frame102-img", height: "140", "data-mooving-effect-object-target":"object"  %>
+          <%= image_tag "frame_103.png", class: "position-absolute frame103-img", height: "180", "data-mooving-effect-object-target":"object"  %>
+          <%= image_tag "frame_104.png", class: "position-absolute frame104-img", height: "70", "data-mooving-effect-object-target":"object"  %>
+          <%= image_tag "frame_105.png", class: "position-absolute frame105-img", height: "140", "data-mooving-effect-object-target":"object"  %>
+
+            <div class="d-none"
+              data-status-switch-target="door"
+              data-game-subscription-target="door"
+              data-action="click->status-switch#openDoorOne"
+            >
+            !
+            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -1,3 +1,5 @@
+//     transition: transform 0.2s ease 0s;
+
 .chandelier-img {
   top: -181px;
   right: -23px;
@@ -29,8 +31,10 @@
 }
 
 .carpet2-img {
-  top: 511px;
-  right: -258px;
+  // top: 511px;
+  // right: -258px;
+  bottom: 0;
+  left: calc(50vw - 397px);
 }
 
 .storage1-img {
@@ -39,8 +43,11 @@
 }
 
 .chair1-img {
-  top: 316px;
-  right: -386px;
+  // top: 316px;
+  // right: -386px;
+  bottom: 127px;
+  right: 167px;
+  height: 197px;
 }
 
 .oldwallpaper-img {

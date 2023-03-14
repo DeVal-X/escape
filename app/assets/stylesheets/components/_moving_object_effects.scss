@@ -1,0 +1,12 @@
+.moving-transition {
+
+}
+
+.hidden-object {
+  opacity: .1;
+}
+
+.displayed-object {
+  transition: opacity, 2s ease-in-out 2s;
+  opacity: 1;
+}

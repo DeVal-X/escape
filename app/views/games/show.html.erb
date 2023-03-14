@@ -41,7 +41,7 @@
 
     <% if current_user == @game.first_user %>
       <div
-        class="full-height-game-content <%= @game.status == "level1" ? "": "d-none"%>"
+        class="full-height-game-content <%= @game.status == "level1" ? "": "d-none hidden-object"%> "
         data-game-subscription-target="gameLevel1"
       >
         <%= render "room_one_user_one" %>
