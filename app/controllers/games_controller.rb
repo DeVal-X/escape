@@ -25,12 +25,16 @@ class GamesController < ApplicationController
       @game.save
       GameChannel.broadcast_to(
         @game,
-        @game.data
+        @game.data.merge(status: 'lobby_full')
       )
     else
       # else => On crée une nouvelle game et on prend la position du player 1
       @game = Game.find_by(first_user: current_user, second_user: nil)
-      @game = Game.create(first_user: current_user) if @game.nil?
+      @game = Game.create!(first_user: current_user) if @game.nil?
+      GameChannel.broadcast_to(
+        @game,
+        @game.data
+      )
     end
     # on est ensuite redirigé vers la show du game
     redirect_to game_path(@game)
@@ -39,7 +43,12 @@ class GamesController < ApplicationController
   def join
     @game = Game.find(params[:id])
     @game.second_user = current_user
+    @game.status = :lobby_full
     @game.save
+    GameChannel.broadcast_to(
+      @game,
+      @game.data.merge(status: 'lobby_full')
+    )
     redirect_to game_path(@game)
   end
 
@@ -48,7 +57,11 @@ class GamesController < ApplicationController
     @game = Game.new(params_game)
     @game.first_user = @first_user
     @game.status = :pending
-    if game.save!
+    if @game.save!
+      GameChannel.broadcast_to(
+        @game,
+        @game.data
+      )
       redirect_to game_path(@game)
     else
       render :index, status: :unprocessable_entity
@@ -60,6 +73,10 @@ class GamesController < ApplicationController
     @game.status = params[:game][:status]
     @game.data[:last_event] = @game.status
     @game.save
+    GameChannel.broadcast_to(
+      @game,
+      @game.data
+    )
   end
 
   def advance
@@ -67,12 +84,10 @@ class GamesController < ApplicationController
     @game.data[:last_event] = params[:last_event]
     @game.data[:successfull_challenges] = [] if @game.data[:successfull_challenges].nil?
     @game.data[:successfull_challenges].push(params[:successfull_challenges])
-
     @game.status = :level1 if @game.data[:successfull_challenges].include?("start-game")
     @game.status = :level2 if @game.data[:successfull_challenges].include?("open-door-one")
     @game.status = :ended if @game.data[:successfull_challenges].include?("open-door-two")
     @game.status = :dead if @game.data[:successfull_challenges].include?("player-died")
-
     @game.save
     GameChannel.broadcast_to(
       @game,
@@ -90,6 +105,6 @@ class GamesController < ApplicationController
   private
 
   def params_game
-    params.require(:game).permit( :status, :first_user, :second_user)
+    params.require(:game).permit(:status, :first_user, :second_user, :name)
   end
 end
