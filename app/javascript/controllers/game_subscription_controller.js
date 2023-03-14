@@ -45,8 +45,8 @@ export default class extends Controller {
     this.frame3User1Room1Target.classList.toggle('fade-in-frame3-e', addClass)
   }
 
-  displayRoom1(addClass = true) {
-    this.carpetUser1Room2Target.classList.toggle('fade-in-chandelier-n', addClass)
+  displayRoom2(addClass = true) {
+    // this.carpetUser1Room2Target.classList.toggle('fade-in-chandelier-n', addClass)
   }
 
   hideRoom1() {
@@ -67,7 +67,7 @@ export default class extends Controller {
 
   hideRoom2() {
     this.displayRoom2(false)
-    this.carpetUser1Room2Target.classList.toggle('fade-in-chandelier-n-r')
+    // this.carpetUser1Room2Target.classList.toggle('fade-in-chandelier-n-r')
   }
 
   connect() {
@@ -103,7 +103,10 @@ export default class extends Controller {
     }
 
     if (data.last_event === "success-open-door-one") {
-      if (this.hasGameLevel1Target) this.hideRoom1()
+      if (this.hasGameLevel1Target) {
+        this.hideRoom1()
+        this.displayRoom2()
+      }
       if (this.hasGameLevel2Target) this.gameLevel2Target.classList.remove("d-none")
     }
 
