@@ -14,7 +14,9 @@
     <%= image_tag "livre_2.png", class: "livre-img position-absolute", height: "70" %>
     <%= image_tag "bougie_2.png", class: "bougie-img position-absolute", height: "30" %>
     <%= image_tag "piledelivre_2.png", class: "pile-img position-absolute", height: "270" %>
-    <%= image_tag "piledelivre_1.png", class: "pile-img1 position-absolute", height: "180" %>
+    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      <%= image_tag "piledelivre_1.png", class: "pile-img1 position-absolute", height: "180" %>
+    </button>
     <%= image_tag "table_2.png", class: "table-img position-absolute", height: "150" %>
     <%= image_tag "lustre_2.jpg", class: "lustre-img position-absolute", height: "150" %>
     <%= image_tag "clef_1.png", class: "clef-img position-absolute", height: "10", "data-action": "click->door-opening#grabKey", "data-door-opening-good-key-param": "false" %>
@@ -28,5 +30,16 @@
     data-door-opening-advance-path-value="<%= advance_game_path(@game) %>"
   >
 
+  </div>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <img src="" alt="">
+        <div>
+          <p>Une pile de livres poussiéreux</p>
+        </div>
+    </div>
   </div>
 </div>
