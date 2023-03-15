@@ -1,0 +1,16 @@
+.modal.show {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  .modal-dialog {
+    max-width: unset !important;
+    margin-right: unset !important;
+    margin-left: unset !important;
+    .modal-content {
+      height: 80vh;
+      width: 60vw;
+      color: black;
+      background-image: url("old_paper.png")
+    }
+  }
+}
