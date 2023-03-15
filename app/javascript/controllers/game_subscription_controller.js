@@ -75,6 +75,7 @@ export default class extends Controller {
   }
 
   displayRoom2(addClass = true) {
+    this.gameLevel1Target.classList.add("d-none")
     this.gameLevel2Target.classList.remove("d-none")
     this.lustreUser1Room2Target.classList.toggle("fade-in-lustre-n", addClass)
     this.doorUser1Room2Target.classList.toggle("fade-in-door-bis-n", addClass)
@@ -98,9 +99,6 @@ export default class extends Controller {
   }
 
   callReverse(target, className) {
-    target.addEventListener("animationend", () =>{
-      target.classList.add("d-none")
-    }, { once: true })
     target.classList.add(className)
   }
 
