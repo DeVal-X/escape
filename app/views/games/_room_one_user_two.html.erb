@@ -1,12 +1,14 @@
 <div class="noise">
 </div>
 <div class="container">
-  <button class="button-green"> aim</button>
+  <button class="button-green">
+    aim
+  </button>
 </div>
 
-  <div
-    data-controller="status-switch "
-    data-status-switch-advance-path-value="<%= advance_game_path(@game) %>" >
+  <div data-controller="status-switch "
+    data-status-switch-advance-path-value="<%= advance_game_path(@game) %>"
+  >
     <button class="d-none"
       data-game-subscription-target="lever"
       data-action ="click->status-switch#unlock"

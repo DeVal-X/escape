@@ -71,3 +71,58 @@
 
   }
 }
+
+.wait-background {
+  // radial-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.9), rgba(0,0,0,0.7), rgba(0,0,0,0.6), rgba(0,0,0,0.9)),
+  background-image:
+    linear-gradient(rgba(0,0,0,0.8),
+    rgba(0,0,0,0.5)),
+    image-url("smoky_background.jpg");
+  background-size: cover;
+  height: 100vh;
+}
+
+.start-click{
+  position: absolute;
+  bottom: 10vh;
+  left: 42vw;
+}
+
+.scroller{
+  position: absolute;
+  width: 65vw;
+  min-width: 100px;
+  max-width: 900px;
+  height: 50vh;
+  overflow-wrap: break-word;
+  overflow: hidden;
+  font-size: 2.1em;
+  line-height: 2;
+  left: calc(50vw - 32.5vw);
+  top:  calc(50vh - 35vh);;
+  padding: 40px 60px;
+  border: 1px solid whitesmoke;
+  border-radius: 8px;
+  box-shadow: 1px 2px 30px whitesmoke;
+
+
+  .content {
+    position: relative;
+    top: -295%;
+    animation: 15s linear 0s scroll;
+  }
+
+  strong{
+    font-size: 1.2em;
+    line-height: 1.5;
+  }
+
+  @keyframes scroll {
+    0%{
+        top: 50vh;
+    }
+    100%{
+        top: -295%;
+    }
+  }
+}

@@ -1,14 +1,34 @@
 
-<h1 >Game ready</h1>
+<div class="wait-background">
 
-<div
-  data-controller="status-switch"
-  data-status-switch-advance-path-value="<%= advance_game_path(@game) %>"
-  data-status-switch-target="waitingRoom"
-  data-action="click->status-switch#startGame"
->
-  <%= simple_form_for @game do |f| %>
-    <%= f.input :status, as: :hidden, input_html: { value: 'level1' } %>
-    <button type="submit" class="btn-distorition"> ► start game </button>
-  <% end %>
+  <div class="scroller">
+    <div class="content">
+      <div class="description">
+        Bienvenue, mes amis. Je suis un vieux fou qui a une passion pour les énigmes et les puzzles.
+        Vous êtes tous mes invités, mes prisonniers pour être précis.
+        Vous êtes ici pour jouer à mon jeu et pour trouver un moyen de sortir de cette pièce avant qu'il ne soit trop tard.
+        Je vous ai enfermé ici pour tester votre intelligence et votre capacité à résoudre des énigmes.
+        Vous devrez faire preuve de perspicacité et de logique pour découvrir les indices cachés dans cette pièce
+        et résoudre les énigmes complexes qui se dressent devant vous.
+        Mais attention, mes chers prisonniers, chaque erreur vous rapprochera de votre fin tragique.
+        Si vous échouez, oubliez l'idée de sortir de cette pièce, vous resterez à jamais mes invités. <br/>
+        <strong> Bonne chance, et ne paniquez pas.</strong>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class = "start-click"
+    data-controller="status-switch"
+    data-status-switch-advance-path-value="<%= advance_game_path(@game) %>"
+    data-status-switch-target="waitingRoom"
+    data-action="click->status-switch#startGame"
+  >
+    <%= simple_form_for @game do |f| %>
+      <%= f.input :status, as: :hidden, input_html: { value: 'level1' } %>
+      <button type="submit" class="btn-distorition"> ► start game </button>
+    <% end %>
+  </div>
+
 </div>
