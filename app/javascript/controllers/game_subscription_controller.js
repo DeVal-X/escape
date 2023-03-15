@@ -51,18 +51,22 @@ export default class extends Controller {
 
   hideRoom1() {
     this.displayRoom1(false)
-    this.chandelierUser1Room1Target.classList.toggle('fade-in-chandelier-n-r')
-    this.doorUser1Room1Target.classList.toggle('fade-in-door-n-r')
-    this.carpetUser1Room1Target.classList.toggle('fade-in-carpet-n-r')
-    this.chairUser1Room1Target.classList.toggle('fade-in-chair-e-r')
-    this.floorUser1Room1Target.classList.toggle('fade-in-floor-s-r')
-    this.frame101User1Room1Target.classList.toggle('fade-in-frame101-w-r')
-    this.frame102User1Room1Target.classList.toggle('fade-in-frame102-e-r')
-    this.frame103User1Room1Target.classList.toggle('fade-in-frame103-w-r')
-    this.frame104User1Room1Target.classList.toggle('fade-in-frame104-e-r')
-    this.frame105User1Room1Target.classList.toggle('fade-in-frame105-e-r')
-    this.frame1And2User1Room1Target.classList.toggle('fade-in-frame1-2-w-r')
-    this.frame3User1Room1Target.classList.toggle('fade-in-frame3-e-r')
+    this.chandelierUser1Room1Target.addEventListener("animationend", () =>{
+      this.chandelierUser1Room1Target.classList.add("d-none")
+    }, { once: true })
+    this.chandelierUser1Room1Target.classList.add('fade-in-chandelier-n-r')
+
+    this.doorUser1Room1Target.classList.add('fade-in-door-n-r')
+    this.carpetUser1Room1Target.classList.add('fade-in-carpet-n-r')
+    this.chairUser1Room1Target.classList.add('fade-in-chair-e-r')
+    this.floorUser1Room1Target.classList.add('fade-in-floor-s-r')
+    this.frame101User1Room1Target.classList.add('fade-in-frame101-w-r')
+    this.frame102User1Room1Target.classList.add('fade-in-frame102-e-r')
+    this.frame103User1Room1Target.classList.add('fade-in-frame103-w-r')
+    this.frame104User1Room1Target.classList.add('fade-in-frame104-e-r')
+    this.frame105User1Room1Target.classList.add('fade-in-frame105-e-r')
+    this.frame1And2User1Room1Target.classList.add('fade-in-frame1-2-w-r')
+    this.frame3User1Room1Target.classList.add('fade-in-frame3-e-r')
   }
 
   hideRoom2() {
@@ -76,6 +80,10 @@ export default class extends Controller {
       { received: data => this.#advanceGame(data) }
     )
     console.log(`currently listening on channel game id:${this.gameIdValue}.`)
+  }
+
+  disconnect() {
+    this.channel.unsubscribe()
   }
 
   #advanceGame(data) {

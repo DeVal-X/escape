@@ -1,4 +1,4 @@
-@mixin fadeInDeOuf($time, $translate, $direction, $name, $scale:1) {
+@mixin fadeInDeOuf($time, $translate, $name, $scale:1) {
   @keyframes fadeIn#{$name} {
     0% {
       opacity: 0;
@@ -13,50 +13,97 @@
       // transform: $to;  avec $to:"translate(0,0)"
     }
   }
-  animation: fadeIn#{$name} #{$time} #{$direction} ease-in-out;
+  animation: fadeIn#{$name} #{$time}  ease-in-out;
+}
+
+@mixin fadeOutDeOuf($time, $translate, $name, $scale:1) {
+  @keyframes fadeOut#{$name} {
+    0% {
+      opacity: 1;
+
+    }
+    99% {
+      display: block;
+    }
+    100% {
+      opacity: 0;
+      display: none;
+      transform: #{$translate};
+    }
+  }
+  animation: fadeOut#{$name} #{$time}  ease-in-out forwards;
 }
 
 //  first room transition
-.fade-in-chandelier-n { @include fadeInDeOuf(3.8s, translate(0, -100vh), normal, chandelier) }
-.fade-in-chandelier-n-r { @include fadeInDeOuf(3.8s, translate(0, -100vh), reverse, chandelier) }
+.fade-in-chandelier-n { @include fadeInDeOuf(3.8s, translate(0, -100vh), chandelier) }
+.fade-in-chandelier-n-r { @include fadeOutDeOuf(3.8s, translate(0, -100vh), chandelier) }
 
-.fade-in-door-n { @include fadeInDeOuf(2.6s, translate(0, -100vh), normal, door) }
-.fade-in-door-n-r { @include fadeInDeOuf(2.6s, translate(0, -100vh), reverse, door) }
+.fade-in-door-n { @include fadeInDeOuf(2.6s, translate(0, -100vh), door) }
+.fade-in-door-n-r { @include fadeOutDeOuf(2.6s, translate(0, -100vh), door) }
 
-.fade-in-carpet-n { @include fadeInDeOuf(1.8s, translate(400px, 400px), normal, carpet) }
-.fade-in-carpet-n-r { @include fadeInDeOuf(1.8s, translate(400px, 400px), reverse, carpet) }
+.fade-in-carpet-n { @include fadeInDeOuf(1.8s, translate(400px, 400px), carpet) }
+.fade-in-carpet-n-r { @include fadeOutDeOuf(1.8s, translate(400px, 400px), carpet) }
 
-.fade-in-chair-e { @include fadeInDeOuf(2s, translate(400px, 0), normal, chair) }
-.fade-in-chair-e-r { @include fadeInDeOuf(2s, translate(400px, 0), reverse, chair) }
+.fade-in-chair-e { @include fadeInDeOuf(2s, translate(400px, 0), chair) }
+.fade-in-chair-e-r { @include fadeOutDeOuf(2s, translate(400px, 0), chair) }
 
-.fade-in-floor-s { @include fadeInDeOuf(1s, "translate(0, 20vh) perspective(14px) rotateX(3deg)", normal, floor) }
-.fade-in-floor-s-r { @include fadeInDeOuf(1s, "translate(0, 20vh) perspective(14px) rotateX(3deg)", reverse, floor) }
+.fade-in-floor-s { @include fadeInDeOuf(1s, "translate(0, 20vh) perspective(14px) rotateX(3deg)", floor) }
+.fade-in-floor-s-r { @include fadeOutDeOuf(1s, "translate(0, 20vh) perspective(14px) rotateX(3deg)", floor) }
 
-.fade-in-frame101-w { @include fadeInDeOuf(5.5s, translate(-50vw, 0), normal, frame101) }
-.fade-in-frame101-w-r { @include fadeInDeOuf(5.5s, translate(-50vw, 0), reverse, frame101) }
+.fade-in-frame101-w { @include fadeInDeOuf(5.5s, translate(-50vw, 0), frame101) }
+.fade-in-frame101-w-r { @include fadeOutDeOuf(5.5s, translate(-50vw, 0), frame101) }
 
-.fade-in-frame102-e { @include fadeInDeOuf(5.2s, translate(50vw, 0), normal, frame102) }
-.fade-in-frame102-e-r { @include fadeInDeOuf(5.2s, translate(50vw, 0), reverse, frame102) }
+.fade-in-frame102-e { @include fadeInDeOuf(5.2s, translate(50vw, 0), frame102) }
+.fade-in-frame102-e-r { @include fadeOutDeOuf(5.2s, translate(50vw, 0), frame102) }
 
-.fade-in-frame103-w { @include fadeInDeOuf(6s, translate(-50vw, 0), normal, frame103) }
-.fade-in-frame103-w-r { @include fadeInDeOuf(6s, translate(-50vw, 0), reverse, frame103) }
+.fade-in-frame103-w { @include fadeInDeOuf(6s, translate(-50vw, 0), frame103) }
+.fade-in-frame103-w-r { @include fadeOutDeOuf(6s, translate(-50vw, 0), frame103) }
 
-.fade-in-frame104-e { @include fadeInDeOuf(6.1s, translate(50vw, 0), normal, frame104) }
-.fade-in-frame104-e-r { @include fadeInDeOuf(6.1s, translate(50vw, 0), reverse, frame104) }
+.fade-in-frame104-e { @include fadeInDeOuf(6.1s, translate(50vw, 0), frame104) }
+.fade-in-frame104-e-r { @include fadeOutDeOuf(6.1s, translate(50vw, 0), frame104) }
 
-.fade-in-frame105-e { @include fadeInDeOuf(6s, translate(50vw, 0), normal, frame105) }
-.fade-in-frame105-e-r { @include fadeInDeOuf(6s, translate(50vw, 0), reverse, frame105) }
+.fade-in-frame105-e { @include fadeInDeOuf(6s, translate(50vw, 0), frame105) }
+.fade-in-frame105-e-r { @include fadeOutDeOuf(6s, translate(50vw, 0), frame105) }
 
-.fade-in-frame1-2-w { @include fadeInDeOuf(5s, translate(-50vw, 0), normal, frame1-2) }
-.fade-in-frame1-2-w-r { @include fadeInDeOuf(5s, translate(-50vw, 0), reverse, frame1-2) }
+.fade-in-frame1-2-w { @include fadeInDeOuf(5s, translate(-50vw, 0), frame1-2) }
+.fade-in-frame1-2-w-r { @include fadeOutDeOuf(5s, translate(-50vw, 0), frame1-2) }
 
-.fade-in-frame3-e { @include fadeInDeOuf(5s, translate(50vw, 0), normal, frame3) }
-.fade-in-frame3-e-r { @include fadeInDeOuf(5s, translate(50vw, 0), reverse, frame3) }
+.fade-in-frame3-e { @include fadeInDeOuf(5s, translate(50vw, 0), frame3) }
+.fade-in-frame3-e-r { @include fadeOutDeOuf(5s, translate(50vw, 0), frame3) }
 
 
 //  second room transition
 
 
+//done
+// .fade-in-bombonne-n { @include fadeInDeOuf(2s, translate(0, -280px), normal, bombonne) }
+// .fade-in-bombonne-n-r { @include fadeInDeOuf(2s, translate(0, -280px), reverse, bombonne) }
+
+// .fade-in-chemine-n { @include fadeInDeOuf(2s, translate(0, -280px), normal, chemine) }
+// .fade-in-chemine-n-r { @include fadeInDeOuf(2s, translate(0, -280px), reverse, chemine) }
+
+// .fade-in-bureau-n { @include fadeInDeOuf(2s, translate(0, -280px), normal, bureau) }
+// .fade-in-bureau-n-r { @include fadeInDeOuf(2s, translate(0, -280px), reverse, bureau) }
+
+// .fade-in-livre-n { @include fadeInDeOuf(2s, translate(0, -280px), normal, livre) }
+// .fade-in-livre-n-r { @include fadeInDeOuf(2s, translate(0, -280px), reverse, livre) }
+
+// .fade-in-bougie-n { @include fadeInDeOuf(2s, translate(0, -280px), normal, bougie) }
+// .fade-in-bougie-n-r { @include fadeInDeOuf(2s, translate(0, -280px), reverse, bougie) }
+
+// .fade-in-pile2-n { @include fadeInDeOuf(2s, translate(0, -280px), normal, pile2) }
+// .fade-in-pile2-n-r { @include fadeInDeOuf(2s, translate(0, -280px), reverse, pile2) }
+
+// .fade-in-pile1-n { @include fadeInDeOuf(2s, translate(0, -280px), normal, pile1) }
+// .fade-in-pile1-n-r { @include fadeInDeOuf(2s, translate(0, -280px), reverse, pile1) }
+
+
+//TODO
+// .fade-in-x-n { @include fadeInDeOuf(2s, translate(0, -280px), normal) }
+// .fade-in-x-n-r { @include fadeInDeOuf(2s, translate(0, -280px), reverse) }
+
+// .fade-in-x-n { @include fadeInDeOuf(2s, translate(0, -280px), normal) }
+// .fade-in-x-n-r { @include fadeInDeOuf(2s, translate(0, -280px), reverse) }
 
 // .fade-in-x-n { @include fadeInDeOuf(2s, translate(0, -280px), normal) }
 // .fade-in-x-n-r { @include fadeInDeOuf(2s, translate(0, -280px), reverse) }
