@@ -61,17 +61,16 @@
 }
 
 .transparent-door {
-  opacity: 0;
-  width: 20vw;
-  height: 46vh;
-  border: 5px solid aqua;
-  position: relative;
+  opacity: 0.5;
+  position: absolute;
   z-index: 4;
-  bottom: 50vh;
-  left: 9vw;
+  left: 0;
+  // transition: ;
 
   &:hover{
     cursor: pointer;
+    border: 2px solid rgb(0, 0, 0);
+
   }
 }
 
