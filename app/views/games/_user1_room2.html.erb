@@ -3,57 +3,57 @@
   data-controller="door-opening mooving-effect-object"
   data-door-opening-advance-path-value="<%= advance_game_path(@game) %>"
 >
-  <div class="marble-floor-room2 fade-in-floor-s"
+  <div class="marble-floor-room2 fade-in-floor-bis-s"
     data-mooving-effect-object-target="floor"
   >
   </div>
 
   <div>
     <%= image_tag "porte_4.png",
-      class: "door-img w-100 fade-in-door-n",
+      class: "door-img w-100 fade-in-door-bis-n",
       height: "310",
       "data-action": "click->door-opening#deactivateDoorTrap",
-      "data-mooving-effect-object-target":"object"
+      "data-mooving-effect-object-target":"carpet"
     %>
 
     <%= image_tag "carpet_3a.png",
-      class: "carpet-img position-absolute fade-in-carpet-n",
+      class: "carpet-img position-absolute fade-in-carpet-bis-se",
       height: "80",
-      "data-mooving-effect-object-target":"object"
+      "data-mooving-effect-object-target":"carpet"
     %>
 
     <%= image_tag "bombonne_1.png",
-      class: "bombonne-img position-absolute fade-in-bombonne-n",
+      class: "bombonne-img position-absolute fade-in-bombonne-ne",
       height: "90",
-      "data-mooving-effect-object-target":"object"
+      "data-mooving-effect-object-target":"chair"
     %>
 
     <%= image_tag "chemine_1.png",
-      class: "chemine-img position-absolute fade-in-chemine-n",
+      class: "chemine-img position-absolute fade-in-chemine-ne",
       height: "430",
-      "data-mooving-effect-object-target":"object"
+      "data-mooving-effect-object-target":"carpet"
     %>
 
     <%= image_tag "bureau_1.png",
-      class: "bureau-img position-absolute fade-in-bureau-n",
+      class: "bureau-img position-absolute fade-in-bureau-sw",
       height: "200",
-      "data-mooving-effect-object-target":"object"
+      "data-mooving-effect-object-target":"chair"
     %>
 
     <%= image_tag "livre_2.png",
-      class: "livre-img position-absolute fade-in-livre-n",
+      class: "livre-img position-absolute fade-in-livre-se",
       height: "70",
-      "data-mooving-effect-object-target":"object"
+      "data-mooving-effect-object-target":"chair"
     %>
 
     <%= image_tag "bougie_2.png",
-      class: "bougie-img position-absolute fade-in-bougie-n",
+      class: "bougie-img position-absolute fade-in-bougie-se",
       height: "30",
       "data-mooving-effect-object-target":"object"
     %>
 
     <%= image_tag "piledelivre_2.png",
-      class: "pile-img position-absolute fade-in-pile2-n",
+      class: "pile-img position-absolute fade-in-pile2-se",
       height: "270",
       "data-mooving-effect-object-target":"object"
      %>
@@ -64,7 +64,7 @@
       data-bs-target="#exampleModal"
     >
       <%= image_tag "piledelivre_1.png",
-        class: "pile-img1 position-absolute fade-in-pile1-n",
+        class: "pile-img1 position-absolute fade-in-pile1-se",
         height: "180",
         "data-mooving-effect-object-target":"object"
       %>
@@ -72,19 +72,19 @@
     </button>
 
     <%= image_tag "table_2.png",
-      class: "table-img position-absolute",
+      class: "table-img position-absolute fade-in-buffet-sw",
       height: "150",
       "data-mooving-effect-object-target":"object"
     %>
 
     <%= image_tag "lustre_2.jpg",
-      class: "lustre-img position-absolute",
+      class: "lustre-img position-absolute fade-in-lustre-n",
       height: "150",
       "data-mooving-effect-object-target":"object"
     %>
 
     <%= image_tag "clef_1.png",
-      class: "clef-img position-absolute",
+      class: "clef-img position-absolute fade-in-clef1-sw",
       height: "10",
       "data-action": "click->door-opening#grabKey",
       "data-door-opening-good-key-param": "false",
@@ -92,7 +92,7 @@
     %>
 
     <%= image_tag "clef_2.png",
-      class: "clef2-img position-absolute",
+      class: "clef2-img position-absolute fade-in-clef2-ne",
       height: "25",
       "data-action": "click->door-opening#grabKey",
       "data-door-opening-good-key-param": "true",
@@ -100,7 +100,7 @@
     %>
 
     <%= image_tag "clef_3.png",
-      class: "clef3-img position-absolute",
+      class: "clef3-img position-absolute fade-in-clef3-se",
       height: "20",
       "data-action": "click->door-opening#grabKey",
       "data-door-opening-good-key-param": "false",
