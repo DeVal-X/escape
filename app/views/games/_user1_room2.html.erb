@@ -9,19 +9,25 @@
     <%= image_tag "porte_4.png", class: "door-img w-100 ", height: "310", "data-action": "click->door-opening#deactivateDoorTrap" %>
     <%= image_tag "carpet_3a.png", class: "carpet-img position-absolute", height: "80" %>
     <%= image_tag "bombonne_1.png", class: "bombonne-img position-absolute", height: "90" %>
+
     <%= image_tag "chemine_1.png", class: "chemine-img position-absolute", height: "430" %>
-    <%= image_tag "bureau_1.png", class: "bureau-img position-absolute", height: "200" %>
+    <div id="aura-chemine", class="background-chemine position-absolute surbrillance"></div>
+
+    <%= image_tag "bureau_1.png", class: "bureau-img position-absolute", height: "170" %>
     <%= image_tag "livre_2.png", class: "livre-img position-absolute", height: "70" %>
     <%= image_tag "bougie_2.png", class: "bougie-img position-absolute", height: "30" %>
     <%= image_tag "piledelivre_2.png", class: "pile-img position-absolute", height: "270" %>
+
     <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
       <%= image_tag "piledelivre_1.png", class: "pile-img1 position-absolute", height: "180" %>
+      <div id="aura-pile", class="background-pile position-absolute surbrillance"></div>
     </button>
+
     <%= image_tag "table_2.png", class: "table-img position-absolute", height: "150" %>
     <%= image_tag "lustre_2.jpg", class: "lustre-img position-absolute", height: "150" %>
-    <%= image_tag "clef_1.png", class: "clef-img position-absolute", height: "10", "data-action": "click->door-opening#grabKey", "data-door-opening-good-key-param": "false" %>
-    <%= image_tag "clef_2.png", class: "clef2-img position-absolute", height: "25", "data-action": "click->door-opening#grabKey", "data-door-opening-good-key-param": "true" %>
-    <%= image_tag "clef_3.png", class: "clef3-img position-absolute", height: "20", "data-action": "click->door-opening#grabKey", "data-door-opening-good-key-param": "false" %>
+    <%= image_tag "clef_1.png", class: "clef-img position-absolute aurakey", height: "10", "data-action": "click->door-opening#grabKey", "data-door-opening-good-key-param": "false" %>
+    <%= image_tag "clef_2.png", class: "clef2-img position-absolute aurakey", height: "25", "data-action": "click->door-opening#grabKey", "data-door-opening-good-key-param": "true" %>
+    <%= image_tag "clef_3.png", class: "clef3-img position-absolute aurakey", height: "20", "data-action": "click->door-opening#grabKey", "data-door-opening-good-key-param": "false" %>
   </div>
 
   <div  class="position-absolute"
@@ -36,9 +42,9 @@
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-      <img src="" alt="">
-        <div>
-          <p>Une pile de livres poussiéreux</p>
+        <div class= "d-flex justify-content-around align-items-center flex-column h-90">
+          <p>Une pile de livres poussiéreuse. Elle contient nombre d'information inutile.</p>
+          <%= image_tag "bd-piledelivre.png", class: "img-in-modal rounded" %>
         </div>
     </div>
   </div>

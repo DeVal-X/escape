@@ -10,7 +10,26 @@
       height: 80vh;
       width: 60vw;
       color: black;
-      background-image: url("old_paper.png")
+      background-image: url("old_paper2.png");
+      background-position: center;
+      background-size: cover;
+      background-color: transparent;
+      p {
+        margin-top: 60px;
+        margin-bottom: 1rem;
+        font-style: italic;
+        font-size: 27px;
+        /* padding: 54px; */
+        width: 550PX;
+        font-size-adjust: 2.00;
+      }
     }
   }
+}
+
+.img-in-modal{
+  max-height: 400px;
+  max-width: 330px;
+  object-fit: contain;
+  filter: drop-shadow(-4px 24px 16px #000000fe);
 }
