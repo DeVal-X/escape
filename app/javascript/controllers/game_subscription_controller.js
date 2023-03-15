@@ -94,9 +94,6 @@ export default class extends Controller {
     this.clef3User1Room2Target.classList.toggle("fade-in-clef3-se", addClass)
   }
 
-  displayPostDoor2() {
-
-  }
 
   callReverse(target, className) {
     target.classList.add(className)
@@ -168,7 +165,7 @@ export default class extends Controller {
         this.hideRoom1()
       }
       if (this.hasGameLevel2Target) {
-        setTimeout(() => {this.displayRoom2()}, 6.5 * 1000)
+        setTimeout(() => {this.displayRoom2()}, 5.5 * 1000)
 
       }
     }
