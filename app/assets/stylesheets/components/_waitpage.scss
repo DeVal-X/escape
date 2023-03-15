@@ -103,20 +103,26 @@
   padding: 40px 60px;
   border: 1px solid whitesmoke;
   border-radius: 8px;
-  box-shadow: 1px 2px 20px whitesmoke;
-}
+  box-shadow: 1px 2px 30px whitesmoke;
 
-.content {
-  position: relative;
-  top: -305%;
-  animation: 15s linear 0s scroll;
-}
 
-@keyframes scroll {
-  0%{
-      top: 50vh;
+  .content {
+    position: relative;
+    top: -295%;
+    animation: 15s linear 0s scroll;
   }
-  100%{
-      top: -305%;
+
+  strong{
+    font-size: 1.2em;
+    line-height: 1.5;
+  }
+
+  @keyframes scroll {
+    0%{
+        top: 50vh;
+    }
+    100%{
+        top: -295%;
+    }
   }
 }
