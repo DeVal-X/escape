@@ -60,7 +60,7 @@
   right: -386px;
 }
 
-.transparent-door{
+.transparent-door {
   opacity: 0;
   width: 20vw;
   height: 46vh;
@@ -69,6 +69,10 @@
   z-index: 4;
   bottom: 50vh;
   left: 9vw;
+
+  &:hover{
+    cursor: pointer;
+  }
 }
 
 .frame {
