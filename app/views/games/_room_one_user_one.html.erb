@@ -1,3 +1,6 @@
+<%# <div class="noise">
+</div> %>
+
 <div class="d-flex justify-content-center align-items-center h-100 position-relative"
   data-controller="mooving-effect-object"
 >
@@ -12,7 +15,8 @@
     <div class="fade-in-object-n">
       <%= image_tag "chandelier_1.png",
         class: "chandelier-img position-absolute fade-in-chandelier-n",
-        height: "200", "data-mooving-effect-object-target":"door",
+        height: "200",
+        "data-mooving-effect-object-target":"door",
         "data-game-subscription-target":"chandelierUser1Room1"
       %>
     </div>
@@ -46,9 +50,9 @@
         data-status-switch-advance-path-value="<%= advance_game_path(@game) %>"
       >
         <div class="position-relative">
-          <div class="position-absolute frame frame2 d-flex justify-content-center align-items-center fade-in-frame1-2-w "
+          <div class="position-absolute frame frame2 d-flex justify-content-center align-items-center fade-in-frame2-w"
             data-mooving-effect-object-target="object"
-            data-game-subscription-target="frame1And2User1Room1"
+            data-game-subscription-target="frame2User1Room1"
           >
             <button class="button-green"
               data-status-switch-target="totem"
@@ -57,9 +61,9 @@
             </button>
           </div>
 
-          <div class="position-absolute frame frame1 d-flex justify-content-center align-items-center fade-in-frame1-2-w "
+          <div class="position-absolute frame frame1 d-flex justify-content-center align-items-center fade-in-frame1-w"
             data-mooving-effect-object-target="object"
-            data-game-subscription-target="frame1And2User1Room1"
+            data-game-subscription-target="frame1User1Room1"
           >
             <button class="button-red"
               data-status-switch-target="totem"

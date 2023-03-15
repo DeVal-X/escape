@@ -108,13 +108,13 @@
 
   .content {
     position: relative;
-    top: -295%;
-    animation: 15s linear 0s scroll;
+    top: -158%;
+    animation: 16s linear 0s scroll;
   }
 
   strong{
     font-size: 1.2em;
-    line-height: 1.5;
+    line-height: 2.8;
   }
 
   @keyframes scroll {
@@ -122,7 +122,7 @@
         top: 50vh;
     }
     100%{
-        top: -295%;
+        top: -158%;
     }
   }
 }

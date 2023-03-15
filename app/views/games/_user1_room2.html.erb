@@ -1,36 +1,134 @@
-<div class="d-flex justify-content-center align-items-center h-100 position-relative", style= "width:1000px", data-controller="door-opening game-subscription"
-  data-game-subscription-game-id-value="<%= @game.id %>"
+<div class="d-flex justify-content-center align-items-center h-100 position-relative"
+  style= "width:1000px"
+  data-controller="door-opening mooving-effect-object"
   data-door-opening-advance-path-value="<%= advance_game_path(@game) %>"
-  data-action="mousemove->mooving-effect-object#moovingEffect"
-  data-controller="mooving-effect-object"
 >
-  <div class="marble-floor-room2" data-mooving-effect-object-target="floor"></div>
+  <div class="marble-floor-room2 fade-in-floor-bis-s"
+    data-mooving-effect-object-target="floor"
+    data-game-subscription-target="floorUser1Room2"
+  >
+  </div>
+
   <div>
-    <%= image_tag "porte_4.png", class: "door-img w-100 ", height: "310", "data-action": "click->door-opening#deactivateDoorTrap" %>
-    <%= image_tag "carpet_3a.png", class: "carpet-img position-absolute", height: "80" %>
-    <%= image_tag "bombonne_1.png", class: "bombonne-img position-absolute", height: "90" %>
-    <%= image_tag "chemine_1.png", class: "chemine-img position-absolute", height: "430" %>
-    <%= image_tag "bureau_1.png", class: "bureau-img position-absolute", height: "200" %>
-    <%= image_tag "livre_2.png", class: "livre-img position-absolute", height: "70" %>
-    <%= image_tag "bougie_2.png", class: "bougie-img position-absolute", height: "30" %>
-    <%= image_tag "piledelivre_2.png", class: "pile-img position-absolute", height: "270" %>
-    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
-      <%= image_tag "piledelivre_1.png", class: "pile-img1 position-absolute", height: "180" %>
+    <%= image_tag "porte_4.png",
+      class: "door-img w-100 fade-in-door-bis-n",
+      height: "310",
+      "data-action": "click->door-opening#deactivateDoorTrap",
+      "data-mooving-effect-object-target":"carpet",
+      "data-game-subscription-target":"doorUser1Room2"
+    %>
+
+    <%= image_tag "carpet_3a.png",
+      class: "carpet-img position-absolute fade-in-carpet-bis-se",
+      height: "80",
+      "data-mooving-effect-object-target":"carpet",
+      "data-game-subscription-target":"carpetUser1Room2"
+    %>
+
+    <%= image_tag "bombonne_1.png",
+      class: "bombonne-img position-absolute fade-in-bombonne-ne",
+      height: "90",
+      "data-mooving-effect-object-target":"chair",
+      "data-game-subscription-target":"bombonneUser1Room2"
+    %>
+
+    <%= image_tag "chemine_1.png",
+      class: "chemine-img position-absolute fade-in-chemine-ne",
+      height: "430",
+      "data-mooving-effect-object-target":"carpet",
+      "data-game-subscription-target":"chemineUser1Room2"
+    %>
+
+    <%= image_tag "bureau_1.png",
+      class: "bureau-img position-absolute fade-in-bureau-sw",
+      height: "200",
+      "data-mooving-effect-object-target":"chair",
+      "data-game-subscription-target":"bureauUser1Room2"
+    %>
+
+    <%= image_tag "livre_2.png",
+      class: "livre-img position-absolute fade-in-livre-se",
+      height: "70",
+      "data-mooving-effect-object-target":"chair",
+      "data-game-subscription-target":"livreUser1Room2"
+    %>
+
+    <%= image_tag "bougie_2.png",
+      class: "bougie-img position-absolute fade-in-bougie-se",
+      height: "30",
+      "data-mooving-effect-object-target":"object",
+      "data-game-subscription-target":"bougieUser1Room2"
+    %>
+
+    <%= image_tag "piledelivre_2.png",
+      class: "pile-img position-absolute fade-in-pile2-se",
+      height: "270",
+      "data-mooving-effect-object-target":"object",
+      "data-game-subscription-target":"pile2User1Room2"
+     %>
+
+    <button type="button"
+      class="btn"
+      data-bs-toggle="modal"
+      data-bs-target="#exampleModal"
+    >
+      <%= image_tag "piledelivre_1.png",
+        class: "pile-img1 position-absolute fade-in-pile1-se",
+        height: "180",
+        "data-mooving-effect-object-target":"object",
+        "data-game-subscription-target":"pile1User1Room2"
+      %>
+
     </button>
-    <%= image_tag "table_2.png", class: "table-img position-absolute", height: "150" %>
-    <%= image_tag "lustre_2.jpg", class: "lustre-img position-absolute", height: "150" %>
-    <%= image_tag "clef_1.png", class: "clef-img position-absolute", height: "10", "data-action": "click->door-opening#grabKey", "data-door-opening-good-key-param": "false" %>
-    <%= image_tag "clef_2.png", class: "clef2-img position-absolute", height: "25", "data-action": "click->door-opening#grabKey", "data-door-opening-good-key-param": "true" %>
-    <%= image_tag "clef_3.png", class: "clef3-img position-absolute", height: "20", "data-action": "click->door-opening#grabKey", "data-door-opening-good-key-param": "false" %>
+
+    <%= image_tag "table_2.png",
+      class: "table-img position-absolute fade-in-buffet-sw",
+      height: "150",
+      "data-mooving-effect-object-target":"object",
+      "data-game-subscription-target":"buffetUser1Room2"
+    %>
+
+    <%= image_tag "lustre_2.jpg",
+      class: "lustre-img position-absolute fade-in-lustre-n",
+      height: "150",
+      "data-mooving-effect-object-target":"object",
+      "data-game-subscription-target":"lustreUser1Room2"
+    %>
+
+    <%= image_tag "clef_1.png",
+      class: "clef-img position-absolute fade-in-clef1-sw",
+      height: "10",
+      "data-action": "click->door-opening#grabKey",
+      "data-door-opening-good-key-param": "false",
+      "data-mooving-effect-object-target":"object",
+      "data-game-subscription-target":"clef1User1Room2"
+    %>
+
+    <%= image_tag "clef_2.png",
+      class: "clef2-img position-absolute fade-in-clef2-ne",
+      height: "25",
+      "data-action": "click->door-opening#grabKey",
+      "data-door-opening-good-key-param": "true",
+      "data-mooving-effect-object-target":"object",
+      "data-game-subscription-target":"clef2User1Room2"
+    %>
+
+    <%= image_tag "clef_3.png",
+      class: "clef3-img position-absolute fade-in-clef3-se",
+      height: "20",
+      "data-action": "click->door-opening#grabKey",
+      "data-door-opening-good-key-param": "false",
+      "data-mooving-effect-object-target":"object",
+      "data-game-subscription-target":"clef3User1Room2"
+    %>
   </div>
 
   <div  class="position-absolute"
-    data-controller="door-opening game-subscription"
-    data-game-subscription-game-id-value="<%= @game.id %>"
+    data-controller="door-opening"
     data-door-opening-advance-path-value="<%= advance_game_path(@game) %>"
   >
-
   </div>
+
 </div>
 
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
