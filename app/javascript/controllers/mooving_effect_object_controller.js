@@ -28,9 +28,9 @@ export default class extends Controller {
     const mouseYdown = event.clientY / window.innerHeight * 2;
     const mouseXup = event.clientX / window.innerWidth * 4;
     const mouseYup = event.clientY / window.innerHeight * 4;
-    this.objectTargets.forEach(object => {object.style.transform = `translate3d(-${mouseXup}%, -${mouseYup}%, 0)`});
-    this.chairTargets.forEach(object => {object.style.transform = `translate3d(-${mouseXdown}%, -${mouseYdown}%, 0)`});
-    this.carpetTargets.forEach(object => {object.style.transform = `translate3d(-${mouseX}%, -${mouseY}%, 0)`});
-    this.floorTargets.forEach(object => {object.style.transform = `perspective(14px) translate3d(-${mouseX}%, -${mouseY}%, 0) rotateX(3deg)`});
+    this.objectTargets.forEach(object => {object.style.transform = `translate3d(-${mouseXup}vh, -${mouseYup}vh, 0)`});
+    this.chairTargets.forEach(object => {object.style.transform = `translate3d(-${mouseXdown}vh, -${mouseYdown}vh, 0)`});
+    this.carpetTargets.forEach(object => {object.style.transform = `translate3d(-${mouseX}vh, -${mouseY}vh, 0)`});
+    this.floorTargets.forEach(object => {object.style.transform = `perspective(14px) translate3d(-${mouseX}vh, -${mouseY}vh, 0) rotateX(3deg)`});
   }
 }

@@ -26,9 +26,37 @@ export default class extends Controller {
     "frame103User1Room1",
     "frame104User1Room1",
     "frame105User1Room1",
-    "frame1And2User1Room1",
-    "frame3User1Room1"
+    "frame1User1Room1",
+    "frame2User1Room1",
+    "frame3User1Room1",
+    "lustreUser1Room2",
+    "doorUser1Room2",
+    "carpetUser1Room2",
+    "floorUser1Room2",
+    "bombonneUser1Room2",
+    "chemineUser1Room2",
+    "bureauUser1Room2",
+    "livreUser1Room2",
+    "bougieUser1Room2",
+    "pile2User1Room2",
+    "pile1User1Room2",
+    "buffetUser1Room2",
+    "clef1User1Room2",
+    "clef2User1Room2",
+    "clef3User1Room2"
   ]
+
+  connect() {
+    this.channel = createConsumer().subscriptions.create(
+      { channel: "GameChannel", id: this.gameIdValue },
+      { received: data => this.#advanceGame(data) }
+    )
+    console.log(`currently listening on channel game id:${this.gameIdValue}.`)
+  }
+
+  disconnect() {
+    this.channel.unsubscribe()
+  }
 
   displayRoom1(addClass = true) {
     this.chandelierUser1Room1Target.classList.toggle('fade-in-chandelier-n', addClass)
@@ -41,41 +69,74 @@ export default class extends Controller {
     this.frame103User1Room1Target.classList.toggle('fade-in-frame103-w', addClass)
     this.frame104User1Room1Target.classList.toggle('fade-in-frame104-e', addClass)
     this.frame105User1Room1Target.classList.toggle('fade-in-frame105-e', addClass)
-    this.frame1And2User1Room1Target.classList.toggle('fade-in-frame1-2-w', addClass)
+    this.frame1User1Room1Target.classList.toggle('fade-in-frame1-w', addClass)
+    this.frame2User1Room1Target.classList.toggle('fade-in-frame2-w', addClass)
     this.frame3User1Room1Target.classList.toggle('fade-in-frame3-e', addClass)
   }
 
   displayRoom2(addClass = true) {
-    // this.carpetUser1Room2Target.classList.toggle('fade-in-chandelier-n', addClass)
+    this.gameLevel1Target.classList.add("d-none")
+    this.gameLevel2Target.classList.remove("d-none")
+    this.lustreUser1Room2Target.classList.toggle("fade-in-lustre-n", addClass)
+    this.doorUser1Room2Target.classList.toggle("fade-in-door-bis-n", addClass)
+    this.carpetUser1Room2Target.classList.toggle("fade-in-carpet-bis-se", addClass)
+    this.floorUser1Room2Target.classList.toggle("fade-in-floor-bis-s", addClass)
+    this.bombonneUser1Room2Target.classList.toggle("fade-in-bombonne-ne", addClass)
+    this.chemineUser1Room2Target.classList.toggle("fade-in-chemine-ne", addClass)
+    this.bureauUser1Room2Target.classList.toggle("fade-in-bureau-sw", addClass)
+    this.livreUser1Room2Target.classList.toggle("fade-in-livre-se", addClass)
+    this.bougieUser1Room2Target.classList.toggle("fade-in-bougie-se", addClass)
+    this.pile2User1Room2Target.classList.toggle("fade-in-pile2-se", addClass)
+    this.pile1User1Room2Target.classList.toggle("fade-in-pile1-se", addClass)
+    this.buffetUser1Room2Target.classList.toggle("fade-in-buffet-sw", addClass)
+    this.clef1User1Room2Target.classList.toggle("fade-in-clef1-sw", addClass)
+    this.clef2User1Room2Target.classList.toggle("fade-in-clef2-ne", addClass)
+    this.clef3User1Room2Target.classList.toggle("fade-in-clef3-se", addClass)
+  }
+
+  displayPostDoor2() {
+
+  }
+
+  callReverse(target, className) {
+    target.classList.add(className)
   }
 
   hideRoom1() {
     this.displayRoom1(false)
-    this.chandelierUser1Room1Target.classList.toggle('fade-in-chandelier-n-r')
-    this.doorUser1Room1Target.classList.toggle('fade-in-door-n-r')
-    this.carpetUser1Room1Target.classList.toggle('fade-in-carpet-n-r')
-    this.chairUser1Room1Target.classList.toggle('fade-in-chair-e-r')
-    this.floorUser1Room1Target.classList.toggle('fade-in-floor-s-r')
-    this.frame101User1Room1Target.classList.toggle('fade-in-frame101-w-r')
-    this.frame102User1Room1Target.classList.toggle('fade-in-frame102-e-r')
-    this.frame103User1Room1Target.classList.toggle('fade-in-frame103-w-r')
-    this.frame104User1Room1Target.classList.toggle('fade-in-frame104-e-r')
-    this.frame105User1Room1Target.classList.toggle('fade-in-frame105-e-r')
-    this.frame1And2User1Room1Target.classList.toggle('fade-in-frame1-2-w-r')
-    this.frame3User1Room1Target.classList.toggle('fade-in-frame3-e-r')
+    this.callReverse(this.chandelierUser1Room1Target,"fade-in-chandelier-n-r")
+    this.callReverse(this.doorUser1Room1Target, 'fade-in-door-n-r')
+    this.callReverse(this.carpetUser1Room1Target, 'fade-in-carpet-n-r')
+    this.callReverse(this.chairUser1Room1Target, 'fade-in-chair-e-r')
+    this.callReverse(this.floorUser1Room1Target, 'fade-in-floor-s-r')
+    this.callReverse(this.frame101User1Room1Target, 'fade-in-frame101-w-r')
+    this.callReverse(this.frame102User1Room1Target, 'fade-in-frame102-e-r')
+    this.callReverse(this.frame103User1Room1Target, 'fade-in-frame103-w-r')
+    this.callReverse(this.frame104User1Room1Target, 'fade-in-frame104-e-r')
+    this.callReverse(this.frame105User1Room1Target, 'fade-in-frame105-e-r')
+    this.callReverse(this.frame1User1Room1Target, 'fade-in-frame1-w-r')
+    this.callReverse(this.frame2User1Room1Target, 'fade-in-frame2-w-r')
+    this.callReverse(this.frame3User1Room1Target, 'fade-in-frame3-e-r')
   }
 
   hideRoom2() {
     this.displayRoom2(false)
-    // this.carpetUser1Room2Target.classList.toggle('fade-in-chandelier-n-r')
-  }
+    this.callReverse(this.lustreUser1Room2Target, "fade-in-lustre-n-r")
+    this.callReverse(this.doorUser1Room2Target, "fade-in-door-bis-n-r")
+    this.callReverse(this.carpetUser1Room2Target, "fade-in-carpet-bis-se-r")
+    this.callReverse(this.floorUser1Room2Target, "fade-in-floor-bis-s-r")
+    this.callReverse(this.bombonneUser1Room2Target, "fade-in-bombonne-ne-r")
+    this.callReverse(this.chemineUser1Room2Target, "fade-in-chemine-ne-r")
+    this.callReverse(this.bureauUser1Room2Target, "fade-in-bureau-sw-r")
+    this.callReverse(this.livreUser1Room2Target, "fade-in-livre-se-r")
+    this.callReverse(this.bougieUser1Room2Target, "fade-in-bougie-se-r")
+    this.callReverse(this.pile2User1Room2Target, "fade-in-pile2-se-r")
+    this.callReverse(this.pile1User1Room2Target, "fade-in-pile1-se-r")
+    this.callReverse(this.buffetUser1Room2Target, "fade-in-buffet-sw-r")
+    this.callReverse(this.clef1User1Room2Target, "fade-in-clef1-sw-r")
+    this.callReverse(this.clef2User1Room2Target, "fade-in-clef2-ne-r")
+    this.callReverse(this.clef3User1Room2Target, "fade-in-clef3-se-r")
 
-  connect() {
-    this.channel = createConsumer().subscriptions.create(
-      { channel: "GameChannel", id: this.gameIdValue },
-      { received: data => this.#advanceGame(data) }
-    )
-    console.log(`currently listening on channel game id:${this.gameIdValue}.`)
   }
 
   #advanceGame(data) {
@@ -105,10 +166,10 @@ export default class extends Controller {
     if (data.last_event === "success-open-door-one") {
       if (this.hasGameLevel1Target) {
         this.hideRoom1()
-        this.displayRoom2()
       }
       if (this.hasGameLevel2Target) {
-        this.gameLevel2Target.classList.remove("d-none")
+        setTimeout(() => {this.displayRoom2()}, 6.5 * 1000)
+
       }
     }
 

@@ -1,0 +1,5 @@
+meta_name: "Escape ... or not"
+meta_title: "Escape ... or not"
+meta_description: "Try to escape this manor, be careful ..."
+meta_image: "homepage-image.jpeg" # should exist in `app/assets/images/`
+twitter_account: "@your_twitter_account"   # required for Twitter Cards
