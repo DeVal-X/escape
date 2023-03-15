@@ -76,3 +76,42 @@
     background-size: cover;
   }
 }
+
+.button-blue:hover {
+  color: #000000;
+  box-shadow:
+
+              0 0 5px rgba(255, 255, 255, 0.946),
+              0 0 25px rgba(255, 254, 254, 0.754),
+              0 0 50px rgba(255, 255, 255, 0.956),
+              0 0 75px rgb(252, 252, 252),
+              0 0 205px rgb(252, 252, 252);
+  text-decoration-line: none;
+
+}
+
+.button-red:hover {
+  color: #000000;
+  box-shadow:
+
+              0 0 5px rgba(255, 255, 255, 0.946),
+              0 0 25px rgba(255, 254, 254, 0.754),
+              0 0 50px rgba(255, 255, 255, 0.956),
+              0 0 75px rgb(252, 252, 252),
+              0 0 205px rgb(252, 252, 252);
+  text-decoration-line: none;
+
+}
+
+.button-green:hover {
+  color: #000000;
+  box-shadow:
+
+              0 0 5px rgba(255, 255, 255, 0.946),
+              0 0 25px rgba(255, 254, 254, 0.754),
+              0 0 50px rgba(255, 255, 255, 0.956),
+              0 0 75px rgb(252, 252, 252),
+              0 0 205px rgb(252, 252, 252);
+  text-decoration-line: none;
+
+}
