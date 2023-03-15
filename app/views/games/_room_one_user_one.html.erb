@@ -2,51 +2,58 @@
 </div>
 
 <div class="d-flex justify-content-center align-items-center h-100 position-relative"
-  data-action="mousemove->mooving-effect-object#moovingEffect"
-  data-controller="mooving-effect-object">
-  <div class="scene" data-mooving-effect-object-target="object">
+  data-controller="mooving-effect-object"
+>
+  <div class="marble-floor fade-in-floor-s" data-mooving-effect-object-target="floor"  data-game-subscription-target="floorUser1Room1">
+  </div>
+
+  <div class="scene" >
     <%#     <%= image_tag "porte_1.png", class: "door-img w-100 ", height: "200" %>
-    <%= image_tag "chandelier_1.png", class: "chandelier-img position-absolute", height: "200" %>
+    <div class="fade-in-object-n">
+      <%= image_tag "chandelier_1.png", class: "chandelier-img position-absolute fade-in-chandelier-n", height: "200", "data-mooving-effect-object-target":"door",  "data-game-subscription-target":"chandelierUser1Room1"%>
     </div>
 
     <div>
-      <%= image_tag "porte_1.png", class: "door-img w-100", height: "500" %>
-      <%= image_tag  "carpet_2.png", class: "carpet2-img position-absolute", height: "190"%>
-      <%= image_tag  "chair_1.png", class: "chair1-img position-absolute", height: "250"%>
-    </div>
+      <div>
+        <%= image_tag "porte_1.png", class: "door-img w-100 fade-in-door-n", height: "500", "data-game-subscription-target":"doorUser1Room1", "data-mooving-effect-object-target":"carpet"%>
+        <%= image_tag "carpet_2.png", class: "carpet2-img position-absolute fade-in-carpet-n", height: "190", "data-mooving-effect-object-target":"carpet", "data-game-subscription-target":"carpetUser1Room1"%>
+        <%= image_tag "chair_1.png", class: "chair1-img position-absolute fade-in-chair-e", height: "250", "data-mooving-effect-object-target":"chair", "data-game-subscription-target":"chairUser1Room1"%>
+      </div>
 
+      <div class="position-absolute"
+        data-controller="status-switch "
+        data-status-switch-advance-path-value="<%= advance_game_path(@game) %>"
+      >
+        <div class="position-relative">
+          <div class="position-absolute frame frame2 d-flex justify-content-center align-items-center fade-in-frame1-2-w"  data-mooving-effect-object-target="object" data-game-subscription-target="frame1And2User1Room1">
+            <button class="button-green"  data-status-switch-target="totem" data-action="click->status-switch#switch"></button>
+          </div>
 
-    <div class="position-absolute"
-      data-controller="status-switch "
-      data-status-switch-advance-path-value="<%= advance_game_path(@game) %>">
-      <div class="position-relative">
-        <div class="position-absolute frame frame2 d-flex justify-content-center align-items-center"  data-mooving-effect-object-target="object">
-          <button class="button-green"  data-status-switch-target="totem" data-action="click->status-switch#switch"></button>
-        </div>
-        <div class="position-absolute frame frame1 d-flex justify-content-center align-items-center" data-mooving-effect-object-target="object">
-          <button class="button-red"  data-status-switch-target="totem" data-action="click->status-switch#switch"></button>
-        </div>
-        <div class="position-absolute frame frame3 d-flex justify-content-center align-items-center" data-mooving-effect-object-target="object">
-          <button class="button-blue"  data-status-switch-target="totem" data-action="click->status-switch#switch"></button>
-        </div>
-        <div class="d-flex justify-content-center align-items-center">
-          <%= image_tag "frame_101.png", class: "position-absolute frame101-img", height: "90" %>
-          <%= image_tag "frame_102.png", class: "position-absolute frame102-img", height: "140" %>
-          <%= image_tag "frame_103.png", class: "position-absolute frame103-img", height: "180" %>
-          <%= image_tag "frame_104.png", class: "position-absolute frame104-img", height: "70" %>
-          <%= image_tag "frame_105.png", class: "position-absolute frame105-img", height: "140" %>
+          <div class="position-absolute frame frame1 d-flex justify-content-center align-items-center fade-in-frame1-2-w" data-mooving-effect-object-target="object" data-game-subscription-target="frame1And2User1Room1">
+            <button class="button-red"  data-status-switch-target="totem" data-action="click->status-switch#switch"></button>
+          </div>
 
-          <div class="d-none"
-            data-status-switch-target="door"
-            data-game-subscription-target="door"
-            data-action="click->status-switch#openDoorOne"
-          >
-          !
+          <div class="position-absolute frame frame3 d-flex justify-content-center align-items-center fade-in-frame3-e" data-mooving-effect-object-target="object" data-game-subscription-target="frame3User1Room1">
+            <button class="button-blue"  data-status-switch-target="totem" data-action="click->status-switch#switch"></button>
+          </div>
+
+          <div class="d-flex justify-content-center align-items-center">
+            <%= image_tag "frame_101.png", class: "position-absolute frame101-img fade-in-frame101-w", height: "90", "data-mooving-effect-object-target":"object", "data-game-subscription-target":"frame101User1Room1" %>
+            <%= image_tag "frame_102.png", class: "position-absolute frame102-img fade-in-frame102-e", height: "140", "data-mooving-effect-object-target":"object", "data-game-subscription-target":"frame102User1Room1"  %>
+            <%= image_tag "frame_103.png", class: "position-absolute frame103-img fade-in-frame103-w", height: "180", "data-mooving-effect-object-target":"object", "data-game-subscription-target":"frame103User1Room1"  %>
+            <%= image_tag "frame_104.png", class: "position-absolute frame104-img fade-in-frame104-e", height: "70", "data-mooving-effect-object-target":"object", "data-game-subscription-target":"frame104User1Room1"  %>
+            <%= image_tag "frame_105.png", class: "position-absolute frame105-img fade-in-frame105-e", height: "140", "data-mooving-effect-object-target":"object", "data-game-subscription-target":"frame105User1Room1"  %>
+
+            <div class="d-none"
+              data-status-switch-target="door"
+              data-game-subscription-target="door"
+              data-action="click->status-switch#openDoorOne"
+            >
+            !
+            </div>
           </div>
         </div>
       </div>
     </div>
-
-</div>
-</div>
+  </div>
 </div>

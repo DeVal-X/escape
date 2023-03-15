@@ -39,13 +39,13 @@
     <%= render "end_screen" %>
   </div>
 
-  <% if current_user == @game.first_user %>
-    <div
-      class="full-height-game-content <%= @game.status == "level1" ? "": "d-none"%>"
-      data-game-subscription-target="gameLevel1"
-    >
-      <%= render "room_one_user_one" %>
-    </div>
+    <% if current_user == @game.first_user %>
+      <div
+        class="full-height-game-content <%= @game.status == "level1" ? "": "d-none"%> "
+        data-game-subscription-target="gameLevel1"
+      >
+        <%= render "room_one_user_one" %>
+      </div>
 
     <div
       class="full-height-game-content <%= @game.status == "level2" ? "": "d-none"%>"
