@@ -2,11 +2,7 @@
   @keyframes fadeIn#{$name} {
     0% {
       opacity: 0;
-      display: none;
       transform: #{$translate};
-    }
-    1% {
-      display: block;
     }
     100% {
       opacity: 1;
@@ -22,16 +18,12 @@
       opacity: 1;
 
     }
-    99% {
-      display: block;
-    }
     100% {
       opacity: 0;
-      display: none;
       transform: #{$translate};
     }
   }
-  animation: fadeOut#{$name} #{$time}  ease-in-out;
+  animation: fadeOut#{$name} #{$time}  ease-in-out forwards;
 }
 
 //  first room transition
