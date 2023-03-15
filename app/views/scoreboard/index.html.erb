@@ -1,14 +1,13 @@
 <table class="container">
-
   <div>
     <thead>
       <h1 class="content-title ">ScoreBoard</h1>
 
       <tr>
-        <th>Position</th>
-        <th>User 1</th>
-        <th>User 2</th>
-        <th>Time to escape</th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
       </tr>
 
     </thead>
@@ -16,14 +15,15 @@
     <tbody>
       <% @ranking.each do |rank| %>
         <tr>
-          <td><%= @ranking.index(rank) + 1 %></td>
-          <td><%= rank.first_user.pseudo %></td>
-          <td><%= rank.second_user.pseudo %></td>
-          <td><%= rank.time %></td>
+          <%# soustraire le temps du status "level1" avec le status "ended" %>
+          <td> <h2 class="glitched"><%= @ranking.index(rank) + 1 %></h2> </td>
+          <td> <h1 class="glitched"><%= rank.first_user&.pseudo %></h1> </td>
+          <td> <h1 class="glitched"><%= rank.second_user&.pseudo %></h1> </td>
+          <td> <p class="glitched"><%= rank.time %>s</p></td>
         </tr>
       <% end %>
     </tbody>
   </div>
 </table>
 
-<%= link_to "► Homepage", root_path, class: "btn-distorition" %>
+<section class="p-3"> <%= link_to "► Homepage", root_path, class: "btn-distorition"%></section>
