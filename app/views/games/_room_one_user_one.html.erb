@@ -23,7 +23,7 @@
 
     <div>
       <div>
-        <div>
+        <div data-controller="status-switch">
           <%= image_tag "porte_1.png",
             class: "door-img w-100 fade-in-door-n",
             height: "500",
@@ -31,7 +31,7 @@
             "data-mooving-effect-object-target":"carpet"
           %>
 
-          <%#= image_tag "porte_1.png",
+          <%= image_tag "porte_1.png",
             class: " d-none door-img w-100 transparent-door",
             height: "500",
             "data-game-subscription-target":"door",
@@ -134,13 +134,13 @@
               "data-game-subscription-target":"frame105User1Room1"
             %>
 
-            <div class="d-none transparent-door"
+            <%# <div class="d-none transparent-door"
               data-status-switch-target="door"
               data-game-subscription-target="door"
               data-action="click->status-switch#openDoorOne"
             >
               !
-            </div>
+            </div> %>
           </div>
         </div>
       </div>

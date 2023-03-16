@@ -1,5 +1,13 @@
 //     transition: transform 0.2s ease 0s;
 
+img{
+  filter: saturate(120%) contrast(1.5);
+}
+
+.img-saturate{
+  filter: saturate(120%) contrast(1.5);
+}
+
 .chandelier-img {
   // top: -181px;
   // right: -23px;
@@ -61,16 +69,15 @@
 }
 
 .transparent-door {
-  opacity: 0.5;
+  opacity: 1;
   position: absolute;
-  z-index: 4;
+  z-index: 1;
   left: 0;
-  // transition: ;
+  transition: 0.3s ease-in-out;
 
   &:hover{
     cursor: pointer;
-    border: 2px solid rgb(0, 0, 0);
-
+    scale: 1.05;
   }
 }
 
