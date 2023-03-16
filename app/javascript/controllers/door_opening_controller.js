@@ -5,9 +5,13 @@ export default class extends Controller {
   static values = { advancePath: String }
 
   grabKey(event) {
-    alert('grab')
+    alert('Vous avez trouvé un clef')
     event.currentTarget.disabled = true
-    if (!this.keyFound) this.keyFound = event.params.goodKey
+    console.log(event.params.goodKey)
+    console.log(event.currentTarget)
+    this.keyFoundValue = event.params.goodKey
+
+    console.log(this.keyFoundValue)
   }
 
   // open() {
@@ -19,10 +23,12 @@ export default class extends Controller {
   // }
 
   deactivateDoorTrap() {
-    if (this.keyFound) {
-      this.openDoorTwo()
-    } else {
-      this.playerDeath()
+    if (this.keyFoundValue === true || this.keyFoundValue === false){
+      if (this.keyFoundValue) {
+        this.openDoorTwo()
+      } else {
+        this.playerDeath()
+      }
     }
   }
 
