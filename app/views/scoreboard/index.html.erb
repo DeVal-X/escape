@@ -19,7 +19,15 @@
           <td> <h2 class="glitched"><%= @ranking.index(rank) + 1 %></h2> </td>
           <td> <h1 class="glitched"><%= rank.first_user&.pseudo %></h1> </td>
           <td> <h1 class="glitched"><%= rank.second_user&.pseudo %></h1> </td>
-          <td> <p class="glitched"><%= rank.time %>s</p></td>
+          <td>
+            <p class="glitched">
+              <% if rank.time.to_i.to_s == rank.time %>
+                <%= rank.time %>s
+              <% else %>
+                <%= rank.time %>
+              <% end %>
+            </p>
+          </td>
         </tr>
       <% end %>
     </tbody>
