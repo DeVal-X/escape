@@ -1,3 +1,22 @@
-.img-deadscreen {
+@import url('https://fonts.googleapis.com/css?family=IM+Fell+English');
+
+.wait {
+  border-color: white;
+  border-radius: 5px;
+  margin: 0 auto;
+  /* width: 100px; */
+  padding: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.wait-img {
   width: 50%;
+}
+
+.text-trigger {
+  font-family: 'IM Fell English', serif;
+  font-size: 30px;
 }

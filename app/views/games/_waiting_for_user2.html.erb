@@ -1,8 +1,8 @@
 <div data-status-switch-advance-path-value="<%= advance_game_path(@game) %>"
   class="waitpage"
 >
-  <h1 class="content-title">Waiting for a player</h1>
+  <h1 class="content-title">Une personne va bientôt te rejoindre ...</h1>
   <img class="imgwaiting" src="https://static.wixstatic.com/media/8a2fe1_ba66bf4ef6c2440e9450209d4510df67~mv2.gif" alt="">
-  <p class="content-title">You are alone </p>
-  <%= link_to "destroy the Room", game_path(@game), data:{turbo_method: :delete}, class: "btn-distorition" %>
+  <p class="content-title">Tu as besoin de quelqu'un pour t'en sortir.</p>
+  <%= link_to "Détruire la salle", game_path(@game), data:{turbo_method: :delete}, class: "btn-distorition" %>
 </div>
