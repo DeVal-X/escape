@@ -7,17 +7,17 @@ export default class extends Controller {
   grabKey(event) {
     // alert('Vous avez trouvé un clef')
     event.currentTarget.disabled = true
-    console.log(event.params.goodKey)
-    console.log(event.currentTarget)
     this.keyFoundValue = event.params.goodKey
-
     console.log(this.keyFoundValue)
   }
 
   deactivateDoorTrap() {
+    console.log(this.keyFoundValue)
     if (this.keyFoundValue === true || this.keyFoundValue === false){
+
       if (this.keyFoundValue) {
         this.openDoorTwo()
+
       } else {
         this.playerDeath()
       }
