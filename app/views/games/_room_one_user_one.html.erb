@@ -23,12 +23,24 @@
 
     <div>
       <div>
-        <%= image_tag "porte_1.png",
-          class: "door-img w-100 fade-in-door-n",
-          height: "500",
-          "data-game-subscription-target":"doorUser1Room1",
-          "data-mooving-effect-object-target":"carpet"
-        %>
+        <div data-controller="status-switch">
+          <%= image_tag "porte_1.png",
+            class: "door-img w-100 fade-in-door-n",
+            height: "500",
+            "data-game-subscription-target":"doorUser1Room1",
+            "data-mooving-effect-object-target":"carpet"
+          %>
+
+          <%= image_tag "porte_1.png",
+            class: " d-none door-img w-100 transparent-door",
+            height: "500",
+            "data-game-subscription-target":"door",
+            "data-mooving-effect-object-target":"carpet",
+            "data-status-switch-target":"door",
+            "data-action":"click->status-switch#openDoorOne"
+          %>
+        </div>
+
 
         <%= image_tag "carpet_2.png",
           class: "carpet2-img position-absolute fade-in-carpet-n",
@@ -98,6 +110,7 @@
               "data-mooving-effect-object-target":"object",
               "data-game-subscription-target":"frame102User1Room1"
             %>
+
             <div class="recadrage1">
               <%= image_tag "frame_103.png",
                 class: "position-absolute frame103-img fade-in-frame103-w surbrillance",
@@ -121,13 +134,13 @@
               "data-game-subscription-target":"frame105User1Room1"
             %>
 
-            <div class="d-none"
+            <%# <div class="d-none transparent-door"
               data-status-switch-target="door"
               data-game-subscription-target="door"
               data-action="click->status-switch#openDoorOne"
             >
               !
-            </div>
+            </div> %>
           </div>
         </div>
       </div>
