@@ -23,7 +23,9 @@
 
     <div>
       <div>
-        <div data-controller="status-switch">
+        <div data-controller="status-switch"
+         data-status-switch-advance-path-value="<%= advance_game_path(@game) %>"
+        >
           <%= image_tag "porte_1.png",
             class: "door-img w-100 fade-in-door-n",
             height: "500",
