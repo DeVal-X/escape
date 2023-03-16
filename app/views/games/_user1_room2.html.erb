@@ -98,14 +98,22 @@
       "data-game-subscription-target":"lustreUser1Room2"
     %>
 
+    <button type="button"
+      class="btn"
+      data-bs-toggle="modal"
+      data-bs-target="#key-one"
+    >
     <%= image_tag "clef_1.png",
       class: "clef-img position-absolute fade-in-clef1-sw aurakey img-saturate",
       height: "15",
-      "data-action": "click->door-opening#grabKey",
-      "data-door-opening-good-key-param": "false",
+      # "data-action": "click->door-opening#grabKey",
+      # "data-door-opening-good-key-param":"false",
       "data-mooving-effect-object-target":"object",
       "data-game-subscription-target":"clef1User1Room2"
     %>
+
+    </button>
+
 
     <%= image_tag "clef_2.png",
       class: "clef2-img position-absolute fade-in-clef2-ne aurakey img-saturate",
@@ -144,6 +152,121 @@
     </div>
   </div>
 </div>
+
+<div class="modal fade"
+  id="key-one"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+  data-door-opening-advance-path-value="<%= advance_game_path(@game) %>"
+  data-controller="door-opening"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+        <div class= "d-flex justify-content-around align-items-center flex-column h-90">
+          <p>Une clé très légerement rouillée. On pourrait croire celle dont parlait l'enigme.</p>
+          <%= image_tag "clef_1.png", class: "img-in-modal rounded" %>
+          <div class="ask-opening">
+            <p>Souhaitez vous utiliser cette clé pour dévérouiller la porte?</p>
+          </div>
+          <div class="d-flex w-75 justify-content-around align-items-center"
+            data-controller="game-subscription"
+          >
+            <div class="btn  btn-dark btn-lg"
+              data-action="click->door-opening#grabKey click->door-opening#deactivateDoorTrap "
+              data-door-opening-good-key-param="false"
+              data-bs-dismiss="modal"
+            >
+              Ouvrir la porte
+            </div>
+            <div
+              class="btn  btn-secondary btn-lg"
+              data-bs-dismiss="modal"
+            >
+              Ne pas ouvrir
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade"
+  id="key-two"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+  data-door-opening-advance-path-value="<%= advance_game_path(@game) %>"
+  data-controller="door-opening"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+        <div class= "d-flex justify-content-around align-items-center flex-column h-90">
+          <p>Une clé très légerement rouillée. On pourrait croire celle dont parlait l'enigme.</p>
+          <%= image_tag "clef_1.png", class: "img-in-modal rounded" %>
+          <div class="ask-opening">
+            <p>Souhaitez vous utiliser cette clé pour dévérouiller la porte?</p>
+          </div>
+          <div class="d-flex w-75 justify-content-around align-items-center"
+            data-controller="game-subscription"
+          >
+            <div class="btn btn-primary"
+              data-action="click->door-opening#grabKey click->door-opening#deactivateDoorTrap "
+              data-door-opening-good-key-param="false"
+              data-bs-dismiss="modal"
+            >
+              Ouvrir la porte
+            </div>
+            <div
+              class="btn btn-danger"
+              data-bs-dismiss="modal"
+            >
+              Ne pas ouvrir
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade"
+  id="key-three"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+  data-door-opening-advance-path-value="<%= advance_game_path(@game) %>"
+  data-controller="door-opening"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+        <div class= "d-flex justify-content-around align-items-center flex-column h-90">
+          <p>Une clé très légerement rouillée. On pourrait croire celle dont parlait l'enigme.</p>
+          <%= image_tag "clef_1.png", class: "img-in-modal rounded" %>
+          <div class="ask-opening">
+            <p>Souhaitez vous utiliser cette clé pour dévérouiller la porte?</p>
+          </div>
+          <div class="d-flex w-75 justify-content-around align-items-center"
+            data-controller="game-subscription"
+          >
+            <div class="btn btn-primary"
+              data-action="click->door-opening#grabKey click->door-opening#deactivateDoorTrap "
+              data-door-opening-good-key-param="false"
+              data-bs-dismiss="modal"
+            >
+              Ouvrir la porte
+            </div>
+            <div
+              class="btn btn-danger"
+              data-bs-dismiss="modal"
+            >
+              Ne pas ouvrir
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+
 
 <div class="modal fade" id="chemineModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
