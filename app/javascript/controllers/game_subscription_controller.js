@@ -43,7 +43,8 @@ export default class extends Controller {
     "buffetUser1Room2",
     "clef1User1Room2",
     "clef2User1Room2",
-    "clef3User1Room2"
+    "clef3User1Room2",
+    "fullWaitingRoom"
   ]
 
   connect() {
@@ -148,9 +149,14 @@ export default class extends Controller {
     if (data.last_event === "start-game") {
       // const customGameEvent = new CustomEvent('game:start')
       // document.dispatchEvent(customGameEvent)
-      if (this.hasLobbyFullTarget ) { this.lobbyFullTarget.classList.add("d-none") }
-      if (this.hasGameLevel1Target ) {
-        this.gameLevel1Target.classList.remove("d-none")
+      if (this.hasLobbyFullTarget && this.hasGameLevel1Target ) {
+        this.fullWaitingRoomTarget.classList.add('fade-out-startgame-center')
+        this.fullWaitingRoomTarget.addEventListener("animationend", () => {
+          console.log('coucou');
+          this.lobbyFullTarget.classList.add("d-none")
+          this.gameLevel1Target.classList.remove("d-none")
+        }, {once:true} );
+      // if () {
       }
     }
 
@@ -166,7 +172,6 @@ export default class extends Controller {
       }
       if (this.hasGameLevel2Target) {
         setTimeout(() => {this.displayRoom2()}, 5.5 * 1000)
-
       }
     }
 

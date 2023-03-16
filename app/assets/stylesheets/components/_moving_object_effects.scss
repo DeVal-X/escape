@@ -26,6 +26,11 @@
   animation: fadeOut#{$name} #{$time}  ease-in-out forwards;
 }
 
+
+// waitingroom fade out
+
+.fade-out-startgame-center { @include fadeOutDeOuf(1s, translate(0, 0), startgame) }
+
 //  first room transition
 .fade-in-chandelier-n { @include fadeInDeOuf(3.8s, translate(0, -100vh), chandelier) }
 .fade-in-chandelier-n-r { @include fadeOutDeOuf(3.8s, translate(0, -100vh), chandelier) }

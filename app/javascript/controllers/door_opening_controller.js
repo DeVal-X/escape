@@ -5,7 +5,7 @@ export default class extends Controller {
   static values = { advancePath: String }
 
   grabKey(event) {
-    alert('Vous avez trouvé un clef')
+    // alert('Vous avez trouvé un clef')
     event.currentTarget.disabled = true
     console.log(event.params.goodKey)
     console.log(event.currentTarget)
@@ -13,14 +13,6 @@ export default class extends Controller {
 
     console.log(this.keyFoundValue)
   }
-
-  // open() {
-  //   if (this.keyFound) {
-  //     window.alert( "The door is open" )
-  //   } else {
-  //     window.alert( "Door is still locked" )
-  //   }
-  // }
 
   deactivateDoorTrap() {
     if (this.keyFoundValue === true || this.keyFoundValue === false){

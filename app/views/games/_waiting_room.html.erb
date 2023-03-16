@@ -1,32 +1,37 @@
-<div class="content" data-action="mousemove->mooving-effect-object#moovingEffect" data-controller="mooving-effect-object">
-
-  <div class="gloutch">
-    <div class="gloutch-img" data-mooving-effect-object-target="object"></div>
-    <div class="gloutch-img" data-mooving-effect-object-target="object"></div>
-    <div class="gloutch-img" data-mooving-effect-object-target="object"></div>
-    <div class="gloutch-img" data-mooving-effect-object-target="object"></div>
-    <div class="gloutch-img" data-mooving-effect-object-target="object"></div>
-  </div>
-
-  <div class="home-txt">
-    <h2 class="baboun-title">
-        Bienvenue dans ce manoir du 19ème siècle, où les portes sont closes et les mystères sont nombreux.<br/>
-        Je vais vous emmener dans une aventure pleine de défis et d'énigmes à résoudre pour sortir de ce lieu.<br/>
-        Préparez-vous à plonger dans l'atmosphère sombre et oppressante de ce manoir, où chaque pièce est une énigme à résoudre.
-    </h2>
-  </div>
-</div>
-
-<section>
-  <div class = "start-click"
-    data-controller="status-switch"
-    data-status-switch-advance-path-value="<%= advance_game_path(@game) %>"
-    data-status-switch-target="waitingRoom"
-    data-action="click->status-switch#startGame"
+<div data-game-subscription-target="fullWaitingRoom">
+  <div class="content"
+    data-action="mousemove->mooving-effect-object#moovingEffect"
+    data-controller="mooving-effect-object"
   >
-    <%= simple_form_for @game do |f| %>
-      <%= f.input :status, as: :hidden, input_html: { value: 'level1' } %>
-      <button type="submit" class="btn-distorition"> ► start game </button>
-    <% end %>
+
+    <div class="gloutch">
+      <div class="gloutch-img" data-mooving-effect-object-target="object"></div>
+      <div class="gloutch-img" data-mooving-effect-object-target="object"></div>
+      <div class="gloutch-img" data-mooving-effect-object-target="object"></div>
+      <div class="gloutch-img" data-mooving-effect-object-target="object"></div>
+      <div class="gloutch-img" data-mooving-effect-object-target="object"></div>
+    </div>
+
+    <div class="home-txt">
+      <h2 class="baboun-title">
+          Bienvenue dans ce manoir du 19ème siècle, où les portes sont closes et les mystères sont nombreux.<br/>
+          Je vais vous emmener dans une aventure pleine de défis et d'énigmes à résoudre pour sortir de ce lieu.<br/>
+          Préparez-vous à plonger dans l'atmosphère sombre et oppressante de ce manoir, où chaque pièce est une énigme à résoudre.
+      </h2>
+    </div>
   </div>
-</section>
+
+  <section>
+    <div class = "start-click"
+      data-controller="status-switch"
+      data-status-switch-advance-path-value="<%= advance_game_path(@game) %>"
+      data-status-switch-target="waitingRoom"
+      data-action="click->status-switch#startGame"
+    >
+      <%= simple_form_for @game do |f| %>
+        <%= f.input :status, as: :hidden, input_html: { value: 'level1' } %>
+        <button type="submit" class="btn-distorition"> ► start game </button>
+      <% end %>
+    </div>
+  </section>
+</div>
