@@ -26,12 +26,12 @@ ronaloaded.save!
 mostwanted = User.new(pseudo: "MoSTWanTeD", email: "mostwanted@gmail.com", password: "pourquoi")
 mostwanted.save!
 
-game = Game.new(status: 2, time: "10000")
+game = Game.new(status: 2, time: "1200")
 game.first_user = zbest
 game.second_user = fantasious
 game.save!
 
-game = Game.new(status: 3, time: "45656")
+game = Game.new(status: 3, time: "3656")
 game.first_user = prodigy
 game.second_user = keepergoal
 game.save!
