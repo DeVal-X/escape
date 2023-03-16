@@ -26,20 +26,11 @@ ronaloaded.save!
 mostwanted = User.new(pseudo: "MoSTWanTeD", email: "mostwanted@gmail.com", password: "pourquoi")
 mostwanted.save!
 
-game = Game.new(status: 2, time: "10000")
-game.first_user = zbest
-game.second_user = fantasious
-game.save!
-
-game = Game.new(status: 3, time: "45656")
+game = Game.new(status: 2, time: "12508")
 game.first_user = prodigy
-game.second_user = keepergoal
-game.save!
-
-game = Game.new(status: 3, time: "2452")
-game.first_user = ronaloaded
 game.second_user = mostwanted
 game.save!
+
 
 # 4ver, MoSTWanTeD, FantaSious, MoSTWanTeD, ReLaoDeD, 2Late, Adren4lYnne, Bullet, KardiaK, NeoN, TheCrew, etc.
 #  Messih, Ronaloaded, KeeperGoal, Mooney, Technikal, Prodigy, etc.
