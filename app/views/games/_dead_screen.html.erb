@@ -1,12 +1,14 @@
 
     <div data-status-switch-advance-path-value="<%= advance_game_path(@game) %>"
       data-game-subscription-target="lobbyFull"
-      class="waitpage"
+      class="wait"
     >
-      <h1 class="content-title">You are dead ... </h1>
-      <img class="img-deadscreen" src="https://thumbs.gfycat.com/FrayedGratefulKoala-max-1mb.gif" alt="white skull on a black backgound">
-      <p>You triggered a trap.</p>
+      <h1 class="content-title">Vous êtes mort ... </h1>
+      <img class="img-deadscreen justify-content-center" src="https://thumbs.gfycat.com/FrayedGratefulKoala-max-1mb.gif" alt="white skull on a black backgound">
+      <p class="text-trigger justify-content-center">Vous avez activé un piège.</p>
     </div>
 
-<%= link_to "► Try again", root_path, class: "btn-distorition" %>
-<%= link_to "► Scoreboard", scoreboard_path, class: "btn-distorition" %>
+<section>
+<%= link_to "► Essaye encore", root_path, class: "btn-distorition" %>
+<%= link_to "► Classement", scoreboard_path, class: "btn-distorition" %>
+</section>
