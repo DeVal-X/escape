@@ -10,17 +10,17 @@
 
   <div class="new-game-form">
     <%= simple_form_for @game do |f| %>
-      <%= f.input :name, label: "Session's name",
-                  error: "This name is already taken, choose another one ",
+      <%= f.input :name, label: "Nom de la salle",
+                  error: "Le nom de salle est déjà utilisé.",
                   placeholder: "#{current_user.email}'s session" %>
       <button type="submit" class="btn-distorition"> ► Create a session </button>
     <% end %>
   </div>
 
   <section data-controller="game-subscription status-switch" >
-    <%= link_to "► Join a Game (Auto) ", random_games_path, class: "btn-distorition" %>
-    <%= link_to "► Search a Game",games_path, class: "btn-distorition" %>
-    <%= link_to "► Create a Game",new_game_path, class: "btn-distorition" %>
+    <%= link_to "► Rejoindre une salle (Auto) ", random_games_path, class: "btn-distorition" %>
+    <%= link_to "► Chercher une salle",games_path, class: "btn-distorition" %>
+    <%= link_to "► Créer une salle",new_game_path, class: "btn-distorition" %>
   </section>
 
 </div>
