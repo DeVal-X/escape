@@ -1,21 +1,23 @@
+<div class="content" data-action="mousemove->mooving-effect-object#moovingEffect" data-controller="mooving-effect-object">
 
-<div class="wait-background">
-
-
-  <div class="scroller">
-    <div class="content">
-      <div class="description">
-        Bienvenue chers invités ! <br/>
-        Pris d'un ennui que seule une course pour la survie ne saurait étanchée, je vous ai ammené ici.<br/>
-        Faîtes preuve de perspicacité et logique pour découvrir les indices cachés dans les pièces afin de vous échapper.<br/>
-        Mais attention, chaque erreur vous rapprochera d'une fin tragique.<br/>
-        <strong> Bonne chance</strong>
-      </div>
-    </div>
+  <div class="gloutch">
+    <div class="gloutch-img" data-mooving-effect-object-target="object"></div>
+    <div class="gloutch-img" data-mooving-effect-object-target="object"></div>
+    <div class="gloutch-img" data-mooving-effect-object-target="object"></div>
+    <div class="gloutch-img" data-mooving-effect-object-target="object"></div>
+    <div class="gloutch-img" data-mooving-effect-object-target="object"></div>
   </div>
 
+  <div class="home-txt">
+    <h2 class="content-title">
+        Bienvenue dans ce manoir du 19ème siècle, où les portes sont closes et les mystères sont nombreux.<br/>
+        Je vais vous emmener dans une aventure pleine de défis et d'énigmes à résoudre pour sortir de ce lieu.<br/>
+        Préparez-vous à plonger dans l'atmosphère sombre et oppressante de ce manoir, où chaque pièce est une énigme à résoudre.
+    </h2>
+  </div>
+</div>
 
-
+<section>
   <div class = "start-click"
     data-controller="status-switch"
     data-status-switch-advance-path-value="<%= advance_game_path(@game) %>"
@@ -27,5 +29,4 @@
       <button type="submit" class="btn-distorition"> ► start game </button>
     <% end %>
   </div>
-
-</div>
+</section>
