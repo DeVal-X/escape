@@ -6,7 +6,7 @@ img{
 
 // Pour la salle 2 aussi
 .img-saturate{
-  filter: saturate(120%) contrast(1.5);
+  filter: saturate(120%);
 }
 
 .chandelier-img {
@@ -14,41 +14,48 @@ img{
   // right: -23px;
   top: -2px;
   right: 248px;
+  filter: brightness(200.5%);
 }
 
 .frame101-img {
   top: -331px;
   left: -175px;
+  filter: brightness(150%);
 }
 
 .frame102-img {
   top: -293px;
   left: 441px;
   height: 116px;
+  filter: brightness(150%);
 }
 
 .frame103-img {
   top: -204px;
   left: -237px;
   height: 108px;
+  filter: brightness(150%);
 }
 
 .frame104-img {
   top: -424px;
   left: 451px;
   height: 94px;
+  filter: brightness(150%);
 }
 
 .frame105-img {
   top: -416px;
   left: 584px;
   height: 130px;
+  filter: brightness(150%);
 }
 
 .carpet2-img {
   // top: 511px;
   right: -145px;
-  bottom: 2px;
+  bottom: 22px;
+  filter: brightness(190.5%);
 }
 
 .storage1-img {
@@ -63,6 +70,7 @@ img{
   right: -89px;
   height: 197px;
   z-index: 5;
+  filter: brightness(120%);
 }
 
 .oldwallpaper-img {

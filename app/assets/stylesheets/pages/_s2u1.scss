@@ -14,6 +14,7 @@
   top: 591px;
   right: 49px;
   z-index: 40;
+  filter: grayscale(10%) contrast(1.75);
 }
 
 .clef-img {
@@ -26,13 +27,14 @@
   top: 400px;
   right: 73px;
   z-index: 30;
-  filter: grayscale(10%);
+  filter: grayscale(10%) contrast(1.75);
 }
 
 .clef3-img {
-  top: 702px;
-  right: 3px;
+  top: 617px;
+  right: 60px;
   z-index: 50;
+  filter: grayscale(10%) contrast(1.75);
 }
 
 .carpet-img {
@@ -44,7 +46,7 @@
   top: 140px;
   right: 55px;
   z-index: 10;
-  filter: grayscale(10%);
+  filter: grayscale(20%) brightness(260%);
 }
 
 .background-chemine {
@@ -52,24 +54,25 @@
   width: 217px;
   top: 369px;
   right: 75px;
+  filter: grayscale(10%) contrast(1.75);
 }
 
 .door-img {
-
+  filter: contrast(127%) brightness(224.5%);
 }
 
 .table-img {
   top: 592px;
   right: 887px;
-  filter: drop-shadow(15px 51px 16px #000000fe);
+  filter: drop-shadow(15px 51px 16px #000000fe) contrast(0.95) brightness(230%);
 
 }
 
 
 .pile-img {
-  top: 522px;
+  top: 488px;
   right: -37px;
-  filter: drop-shadow(15px 51px 16px #000000fe);
+  filter: drop-shadow(15px 51px 16px #000000fe) contrast(1.75) brightness(210%);
   z-index: 30;
 }
 
@@ -96,13 +99,14 @@
 }
 
 .lustre-img {
-  top: 0px;
-  right: 410px;
+  top: 30px;
+  right: 380px;
+  filter: grayscale(10%) contrast(0.75) brightness(230%);
 }
 
 .livre-img {
   top: 604px;
-  right: 13px;
-  filter: drop-shadow(15px 51px 16px #000000fe);
+  right: 33px;
+  filter: drop-shadow(15px 51px 16px #000000fe)contrast(1.75);
   z-index: 20;
 }
