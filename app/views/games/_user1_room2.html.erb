@@ -39,6 +39,9 @@
       "data-game-subscription-target":"chemineUser1Room2"
     %>
 
+    <div id="aura-chemine", class="background-chemine position-absolute surbrillance">
+    </div>
+
     <%= image_tag "bureau_1.png",
       class: "bureau-img position-absolute fade-in-bureau-sw",
       height: "200",
@@ -78,7 +81,7 @@
         "data-mooving-effect-object-target":"object",
         "data-game-subscription-target":"pile1User1Room2"
       %>
-
+      <div id="aura-pile", class="background-pile position-absolute surbrillance"></div>
     </button>
 
     <%= image_tag "table_2.png",
@@ -96,7 +99,7 @@
     %>
 
     <%= image_tag "clef_1.png",
-      class: "clef-img position-absolute fade-in-clef1-sw",
+      class: "clef-img position-absolute fade-in-clef1-sw aurakey",
       height: "10",
       "data-action": "click->door-opening#grabKey",
       "data-door-opening-good-key-param": "false",
@@ -105,7 +108,7 @@
     %>
 
     <%= image_tag "clef_2.png",
-      class: "clef2-img position-absolute fade-in-clef2-ne",
+      class: "clef2-img position-absolute fade-in-clef2-ne aurakey",
       height: "25",
       "data-action": "click->door-opening#grabKey",
       "data-door-opening-good-key-param": "true",
@@ -114,7 +117,7 @@
     %>
 
     <%= image_tag "clef_3.png",
-      class: "clef3-img position-absolute fade-in-clef3-se",
+      class: "clef3-img position-absolute fade-in-clef3-se aurakey",
       height: "20",
       "data-action": "click->door-opening#grabKey",
       "data-door-opening-good-key-param": "false",
@@ -134,9 +137,9 @@
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-      <img src="" alt="">
-        <div>
-          <p>Une pile de livres poussiéreux</p>
+        <div class= "d-flex justify-content-around align-items-center flex-column h-90">
+          <p>Une pile de livres poussiéreuse. Elle contient nombre d'information inutile.</p>
+          <%= image_tag "bd-piledelivre.png", class: "img-in-modal rounded" %>
         </div>
     </div>
   </div>

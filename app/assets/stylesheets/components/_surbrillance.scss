@@ -15,3 +15,33 @@
   text-decoration-line: none;
 
 }
+
+.chemine-img:hover + #aura-chemine {
+  box-shadow:
+              0 0 5px rgba(255, 255, 255, 0.946),
+              0 0 25px rgba(255, 254, 254, 0.754),
+              0 0 50px rgba(255, 255, 255, 0.956),
+              0 0 75px rgb(252, 252, 252);
+  text-decoration-line: none;
+}
+
+.pile-img1:hover + #aura-pile {
+  box-shadow:
+    0 0 5px rgba(255, 255, 255, 0.946),
+    0 0 25px rgba(255, 254, 254, 0.754),
+    0 0 50px rgba(255, 255, 255, 0.956),
+    0 0 75px rgb(252, 252, 252),
+    0 0 100px rgb(252, 252, 252);
+  text-decoration-line: none;
+}
+
+.aurakey {
+
+}
+
+.aurakey:hover{
+  box-shadow:
+  inset 0 0 5px rgba(255, 255, 255, 0.543),
+  0 0 5px rgba(255, 255, 255, 0.543),
+  0 0 25px rgba(255, 254, 254, 0.543);
+}
