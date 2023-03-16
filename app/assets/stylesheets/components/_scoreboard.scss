@@ -8,16 +8,26 @@ body, html {
   height: 100%;
   background-color: black;
 }
+
+.header {
+  color: white;
+  font-family: sans-serif;
+  font-weight: 600;
+  position: relative;
+  font-size: 25px;
+  padding: 8px;
+}
+
 body h1.glitched, html h1.glitched {
   color: white;
   font-family: sans-serif;
   font-weight: 600;
   position: relative;
-  font-size: 30px;
-  padding: 30px;
+  font-size: 25px;
+  padding: 8px;
 }
 body h1.glitched::before, body h1.glitched::after, html h1.glitched::before, html h1.glitched::after {
-  padding: 30px;
+  padding: 8px;
   color: white;
   content: "who am I ?";
   position: absolute;
@@ -33,7 +43,7 @@ body h1.glitched::before, html h1.glitched::before {
   animation-name: glitched-animation-1;
   content: "who are you ?";
 
-  animation-duration: 2s;
+  animation-duration: 4s;
   animation-timing-function: linear;
   animation-delay: 0s;
   animation-iteration-count: infinite;
@@ -43,7 +53,7 @@ body h1.glitched::after, html h1.glitched::after {
   left: -3px;
   text-shadow: -2px 0 blue;
   animation-name: glitched-animation-2;
-  animation-duration: 2s;
+  animation-duration: 4s;
   animation-timing-function: linear;
   animation-delay: 0s;
   animation-iteration-count: infinite;
@@ -55,11 +65,11 @@ body p.glitched, html p.glitched {
   font-family: sans-serif;
   font-weight: 600;
   position: relative;
-  font-size: 30px;
-  padding: 30px;
+  font-size: 25px;
+  padding: 8px;
 }
 body p.glitched::before, body p.glitched::after, html p.glitched::before, html p.glitched::after {
-  padding: 30px;
+  padding: 25px;
   color: white;
   content: "escape";
   position: absolute;
@@ -75,7 +85,7 @@ body p.glitched::before, html p.glitched::before {
   animation-name: glitched-animation-1;
   content: "can't";
 
-  animation-duration: 2s;
+  animation-duration: 4s;
   animation-timing-function: linear;
   animation-delay: 0s;
   animation-iteration-count: infinite;
@@ -85,7 +95,7 @@ body p.glitched::after, html p.glitched::after {
   left: -3px;
   text-shadow: -2px 0 blue;
   animation-name: glitched-animation-2;
-  animation-duration: 2s;
+  animation-duration: 4s;
   animation-timing-function: linear;
   animation-delay: 0s;
   animation-iteration-count: infinite;
@@ -101,7 +111,7 @@ body h2.glitched, html h2.glitched {
   padding: 30px;
 }
 body h2.glitched::before, body h2.glitched::after, html h2.glitched::before, html h2.glitched::after {
-  padding: 30px;
+  padding: 25px;
   color: white;
   content: "0";
   position: absolute;
@@ -116,7 +126,7 @@ body h2.glitched::before, html h2.glitched::before {
   text-shadow: -2px 0 red;
   animation-name: glitched-animation-1;
   content: "17";
-  animation-duration: 2s;
+  animation-duration: 4s;
   animation-timing-function: linear;
   animation-delay: 0s;
   animation-iteration-count: infinite;
@@ -126,7 +136,7 @@ body h2.glitched::after, html h2.glitched::after {
   left: -3px;
   text-shadow: -2px 0 blue;
   animation-name: glitched-animation-2;
-  animation-duration: 2s;
+  animation-duration: 4s;
   animation-timing-function: linear;
   animation-delay: 0s;
   animation-iteration-count: infinite;
@@ -191,9 +201,7 @@ body h2.glitched::after, html h2.glitched::after {
   90% {
     clip: rect(13px, 350px, 55px, 30px);
   }
-  95% {
-    clip: rect(7px, 350px, 137px, 30px);
-  }
+
   100% {
     clip: rect(148px, 350px, 64px, 30px);
   }

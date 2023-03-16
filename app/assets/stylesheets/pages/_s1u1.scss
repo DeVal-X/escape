@@ -6,7 +6,7 @@ img{
 
 // Pour la salle 2 aussi
 .img-saturate{
-  filter: saturate(120%) contrast(1.5);
+  filter: saturate(120%);
 }
 
 .chandelier-img {
@@ -14,41 +14,48 @@ img{
   // right: -23px;
   top: -2px;
   right: 248px;
+  filter: brightness(200.5%);
 }
 
 .frame101-img {
-  top: -300px;
+  top: -331px;
   left: -175px;
+  filter: brightness(150%);
 }
 
 .frame102-img {
-  top: -284px;
-  left: 407px;
+  top: -293px;
+  left: 441px;
   height: 116px;
+  filter: brightness(150%);
 }
 
 .frame103-img {
-  top: -223px;
-  left: -187px;
+  top: -204px;
+  left: -237px;
   height: 108px;
+  filter: brightness(150%);
 }
 
 .frame104-img {
   top: -424px;
-  left: 414px;
+  left: 451px;
   height: 94px;
+  filter: brightness(150%);
 }
 
 .frame105-img {
-  top: -401px;
-  left: 525px;
+  top: -416px;
+  left: 584px;
   height: 130px;
+  filter: brightness(150%);
 }
 
 .carpet2-img {
   // top: 511px;
   right: -145px;
-  bottom: 2px;
+  bottom: 22px;
+  filter: brightness(190.5%);
 }
 
 .storage1-img {
@@ -60,9 +67,10 @@ img{
   // top: 316px;
   // right: -386px;
   bottom: 127px;
-  right: -78px;
+  right: -89px;
   height: 197px;
   z-index: 5;
+  filter: brightness(120%);
 }
 
 .oldwallpaper-img {
@@ -86,9 +94,9 @@ img{
 .frame {
   transform: translate(-50%, -50%);
   &:nth-child(1) {
-    height: 157px;
-    top: -325.4px;
-    left: -102px;
+    height: 161px;
+    top: -316.4px;
+    left: -92px;
   }
   &:nth-child(2) {
     top: -500px;
@@ -97,7 +105,7 @@ img{
   }
   &:nth-child(3) {
     top: -237px;
-    left: 493px;
+    left: 520px;
     height: 150px;
   }
 }

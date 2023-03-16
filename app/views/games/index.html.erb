@@ -12,7 +12,7 @@
   </div>
 
   <div class="games_list">
-    <h1 class = "title">Sessions list</h1>
+    <h1 class = "title">Liste des sessions</h1>
     <ol class = "listing">
       <% @games.each do |game| %>
         <li>
@@ -25,9 +25,9 @@
   </div>
 
   <section data-controller="status-switch" >
-    <%= link_to "► Join a Game (Auto) ", random_games_path, class: "btn-distorition" %>
-    <%= link_to "► Search a Game",games_path, class: "btn-distorition" %>
-    <%= link_to "► Create a Game",new_game_path, class: "btn-distorition" %>
+    <%= link_to "► Rejoindre une salle (Auto)", random_games_path, class: "btn-distorition" %>
+    <%= link_to "► Chercher une salle",games_path, class: "btn-distorition" %>
+    <%= link_to "► Créer une salle",new_game_path, class: "btn-distorition" %>
   </section>
 
 </div>

@@ -87,11 +87,13 @@ class GamesController < ApplicationController
     @game.status = :level1 if @game.data[:successfull_challenges].include?("start-game")
     @game.status = :level2 if @game.data[:successfull_challenges].include?("open-door-one")
     @game.status = :ended if @game.data[:successfull_challenges].include?("open-door-two")
+    @game.status = :dead if @game.data[:successfull_challenges].include?("player-died")
     if @game.status == "ended"
       @game.end_date = DateTime.now
-      @game.time = (@game.end_date - @game.created_at).to_i
+      @game.time = (@game.end_date - @game.created_at)
+    elsif @game.status == "dead"
+      @game.time = "A trépassé"
     end
-    @game.status = :dead if @game.data[:successfull_challenges].include?("player-died")
     @game.save
     GameChannel.broadcast_to(
       @game,

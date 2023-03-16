@@ -1,13 +1,13 @@
 <table class="container">
   <div>
     <thead>
-      <h1 class="content-title ">ScoreBoard</h1>
+      <h1 class="content-title ">Classement</h1>
 
       <tr>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
+        <th class="header"><strong>Position</strong></th>
+        <th class="header"><strong>Joueur 1</strong></th>
+        <th class="header"><strong>Joueur 2</strong></th>
+        <th class="header"><strong>Temps</strong></th>
       </tr>
 
     </thead>
@@ -19,11 +19,19 @@
           <td> <h2 class="glitched"><%= @ranking.index(rank) + 1 %></h2> </td>
           <td> <h1 class="glitched"><%= rank.first_user&.pseudo %></h1> </td>
           <td> <h1 class="glitched"><%= rank.second_user&.pseudo %></h1> </td>
-          <td> <p class="glitched"><%= rank.time %>s</p></td>
+          <td>
+            <p class="glitched">
+              <% if rank.time.to_i.to_s == rank.time %>
+                <%= rank.time %>s
+              <% else %>
+                <%= rank.time %>
+              <% end %>
+            </p>
+          </td>
         </tr>
       <% end %>
     </tbody>
   </div>
 </table>
 
-<section class="p-3"> <%= link_to "► Homepage", root_path, class: "btn-distorition"%></section>
+<section class="p-3"> <%= link_to "► Page d'acceuil", root_path, class: "btn-distorition"%></section>

@@ -1,88 +1,91 @@
 
 .bureau-img {
-  top: 434px;
-  right: 615px;
+  top: 404px;
+  right: 627px;
   filter: drop-shadow(69px 38px 23px #000000fe);
 }
 
 .bombonne-img {
-  top: 465px;
-  right: 287px;
+  top: 446px;
+  right: 257px;
 }
 
 .bougie-img {
   top: 591px;
   right: 49px;
   z-index: 40;
+  filter: grayscale(10%) contrast(1.75);
 }
 
 .clef-img {
-  top: 507px;
-  right: 786px;
+  top: 477px;
+  right: 804px;
   filter: grayscale(100%);
 }
 
 .clef2-img {
-  top: 420px;
-  right: 49px;
+  top: 400px;
+  right: 73px;
   z-index: 30;
-  filter: grayscale(10%);
+  filter: grayscale(10%) contrast(1.75);
 }
 
 .clef3-img {
-  top: 702px;
-  right: 3px;
+  top: 617px;
+  right: 60px;
   z-index: 50;
+  filter: grayscale(10%) contrast(1.75);
 }
 
 .carpet-img {
   top: 597px;
-  right: 202px;
+  right: 201px;
 }
 
 .chemine-img {
-  top: 155px;
+  top: 140px;
   right: 55px;
   z-index: 10;
-  filter: grayscale(10%);
+  filter: grayscale(20%) brightness(260%);
 }
 
 .background-chemine {
   height: 170px;
   width: 217px;
-  top: 381px;
+  top: 369px;
   right: 75px;
+  filter: grayscale(10%) contrast(1.75);
 }
 
 .door-img {
-
+  filter: contrast(127%) brightness(224.5%);
 }
 
 .table-img {
   top: 592px;
   right: 887px;
-  filter: drop-shadow(15px 51px 16px #000000fe);
+  filter: drop-shadow(15px 51px 16px #000000fe) contrast(0.95) brightness(230%);
 
 }
 
 
 .pile-img {
-  top: 522px;
+  top: 488px;
   right: -37px;
-  filter: drop-shadow(15px 51px 16px #000000fe);
+  filter: drop-shadow(15px 51px 16px #000000fe) contrast(1.75) brightness(210%);
   z-index: 30;
 }
 
 .pile-img1{
-  top: 630px;
-  right: 193px;
+  top: 600px;
+  right: 213px;
   filter: drop-shadow(-4px 24px 16px #000000fe);
   z-index: 10;
 }
 
 .background-pile {
-  top: 681PX;
-  right: 233px;
+  top: 651PX;
+  right: 259px;
   height: 113px;
   width: 67px;
   background-color: transparent;
@@ -96,13 +99,14 @@
 }
 
 .lustre-img {
-  top: 0px;
-  right: 410px;
+  top: 30px;
+  right: 380px;
+  filter: grayscale(10%) contrast(0.75) brightness(230%);
 }
 
 .livre-img {
   top: 604px;
-  right: 13px;
-  filter: drop-shadow(15px 51px 16px #000000fe);
+  right: 33px;
+  filter: drop-shadow(15px 51px 16px #000000fe)contrast(1.75);
   z-index: 20;
 }
