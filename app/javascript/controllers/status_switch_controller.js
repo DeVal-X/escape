@@ -32,6 +32,7 @@ export default class extends Controller {
   openDoorOne() {
     const options = {last_event: "success-open-door-one", successfull_challenges: "open-door-one" }
     this.#advanceGame(options)
+    this.doorTarget.classList.add("d-none")
   }
 
   openDoorTwo() {

@@ -23,7 +23,9 @@
 
     <div>
       <div>
-        <div data-controller="status-switch">
+        <div data-controller="status-switch"
+          data-status-switch-advance-path-value="<%= advance_game_path(@game) %>"
+        >
           <%= image_tag "porte_1.png",
             class: "door-img w-100 fade-in-door-n",
             height: "500",
@@ -120,12 +122,26 @@
               %>
             </div>
 
+            <button type="button"
+              class="btn"
+              data-bs-toggle="modal"
+              data-bs-target="#frame_105Modal"
+            >
+
             <%= image_tag "frame_104.png",
               class: "position-absolute frame104-img fade-in-frame104-e surbrillance",
               height: "70",
               "data-mooving-effect-object-target":"object",
               "data-game-subscription-target":"frame104User1Room1"
             %>
+
+            </button>
+
+            <button type="button"
+              class="btn"
+              data-bs-toggle="modal"
+              data-bs-target="#frame_105Modal"
+            >
 
             <%= image_tag "frame_105.png",
               class: "position-absolute frame105-img fade-in-frame105-e surbrillance",
@@ -134,6 +150,7 @@
               "data-game-subscription-target":"frame105User1Room1"
             %>
 
+            </button>
             <%# <div class="d-none transparent-door"
               data-status-switch-target="door"
               data-game-subscription-target="door"
@@ -144,6 +161,18 @@
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="frame_105Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+        <div class= "d-flex justify-content-around align-items-center flex-column h-90">
+          <p>Un trio bien étrange... à réveiller les morts !</p>
+          <%= image_tag "frame_105.png", class: "img-in-modal rounded" %>
+        </div>
     </div>
   </div>
 </div>

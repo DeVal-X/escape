@@ -2,11 +2,10 @@
 .bureau-img {
   top: 434px;
   right: 615px;
-  filter: drop-shadow(69px 38px 23px #000000fe) brightness(100%)grayscale(100%);;
+  filter: drop-shadow(69px 38px 23px #000000fe);
 }
 
 .bombonne-img {
-  filter: brightness(240%) grayscale(80%);
   top: 465px;
   right: 287px;
 }
@@ -14,39 +13,38 @@
 .bougie-img {
   top: 591px;
   right: 49px;
-  filter: brightness(65%);
   z-index: 40;
 }
 
 .clef-img {
-  top: 489px;
-  right: 777px;
-  filter: brightness(194%);
+  top: 507px;
+  right: 786px;
+  filter: grayscale(100%);
 }
 
 .clef2-img {
-  top: 380px;
-  right: 79px;
+  top: 420px;
+  right: 49px;
   z-index: 30;
+  filter: grayscale(10%);
 }
 
 .clef3-img {
   top: 702px;
   right: 3px;
-  filter: brightness(110%);
   z-index: 50;
 }
 
 .carpet-img {
   top: 597px;
   right: 202px;
-  filter: brightness(75%);
 }
 
 .chemine-img {
   top: 155px;
   right: 55px;
   z-index: 10;
+  filter: grayscale(10%);
 }
 
 .background-chemine {
@@ -57,13 +55,13 @@
 }
 
 .door-img {
-  filter: brightness(50%);
+
 }
 
 .table-img {
   top: 592px;
   right: 887px;
-  filter: drop-shadow(15px 51px 16px #000000fe) brightness(100%)grayscale(100%);
+  filter: drop-shadow(15px 51px 16px #000000fe);
 
 }
 
@@ -71,14 +69,14 @@
 .pile-img {
   top: 522px;
   right: -37px;
-  filter: drop-shadow(15px 51px 16px #000000fe) brightness(100%) grayscale(100%);
+  filter: drop-shadow(15px 51px 16px #000000fe);
   z-index: 30;
 }
 
 .pile-img1{
   top: 630px;
   right: 193px;
-  filter: drop-shadow(-4px 24px 16px #000000fe) brightness(100%)grayscale(100%);
+  filter: drop-shadow(-4px 24px 16px #000000fe);
   z-index: 10;
 }
 
@@ -87,14 +85,14 @@
   right: 233px;
   height: 113px;
   width: 67px;
-  background-color: rebeccapurple;
+  background-color: transparent;
 }
 .background-pile2 {
   top: 681PX;
   right: 233px;
   height: 113px;
   width: 67px;
-  background-color: rebeccapurple;
+  background-color: transparent;
 }
 
 .lustre-img {
@@ -105,6 +103,6 @@
 .livre-img {
   top: 604px;
   right: 13px;
-  filter: drop-shadow(15px 51px 16px #000000fe) brightness(100%)grayscale(100%);
+  filter: drop-shadow(15px 51px 16px #000000fe);
   z-index: 20;
 }
