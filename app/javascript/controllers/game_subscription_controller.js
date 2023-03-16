@@ -171,7 +171,7 @@ export default class extends Controller {
         this.hideRoom1()
       }
       if (this.hasGameLevel2Target) {
-        setTimeout(() => {this.displayRoom2()}, 4.5 * 1000)
+        setTimeout(() => {this.displayRoom2()}, 4 * 1000)
       }
     }
 

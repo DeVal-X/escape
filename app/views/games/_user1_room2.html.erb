@@ -103,35 +103,45 @@
       data-bs-toggle="modal"
       data-bs-target="#key-one"
     >
-    <%= image_tag "clef_1.png",
-      class: "clef-img position-absolute fade-in-clef1-sw aurakey img-saturate",
-      height: "15",
-      # "data-action": "click->door-opening#grabKey",
-      # "data-door-opening-good-key-param":"false",
-      "data-mooving-effect-object-target":"object",
-      "data-game-subscription-target":"clef1User1Room2"
-    %>
-
+      <%= image_tag "clef_1.png",
+        class: "clef-img position-absolute fade-in-clef1-sw aurakey img-saturate",
+        height: "15",
+        # "data-action": "click->door-opening#grabKey",
+        # "data-door-opening-good-key-param":"false",
+        "data-mooving-effect-object-target":"object",
+        "data-game-subscription-target":"clef1User1Room2"
+      %>
     </button>
 
+    <button type="button"
+      class="btn"
+      data-bs-toggle="modal"
+      data-bs-target="#key-two"
+    >
+      <%= image_tag "clef_2.png",
+        class: "clef2-img position-absolute fade-in-clef2-ne aurakey img-saturate",
+        height: "25",
+        "data-action": "click->door-opening#grabKey",
+        "data-door-opening-good-key-param": "false",
+        "data-mooving-effect-object-target":"object",
+        "data-game-subscription-target":"clef2User1Room2"
+      %>
+    </button>
 
-    <%= image_tag "clef_2.png",
-      class: "clef2-img position-absolute fade-in-clef2-ne aurakey img-saturate",
-      height: "25",
-      "data-action": "click->door-opening#grabKey",
-      "data-door-opening-good-key-param": "false",
-      "data-mooving-effect-object-target":"object",
-      "data-game-subscription-target":"clef2User1Room2"
-    %>
-
-    <%= image_tag "clef_3.png",
-      class: "clef3-img position-absolute fade-in-clef3-se aurakey img-saturate",
-      height: "20",
-      "data-action": "click->door-opening#grabKey",
-      "data-door-opening-good-key-param": "false",
-      "data-mooving-effect-object-target":"object",
-      "data-game-subscription-target":"clef3User1Room2"
-    %>
+    <button type="button"
+      class="btn"
+      data-bs-toggle="modal"
+      data-bs-target="#key-three"
+    >
+      <%= image_tag "clef_3.png",
+        class: "clef3-img position-absolute fade-in-clef3-se aurakey img-saturate",
+        height: "20",
+        "data-action": "click->door-opening#grabKey",
+        "data-door-opening-good-key-param": "false",
+        "data-mooving-effect-object-target":"object",
+        "data-game-subscription-target":"clef3User1Room2"
+      %>
+    </button>
   </div>
 
   <div  class="position-absolute"
@@ -210,7 +220,7 @@
           <div class="d-flex w-75 justify-content-around align-items-center"
             data-controller="game-subscription"
           >
-            <div class="btn btn-primary"
+            <div class="btn  btn-dark btn-lg"
               data-action="click->door-opening#grabKey click->door-opening#deactivateDoorTrap "
               data-door-opening-good-key-param="false"
               data-bs-dismiss="modal"
@@ -218,7 +228,7 @@
               Ouvrir la porte
             </div>
             <div
-              class="btn btn-danger"
+              class="btn  btn-secondary btn-lg"
               data-bs-dismiss="modal"
             >
               Ne pas ouvrir
@@ -248,7 +258,7 @@
           <div class="d-flex w-75 justify-content-around align-items-center"
             data-controller="game-subscription"
           >
-            <div class="btn btn-primary"
+            <div class="btn  btn-dark btn-lg"
               data-action="click->door-opening#grabKey click->door-opening#deactivateDoorTrap "
               data-door-opening-good-key-param="false"
               data-bs-dismiss="modal"
@@ -256,7 +266,7 @@
               Ouvrir la porte
             </div>
             <div
-              class="btn btn-danger"
+              class="btn  btn-secondary btn-lg"
               data-bs-dismiss="modal"
             >
               Ne pas ouvrir
