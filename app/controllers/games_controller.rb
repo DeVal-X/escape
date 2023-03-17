@@ -77,6 +77,7 @@ class GamesController < ApplicationController
       @game,
       @game.data
     )
+    head :ok
   end
 
   def advance
